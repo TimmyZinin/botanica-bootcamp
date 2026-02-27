@@ -9,7 +9,7 @@
 <meta property="og:description" content="3 урока. 10 мест. AI + реальный мир. Donation от $50.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,700;9..144,900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -26,15 +26,14 @@
     --text: #3A3632;
     --muted: #8A8279;
     --white: #FFFFFF;
-    --coral: #FF6B4A;
-    --peach: #FFE8D6;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Outfit', 'Inter', -apple-system, sans-serif;
+    font-family: 'Space Grotesk', -apple-system, sans-serif;
     background: var(--cream);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23FFFEF7'/%3E%3Crect width='1' height='1' x='1' y='1' fill='%23f5eddf' opacity='0.4'/%3E%3C/svg%3E");
     color: var(--text);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -57,21 +56,21 @@ body {
 }
 
 .nav-logo {
-    font-size: 20px;
-    font-weight: 700;
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 900;
     color: var(--green-dark);
-    letter-spacing: 3px;
-    text-transform: uppercase;
+    letter-spacing: 1px;
     text-decoration: none;
 }
 
 .nav-cta {
+    font-family: 'JetBrains Mono', monospace;
     background: var(--lime);
     color: var(--green-dark);
     border: none;
     padding: 10px 24px;
-    font-family: inherit;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -90,7 +89,7 @@ body {
 /* === HERO === */
 .hero {
     background: linear-gradient(135deg, var(--lime) 0%, var(--lime-soft) 40%, var(--lime-bg) 100%);
-    padding: 140px 40px 80px;
+    padding: 150px 40px 90px;
     position: relative;
     overflow: hidden;
     min-height: 100vh;
@@ -110,17 +109,6 @@ body {
     pointer-events: none;
 }
 
-.hero::after {
-    content: '';
-    position: absolute;
-    bottom: -10%;
-    left: -5%;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(91,140,0,0.1) 0%, transparent 70%);
-    pointer-events: none;
-}
-
 .hero-content {
     max-width: 1000px;
     margin: 0 auto;
@@ -128,51 +116,74 @@ body {
     position: relative;
 }
 
+.hero-botanical {
+    position: absolute;
+    right: 0;
+    top: -40px;
+    pointer-events: none;
+    opacity: 0.7;
+    animation: sway 8s ease-in-out infinite;
+}
+
+@keyframes sway {
+    0%, 100% { transform: rotate(0deg) translateX(0); }
+    50% { transform: rotate(2deg) translateX(10px); }
+}
+
 .hero-tag {
     display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
     background: var(--charcoal);
     color: var(--lime);
     padding: 8px 20px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     text-transform: uppercase;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
     border-radius: 4px;
+    opacity: 0;
+    animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
 }
 
 .hero h1 {
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(52px, 10vw, 110px);
+    font-family: 'Fraunces', serif;
+    font-size: clamp(56px, 11vw, 120px);
     font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -4px;
-    text-transform: uppercase;
+    line-height: 0.85;
+    letter-spacing: -3px;
     color: var(--charcoal);
-    margin-bottom: 28px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
 }
 
 .hero h1 .line2 {
     display: block;
+    font-weight: 300;
+    font-size: 0.55em;
+    letter-spacing: 2px;
     color: var(--green-dark);
-    font-size: 0.65em;
-    letter-spacing: -2px;
+    margin-top: 8px;
 }
 
 .hero-sub {
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 400;
     color: var(--text);
-    max-width: 540px;
-    line-height: 1.7;
-    margin-bottom: 48px;
-    opacity: 0.8;
+    max-width: 480px;
+    line-height: 1.8;
+    margin-bottom: 64px;
+    opacity: 0;
+    animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
 }
 
 .hero-meta {
     display: flex;
-    gap: 40px;
+    gap: 16px;
     flex-wrap: wrap;
+    opacity: 0;
+    animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
 }
 
 .hero-meta-item {
@@ -184,7 +195,8 @@ body {
 }
 
 .hero-meta-label {
-    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -193,10 +205,20 @@ body {
 }
 
 .hero-meta-value {
-    font-family: 'Inter', sans-serif;
-    font-size: 22px;
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
     font-weight: 700;
     color: var(--charcoal);
+}
+
+@keyframes revealUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-tag, .hero h1, .hero-sub, .hero-meta { animation: none; opacity: 1; }
+    .hero-botanical { animation: none; }
 }
 
 /* === COUNTDOWN === */
@@ -205,15 +227,19 @@ body {
     color: var(--lime);
     padding: 18px 40px;
     text-align: center;
-    font-size: 15px;
-    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
-.countdown-strip .timer {
-    color: var(--white);
-    font-weight: 800;
+.countdown-strip .timer { color: var(--white); font-weight: 700; }
+
+/* === SECTION DIVIDER === */
+.section-divider {
+    text-align: center;
+    padding: 24px 0;
 }
 
 /* === SECTIONS === */
@@ -224,6 +250,7 @@ body {
 }
 
 .section-num {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 4px;
@@ -233,7 +260,7 @@ body {
 }
 
 .section h2 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: clamp(28px, 4.5vw, 44px);
     font-weight: 900;
     line-height: 1.1;
@@ -242,9 +269,7 @@ body {
     margin-bottom: 16px;
 }
 
-.section h2 .accent {
-    color: var(--green);
-}
+.section h2 .accent { color: var(--green); }
 
 .section p.lead {
     font-size: 17px;
@@ -256,15 +281,14 @@ body {
 /* === CONCEPT === */
 .concept-block {
     background: var(--sand);
+    background-image: radial-gradient(circle, rgba(173,255,0,0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
     padding: 80px 40px;
     border-top: 3px solid var(--lime);
     border-bottom: 3px solid var(--lime);
 }
 
-.concept-inner {
-    max-width: 920px;
-    margin: 0 auto;
-}
+.concept-inner { max-width: 920px; margin: 0 auto; }
 
 .concept-grid {
     display: grid;
@@ -279,8 +303,6 @@ body {
     padding: 32px;
     border: 1px solid rgba(91,140,0,0.1);
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
 }
 
 .concept-card:hover {
@@ -290,20 +312,20 @@ body {
 }
 
 .concept-card .icon {
-    width: 48px;
-    height: 48px;
-    background: var(--lime-bg);
-    border-radius: 12px;
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--lime-bg), rgba(173,255,0,0.15));
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(91,140,0,0.1);
 }
 
 .concept-card h3 {
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
     font-weight: 700;
     color: var(--charcoal);
     margin-bottom: 8px;
@@ -317,21 +339,59 @@ body {
 
 /* === SCHEDULE === */
 .schedule-grid {
-    display: grid;
-    gap: 0;
     margin-top: 40px;
+    position: relative;
+    padding-left: 40px;
+}
+
+.schedule-grid::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--lime-bg) 0%, var(--lime) 30%, var(--green) 70%, var(--green-dark) 100%);
+    border-radius: 1px;
 }
 
 .schedule-item {
     display: grid;
     grid-template-columns: 140px 1fr;
-    border-bottom: 1px solid rgba(45,42,38,0.08);
-    padding: 28px 0;
+    border-bottom: 1px solid rgba(45,42,38,0.06);
+    padding: 28px 0 28px 24px;
+    position: relative;
+}
+
+.schedule-item:not(.break)::before {
+    content: '';
+    position: absolute;
+    left: -31px;
+    top: 34px;
+    width: 12px;
+    height: 12px;
+    background: var(--lime);
+    border: 3px solid var(--green);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.schedule-item.break::before {
+    content: '';
+    position: absolute;
+    left: -27px;
+    top: 22px;
+    width: 6px;
+    height: 6px;
+    background: var(--muted);
+    border-radius: 50%;
+    opacity: 0.4;
+    z-index: 2;
 }
 
 .schedule-time {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 1px;
     color: var(--green);
@@ -339,7 +399,7 @@ body {
 }
 
 .schedule-content h3 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: 20px;
     font-weight: 700;
     color: var(--charcoal);
@@ -352,16 +412,12 @@ body {
     line-height: 1.7;
 }
 
-.schedule-item.break {
-    opacity: 0.5;
-    padding: 16px 0;
-}
+.schedule-item.break { opacity: 0.5; padding: 16px 0 16px 24px; }
+.schedule-item.break .schedule-content h3 { font-size: 15px; font-weight: 500; color: var(--muted); font-family: 'Space Grotesk', sans-serif; }
 
-.schedule-item.break .schedule-content h3 {
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--muted);
-}
+/* Escalating lesson titles */
+.schedule-item:nth-child(3) .schedule-content h3 { font-size: 22px; }
+.schedule-item:nth-child(5) .schedule-content h3 { font-size: 24px; color: var(--green-dark); }
 
 /* === REQUIREMENTS === */
 .req-grid {
@@ -379,12 +435,10 @@ body {
     transition: border-color 0.3s;
 }
 
-.req-card:hover {
-    border-color: var(--lime);
-}
+.req-card:hover { border-color: var(--lime); }
 
 .req-card .num {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: 36px;
     font-weight: 900;
     color: var(--lime);
@@ -393,7 +447,7 @@ body {
 }
 
 .req-card h3 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: 16px;
     font-weight: 700;
     color: var(--charcoal);
@@ -409,6 +463,8 @@ body {
 /* === HOST === */
 .host-block {
     background: var(--sand);
+    background-image: radial-gradient(circle, rgba(173,255,0,0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
     padding: 80px 40px;
 }
 
@@ -425,20 +481,22 @@ body {
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--lime) 0%, var(--lime-soft) 100%);
+    background: radial-gradient(circle at 30% 30%, var(--lime) 0%, transparent 50%), radial-gradient(circle at 70% 70%, var(--lime-soft) 0%, transparent 50%), var(--cream);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: 48px;
     font-weight: 900;
     color: var(--green-dark);
+    border: 3px solid var(--lime);
+    box-shadow: 0 0 0 8px rgba(173,255,0,0.1), 0 0 0 16px rgba(173,255,0,0.05);
 }
 
 .host-info .section-num { margin-bottom: 4px; }
 
 .host-info h3 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: 28px;
     font-weight: 900;
     color: var(--charcoal);
@@ -446,12 +504,24 @@ body {
 }
 
 .host-info .role {
-    font-size: 13px;
-    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--green);
     margin-bottom: 12px;
+}
+
+.host-quote {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--green-dark);
+    border-left: 3px solid var(--lime);
+    padding-left: 20px;
+    margin: 16px 0;
+    line-height: 1.5;
 }
 
 .host-info p {
@@ -463,14 +533,12 @@ body {
 
 /* === LOCATION === */
 .location-block {
-    background: var(--warm);
+    background-color: var(--warm);
+    background-image: repeating-linear-gradient(135deg, transparent, transparent 40px, rgba(91,140,0,0.04) 40px, rgba(91,140,0,0.04) 41px);
     padding: 80px 40px;
 }
 
-.location-inner {
-    max-width: 920px;
-    margin: 0 auto;
-}
+.location-inner { max-width: 920px; margin: 0 auto; }
 
 .location-grid {
     display: grid;
@@ -481,7 +549,7 @@ body {
 }
 
 .location-info h3 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: 20px;
     font-weight: 700;
     color: var(--charcoal);
@@ -495,10 +563,12 @@ body {
     margin-bottom: 14px;
 }
 
-.location-info .detail-icon {
-    font-size: 18px;
+.location-info .detail-marker {
     min-width: 24px;
-    text-align: center;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .location-info .detail-text {
@@ -507,43 +577,33 @@ body {
     line-height: 1.6;
 }
 
-.location-map {
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid rgba(91,140,0,0.12);
-}
+.location-map-wrapper { border-radius: 16px; overflow: hidden; border: 1px solid rgba(91,140,0,0.12); }
 
-.location-map iframe {
+.terrain-silhouette { display: block; margin-bottom: -1px; }
+
+.location-map-wrapper iframe {
     width: 100%;
-    height: 320px;
+    height: 300px;
     border: none;
+    display: block;
 }
 
 /* === CTA === */
 .cta-block {
-    background: linear-gradient(135deg, var(--lime) 0%, var(--lime-soft) 50%, #D4FF80 100%);
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(91,140,0,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(255,255,255,0.4) 0%, transparent 50%),
+        linear-gradient(135deg, var(--lime) 0%, var(--lime-soft) 50%, #D4FF80 100%);
     padding: 100px 40px;
     text-align: center;
     position: relative;
     overflow: hidden;
 }
 
-.cta-block::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 60%);
-    pointer-events: none;
-}
-
 .cta-block h2 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Fraunces', serif;
     font-size: clamp(36px, 6vw, 56px);
     font-weight: 900;
-    text-transform: uppercase;
     letter-spacing: -2px;
     line-height: 1;
     color: var(--charcoal);
@@ -562,11 +622,11 @@ body {
 
 .cta-btn {
     display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
     background: var(--charcoal);
     color: var(--lime);
     padding: 18px 48px;
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -583,14 +643,33 @@ body {
     box-shadow: 0 8px 24px rgba(45,42,38,0.3);
 }
 
-.spots-left {
-    margin-top: 16px;
-    font-size: 12px;
+.spots-visual {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 28px;
+    position: relative;
+}
+
+.spot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--green-dark);
+    background: var(--green-dark);
+    box-shadow: 0 0 8px rgba(91,140,0,0.3);
+    transition: all 0.3s;
+}
+
+.spots-label {
+    margin-top: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--green-dark);
-    opacity: 0.5;
+    opacity: 0.6;
     position: relative;
 }
 
@@ -603,35 +682,36 @@ footer {
     font-size: 13px;
 }
 
-footer a {
-    color: var(--lime);
-    text-decoration: none;
-}
+footer a { color: var(--lime); text-decoration: none; }
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
     .nav { padding: 12px 20px; }
-    .nav-logo { font-size: 16px; letter-spacing: 2px; }
+    .nav-logo { font-size: 18px; }
     .nav-cta { padding: 8px 16px; font-size: 11px; }
 
     .hero { padding: 120px 24px 60px; min-height: auto; }
     .hero h1 { letter-spacing: -2px; }
-    .hero-meta { gap: 12px; }
+    .hero-meta { gap: 10px; }
     .hero-meta-item { padding: 12px 16px; }
+    .hero-botanical { width: 180px; height: auto; right: -20px; top: 0; opacity: 0.35; }
 
     .section { padding: 60px 24px; }
 
     .concept-block { padding: 60px 24px; }
     .concept-grid { grid-template-columns: 1fr; gap: 16px; }
 
+    .schedule-grid { padding-left: 30px; }
     .schedule-item { grid-template-columns: 1fr; gap: 4px; }
+    .schedule-item:not(.break)::before { left: -21px; top: 34px; width: 10px; height: 10px; }
+    .schedule-item.break::before { left: -18px; }
 
     .req-grid { grid-template-columns: 1fr; }
 
     .host-block { padding: 60px 24px; }
     .host-inner { grid-template-columns: 1fr; text-align: center; }
     .host-avatar { margin: 0 auto; width: 120px; height: 120px; font-size: 40px; }
-    .host-info p { max-width: 100%; }
+    .host-info p, .host-quote { max-width: 100%; }
 
     .location-block { padding: 60px 24px; }
     .location-grid { grid-template-columns: 1fr; }
@@ -656,6 +736,27 @@ footer a {
 <!-- HERO -->
 <section class="hero">
     <div class="hero-content">
+        <!-- Botanical SVG illustration -->
+        <svg class="hero-botanical" width="320" height="440" viewBox="0 0 320 440" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M160 440 C160 330 140 270 160 200 C180 130 160 70 160 0" stroke="#5B8C00" stroke-width="2.5" fill="none" opacity="0.25"/>
+            <path d="M160 360 C115 335 70 345 45 310 C70 298 120 300 160 360" fill="#ADFF00" opacity="0.18"/>
+            <path d="M160 360 C205 335 250 345 275 310 C250 298 200 300 160 360" fill="#ADFF00" opacity="0.12"/>
+            <path d="M160 280 C125 255 80 262 60 230 C82 220 125 224 160 280" fill="#5B8C00" opacity="0.14"/>
+            <path d="M160 280 C195 255 240 262 260 230 C238 220 195 224 160 280" fill="#5B8C00" opacity="0.09"/>
+            <path d="M160 210 C132 190 98 195 78 168 C98 160 132 162 160 210" fill="#ADFF00" opacity="0.12"/>
+            <path d="M160 210 C188 190 222 195 242 168 C222 160 188 162 160 210" fill="#ADFF00" opacity="0.08"/>
+            <path d="M160 150 C140 135 115 138 100 118 C115 112 140 114 160 150" fill="#5B8C00" opacity="0.1"/>
+            <path d="M160 150 C180 135 205 138 220 118 C205 112 180 114 160 150" fill="#5B8C00" opacity="0.06"/>
+            <path d="M160 95 C148 82 132 85 122 70 C132 66 148 68 160 95" fill="#ADFF00" opacity="0.08"/>
+            <path d="M160 95 C172 82 188 85 198 70 C188 66 172 68 160 95" fill="#ADFF00" opacity="0.05"/>
+            <circle cx="45" cy="308" r="4" fill="#ADFF00" opacity="0.3"/>
+            <circle cx="260" cy="228" r="3" fill="#5B8C00" opacity="0.25"/>
+            <circle cx="78" cy="166" r="3" fill="#ADFF00" opacity="0.2"/>
+            <circle cx="220" cy="116" r="2.5" fill="#5B8C00" opacity="0.2"/>
+            <circle cx="160" cy="0" r="5" fill="#ADFF00" opacity="0.4"/>
+            <circle cx="160" cy="12" r="3" fill="#5B8C00" opacity="0.3"/>
+        </svg>
+
         <div class="hero-tag">28 февраля 2026 / Kaş, Turkey</div>
         <h1>
             Botanica
@@ -704,28 +805,67 @@ footer a {
 
         <div class="concept-grid">
             <div class="concept-card">
-                <div class="icon">🎙️</div>
+                <div class="icon">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <path d="M14 2C10 2 8 6 8 10C8 14 10 18 14 26C18 18 20 14 20 10C20 6 18 2 14 2Z" fill="#5B8C00" opacity="0.7"/>
+                        <path d="M14 8V18" stroke="#ADFF00" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M10 12V14" stroke="#ADFF00" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M18 11V15" stroke="#ADFF00" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
                 <h3>Voice-First</h3>
                 <p>Управляем AI голосом. Распознавание речи + Claude Code = руки свободны, мозг работает. Практика с первой минуты.</p>
             </div>
             <div class="concept-card">
-                <div class="icon">🌍</div>
+                <div class="icon">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <circle cx="14" cy="14" r="11" stroke="#5B8C00" stroke-width="1.5" opacity="0.5"/>
+                        <path d="M14 3C14 3 8 10 8 14C8 18 14 25 14 25" stroke="#5B8C00" stroke-width="1.5" fill="none"/>
+                        <path d="M14 3C14 3 20 10 20 14C20 18 14 25 14 25" stroke="#5B8C00" stroke-width="1.5" fill="none"/>
+                        <path d="M3 14H25" stroke="#ADFF00" stroke-width="1.5" opacity="0.6"/>
+                        <path d="M5 9H23" stroke="#ADFF00" stroke-width="1" opacity="0.3"/>
+                        <path d="M5 19H23" stroke="#ADFF00" stroke-width="1" opacity="0.3"/>
+                    </svg>
+                </div>
                 <h3>Окружающий мир</h3>
                 <p>Каждое задание связано с реальным пространством. Средиземноморье, местные истории — всё становится материалом.</p>
             </div>
             <div class="concept-card">
-                <div class="icon">⚡</div>
+                <div class="icon">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <path d="M14 26V6" stroke="#5B8C00" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M14 20C10 18 6 19 4 16C7 14 10 15 14 20" fill="#ADFF00" opacity="0.5"/>
+                        <path d="M14 14C18 12 22 13 24 10C21 8 18 9 14 14" fill="#5B8C00" opacity="0.4"/>
+                        <path d="M14 8C11 6 8 7 6 4C9 3 11 4 14 8" fill="#ADFF00" opacity="0.3"/>
+                        <circle cx="14" cy="4" r="2" fill="#ADFF00"/>
+                    </svg>
+                </div>
                 <h3>От простого к сложному</h3>
                 <p>Три урока — три уровня. Начинаем с базы, заканчиваем проектами, которые удивят даже вас.</p>
             </div>
             <div class="concept-card">
-                <div class="icon">🏆</div>
+                <div class="icon">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <path d="M14 4L16 10H22L17 14L19 20L14 16L9 20L11 14L6 10H12L14 4Z" fill="#ADFF00" opacity="0.5"/>
+                        <path d="M7 22C7 22 10 18 14 18C18 18 21 22 21 22" stroke="#5B8C00" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                        <path d="M4 24C6 22 10 20 14 20C18 20 22 22 24 24" stroke="#5B8C00" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </div>
                 <h3>Соревнование</h3>
                 <p>Каждый работает над своим проектом. В конце дня — показ результатов. Лучшие кейсы получат признание.</p>
             </div>
         </div>
     </div>
 </section>
+
+<!-- LEAF DIVIDER -->
+<div class="section-divider" aria-hidden="true">
+    <svg width="120" height="40" viewBox="0 0 120 40" fill="none">
+        <path d="M60 38 C40 30 10 32 2 18 C15 12 40 15 60 38" fill="#ADFF00" opacity="0.25"/>
+        <path d="M60 38 C80 30 110 32 118 18 C105 12 80 15 60 38" fill="#ADFF00" opacity="0.18"/>
+        <path d="M60 38 C60 28 58 18 60 2" stroke="#5B8C00" stroke-width="1.5" fill="none" opacity="0.3"/>
+    </svg>
+</div>
 
 <!-- SCHEDULE -->
 <section class="section">
@@ -780,6 +920,15 @@ footer a {
     </div>
 </section>
 
+<!-- LEAF DIVIDER -->
+<div class="section-divider" aria-hidden="true">
+    <svg width="120" height="40" viewBox="0 0 120 40" fill="none">
+        <path d="M60 38 C40 30 10 32 2 18 C15 12 40 15 60 38" fill="#ADFF00" opacity="0.25"/>
+        <path d="M60 38 C80 30 110 32 118 18 C105 12 80 15 60 38" fill="#ADFF00" opacity="0.18"/>
+        <path d="M60 38 C60 28 58 18 60 2" stroke="#5B8C00" stroke-width="1.5" fill="none" opacity="0.3"/>
+    </svg>
+</div>
+
 <!-- REQUIREMENTS -->
 <section class="section" style="padding-top: 0;">
     <div class="section-num">02 / Что взять с собой</div>
@@ -818,10 +967,12 @@ footer a {
             <div class="section-num">03 / Ведущий</div>
             <h3>Тим Зинин</h3>
             <div class="role">Multi-Agent Revenue Architect</div>
+            <blockquote class="host-quote">
+                "Каш — мой дом и лучшая лаборатория для экспериментов."
+            </blockquote>
             <p>
                 Строю AI-агентов, которые работают на бизнес. Мульти-агентные системы,
                 автоматизация контента, продукты на стыке AI и реального мира.
-                Каш — мой дом и лучшая лаборатория для экспериментов.
             </p>
         </div>
     </div>
@@ -838,24 +989,38 @@ footer a {
                 <h3>Дом Тима в горах над Кашем</h3>
 
                 <div class="detail">
-                    <span class="detail-icon">📍</span>
+                    <div class="detail-marker">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#5B8C00" stroke-width="1.5"/><circle cx="9" cy="9" r="3" fill="#ADFF00"/></svg>
+                    </div>
                     <span class="detail-text">30 минут от центра Каша. Точные координаты отправим после регистрации.</span>
                 </div>
                 <div class="detail">
-                    <span class="detail-icon">🚗</span>
+                    <div class="detail-marker">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 12 L9 4 L15 12" stroke="#5B8C00" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M1 14H17" stroke="#ADFF00" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
                     <span class="detail-text">Аэропорт Даламан (DLM) — 2.5 часа, Анталья (AYT) — 3 часа</span>
                 </div>
                 <div class="detail">
-                    <span class="detail-icon">📶</span>
+                    <div class="detail-marker">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3 C5 3 3 6 3 9 C3 12 5 15 9 15 C13 15 15 12 15 9 C15 6 13 3 9 3Z" stroke="#5B8C00" stroke-width="1.5" fill="none"/><path d="M6 9H12" stroke="#ADFF00" stroke-width="1.5" stroke-linecap="round"/><path d="M9 6V12" stroke="#ADFF00" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
                     <span class="detail-text">Wi-Fi, розетки, кофе, вода, лёгкие закуски — включено</span>
                 </div>
                 <div class="detail">
-                    <span class="detail-icon">🌅</span>
+                    <div class="detail-marker">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2C5 6 2 9 2 12C2 15 5 17 9 17C13 17 16 15 16 12C16 9 13 6 9 2Z" fill="#ADFF00" opacity="0.3"/><path d="M9 5V12" stroke="#5B8C00" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
                     <span class="detail-text">After-party на террасе с видом на закат</span>
                 </div>
             </div>
 
-            <div class="location-map">
+            <div class="location-map-wrapper">
+                <svg class="terrain-silhouette" width="100%" height="50" viewBox="0 0 400 50" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M0 50 L0 38 C30 34 50 18 80 22 C110 26 130 12 160 8 C190 4 210 16 240 18 C270 20 300 10 330 14 C360 18 380 30 400 26 L400 50 Z" fill="#5B8C00" opacity="0.15"/>
+                    <path d="M0 50 L0 42 C40 40 70 30 100 33 C130 36 160 24 200 28 C240 32 280 22 320 26 C360 30 390 38 400 35 L400 50 Z" fill="#ADFF00" opacity="0.12"/>
+                    <rect x="156" y="4" width="8" height="6" fill="#5B8C00" opacity="0.5"/>
+                    <path d="M154 4 L160 0 L166 4" fill="#5B8C00" opacity="0.5"/>
+                </svg>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100000!2d29.63!3d36.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c1c5b0a8b0f3f9%3A0x8a6a44d3b6d6b2e0!2zS2HFnywgQW50YWx5YSwgVHVya2V5!5e0!3m2!1sen!2s!4v1" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
@@ -867,7 +1032,11 @@ footer a {
     <h2>10 мест.<br>Одно — твоё?</h2>
     <p>Предзапись обязательна. Donation от $50. Напиши в Telegram — забронируй место.</p>
     <a href="https://t.me/timofeyzinin" class="cta-btn" target="_blank">Написать в Telegram</a>
-    <div class="spots-left">Количество мест ограничено</div>
+    <div class="spots-visual" aria-label="10 мест свободно">
+        <span class="spot"></span><span class="spot"></span><span class="spot"></span><span class="spot"></span><span class="spot"></span>
+        <span class="spot"></span><span class="spot"></span><span class="spot"></span><span class="spot"></span><span class="spot"></span>
+    </div>
+    <div class="spots-label">10 из 10 мест свободны</div>
 </section>
 
 <!-- FOOTER -->
@@ -883,19 +1052,12 @@ function updateCountdown() {
     const diff = event - now;
     const el = document.getElementById('countdown');
     if (!el) return;
-
-    if (diff <= 0) {
-        el.textContent = 'Буткемп начался!';
-        return;
-    }
-
+    if (diff <= 0) { el.textContent = 'Буткемп начался!'; return; }
     const hours = Math.floor(diff / (1000 * 60 * 60));
     const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-
     if (hours >= 24) {
         const days = Math.floor(hours / 24);
-        const rh = hours % 24;
-        el.textContent = `До старта: ${days}д ${rh}ч ${mins}мин`;
+        el.textContent = `До старта: ${days}д ${hours % 24}ч ${mins}мин`;
     } else {
         el.textContent = `До старта: ${hours}ч ${mins}мин`;
     }
