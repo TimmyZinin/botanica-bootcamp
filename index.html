@@ -673,6 +673,42 @@ body {
     position: relative;
 }
 
+/* === LANG SWITCH === */
+.lang-switch {
+    display: flex;
+    gap: 4px;
+    margin-right: 12px;
+}
+
+.lang-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border: 1px solid rgba(91,140,0,0.2);
+    background: transparent;
+    color: var(--muted);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 1px;
+}
+
+.lang-btn.active {
+    background: var(--lime-bg);
+    color: var(--green-dark);
+    border-color: var(--lime);
+}
+
+.lang-btn:hover:not(.active) {
+    border-color: var(--green);
+    color: var(--text);
+}
+
+body.en .ru-only { display: none !important; }
+body.en .en-only { display: unset !important; }
+body:not(.en) .en-only { display: none !important; }
+
 /* === FOOTER === */
 footer {
     background: var(--charcoal);
@@ -730,7 +766,13 @@ footer a { color: var(--lime); text-decoration: none; }
 <!-- NAV -->
 <nav class="nav">
     <a href="#" class="nav-logo">Botanica</a>
-    <a href="https://t.me/timofeyzinin" class="nav-cta" target="_blank">Записаться</a>
+    <div style="display:flex;align-items:center;gap:12px;">
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+            <button class="lang-btn" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="https://t.me/timofeyzinin" class="nav-cta" target="_blank"><span class="ru-only">Записаться</span><span class="en-only">Register</span></a>
+    </div>
 </nav>
 
 <!-- HERO -->
@@ -757,32 +799,31 @@ footer a { color: var(--lime); text-decoration: none; }
             <circle cx="160" cy="12" r="3" fill="#5B8C00" opacity="0.3"/>
         </svg>
 
-        <div class="hero-tag">28 февраля 2026 / Kaş, Turkey</div>
+        <div class="hero-tag"><span class="ru-only">28 февраля 2026 / Kaş, Turkey</span><span class="en-only">February 28, 2026 / Kaş, Turkey</span></div>
         <h1>
             Botanica
             <span class="line2">Bootcamp</span>
         </h1>
         <p class="hero-sub">
-            Однодневный интенсив, где AI встречается с реальным миром.
-            3 практических урока. Исследуем пространство вокруг нас через инструменты,
-            которые меняют правила игры.
+            <span class="ru-only">Однодневный интенсив, где AI встречается с реальным миром. 3 практических урока. Исследуем пространство вокруг нас через инструменты, которые меняют правила игры.</span>
+            <span class="en-only">A one-day intensive where AI meets the real world. 3 hands-on lessons. We explore the space around us through tools that change the game.</span>
         </p>
         <div class="hero-meta">
             <div class="hero-meta-item">
-                <span class="hero-meta-label">Когда</span>
-                <span class="hero-meta-value">28 фев, 12:00</span>
+                <span class="hero-meta-label"><span class="ru-only">Когда</span><span class="en-only">When</span></span>
+                <span class="hero-meta-value"><span class="ru-only">28 фев, 12:00</span><span class="en-only">Feb 28, 12:00</span></span>
             </div>
             <div class="hero-meta-item">
-                <span class="hero-meta-label">Где</span>
-                <span class="hero-meta-value">Kaş, дом Тима</span>
+                <span class="hero-meta-label"><span class="ru-only">Где</span><span class="en-only">Where</span></span>
+                <span class="hero-meta-value"><span class="ru-only">Kaş, дом Тима</span><span class="en-only">Kaş, Tim's place</span></span>
             </div>
             <div class="hero-meta-item">
-                <span class="hero-meta-label">Мест</span>
+                <span class="hero-meta-label"><span class="ru-only">Мест</span><span class="en-only">Spots</span></span>
                 <span class="hero-meta-value">10</span>
             </div>
             <div class="hero-meta-item">
                 <span class="hero-meta-label">Donation</span>
-                <span class="hero-meta-value">от $50</span>
+                <span class="hero-meta-value"><span class="ru-only">от $50</span><span class="en-only">from $50</span></span>
             </div>
         </div>
     </div>
@@ -790,17 +831,17 @@ footer a { color: var(--lime); text-decoration: none; }
 
 <!-- COUNTDOWN -->
 <div class="countdown-strip">
-    Завтра. <span id="countdown" class="timer"></span> Осталось мест: <span class="timer">10</span>
+    <span class="ru-only">Завтра.</span><span class="en-only">Tomorrow.</span> <span id="countdown" class="timer"></span> <span class="ru-only">Осталось мест:</span><span class="en-only">Spots left:</span> <span class="timer">10</span>
 </div>
 
 <!-- CONCEPT -->
 <section class="concept-block">
     <div class="concept-inner">
-        <div class="section-num">00 / Идея</div>
-        <h2>AI не заменяет мир.<br>Он помогает его <span class="accent">исследовать</span>.</h2>
+        <div class="section-num"><span class="ru-only">00 / Идея</span><span class="en-only">00 / Concept</span></div>
+        <h2><span class="ru-only">AI не заменяет мир.<br>Он помогает его <span class="accent">исследовать</span>.</span><span class="en-only">AI doesn't replace the world.<br>It helps you <span class="accent">explore</span> it.</span></h2>
         <p class="lead" style="color: var(--muted);">
-            Учимся взаимодействовать с окружающим пространством через AI-инструменты и соцсети.
-            Необычные задачи, соревновательный дух, реальные результаты.
+            <span class="ru-only">Учимся взаимодействовать с окружающим пространством через AI-инструменты и соцсети. Необычные задачи, соревновательный дух, реальные результаты.</span>
+            <span class="en-only">Learn to interact with the world around you through AI tools and social media. Unusual challenges, competitive spirit, real results.</span>
         </p>
 
         <div class="concept-grid">
@@ -814,7 +855,7 @@ footer a { color: var(--lime); text-decoration: none; }
                     </svg>
                 </div>
                 <h3>Voice-First</h3>
-                <p>Управляем AI голосом. Распознавание речи + Claude Code = руки свободны, мозг работает. Практика с первой минуты.</p>
+                <p><span class="ru-only">Управляем AI голосом. Распознавание речи + Claude Code = руки свободны, мозг работает. Практика с первой минуты.</span><span class="en-only">Control AI with your voice. Speech recognition + Claude Code = hands free, brain working. Practice from minute one.</span></p>
             </div>
             <div class="concept-card">
                 <div class="icon">
@@ -827,8 +868,8 @@ footer a { color: var(--lime); text-decoration: none; }
                         <path d="M5 19H23" stroke="#ADFF00" stroke-width="1" opacity="0.3"/>
                     </svg>
                 </div>
-                <h3>Окружающий мир</h3>
-                <p>Каждое задание связано с реальным пространством. Средиземноморье, местные истории — всё становится материалом.</p>
+                <h3><span class="ru-only">Окружающий мир</span><span class="en-only">The Real World</span></h3>
+                <p><span class="ru-only">Каждое задание связано с реальным пространством. Средиземноморье, местные истории — всё становится материалом.</span><span class="en-only">Every task connects to the physical space around us. The Mediterranean, local stories — everything becomes material.</span></p>
             </div>
             <div class="concept-card">
                 <div class="icon">
@@ -840,8 +881,8 @@ footer a { color: var(--lime); text-decoration: none; }
                         <circle cx="14" cy="4" r="2" fill="#ADFF00"/>
                     </svg>
                 </div>
-                <h3>От простого к сложному</h3>
-                <p>Три урока — три уровня. Начинаем с базы, заканчиваем проектами, которые удивят даже вас.</p>
+                <h3><span class="ru-only">От простого к сложному</span><span class="en-only">Simple to Complex</span></h3>
+                <p><span class="ru-only">Три урока — три уровня. Начинаем с базы, заканчиваем проектами, которые удивят даже вас.</span><span class="en-only">Three lessons — three levels. Start with basics, finish with projects that will surprise even you.</span></p>
             </div>
             <div class="concept-card">
                 <div class="icon">
@@ -851,8 +892,8 @@ footer a { color: var(--lime); text-decoration: none; }
                         <path d="M4 24C6 22 10 20 14 20C18 20 22 22 24 24" stroke="#5B8C00" stroke-width="1.5" fill="none" stroke-linecap="round"/>
                     </svg>
                 </div>
-                <h3>Соревнование</h3>
-                <p>Каждый работает над своим проектом. В конце дня — показ результатов. Лучшие кейсы получат признание.</p>
+                <h3><span class="ru-only">Соревнование</span><span class="en-only">Competition</span></h3>
+                <p><span class="ru-only">Каждый работает над своим проектом. В конце дня — показ результатов. Лучшие кейсы получат признание.</span><span class="en-only">Everyone works on their own project. End of day — showcase results. Best cases earn community recognition.</span></p>
             </div>
         </div>
     </div>
@@ -869,52 +910,52 @@ footer a { color: var(--lime); text-decoration: none; }
 
 <!-- SCHEDULE -->
 <section class="section">
-    <div class="section-num">01 / Расписание</div>
-    <h2>3 урока. <span class="accent">1 день.</span><br>Бесконечные возможности.</h2>
+    <div class="section-num"><span class="ru-only">01 / Расписание</span><span class="en-only">01 / Schedule</span></div>
+    <h2><span class="ru-only">3 урока. <span class="accent">1 день.</span><br>Бесконечные возможности.</span><span class="en-only">3 lessons. <span class="accent">1 day.</span><br>Endless possibilities.</span></h2>
 
     <div class="schedule-grid">
         <div class="schedule-item">
             <div class="schedule-time">12:00 — 13:30</div>
             <div class="schedule-content">
-                <h3>Урок 1: Первый контакт</h3>
-                <p>Настройка инструментов. Voice-first подход. Первые взаимодействия с окружающим миром через AI. Простые, но впечатляющие задачи.</p>
+                <h3><span class="ru-only">Урок 1: Первый контакт</span><span class="en-only">Lesson 1: First Contact</span></h3>
+                <p><span class="ru-only">Настройка инструментов. Voice-first подход. Первые взаимодействия с окружающим миром через AI. Простые, но впечатляющие задачи.</span><span class="en-only">Setting up tools. Voice-first approach. First interactions with the real world through AI. Simple but impressive tasks.</span></p>
             </div>
         </div>
 
         <div class="schedule-item break">
             <div class="schedule-time">13:30 — 13:50</div>
             <div class="schedule-content">
-                <h3>Перерыв / кофе / нетворкинг на террасе</h3>
+                <h3><span class="ru-only">Перерыв / кофе / нетворкинг на террасе</span><span class="en-only">Break / coffee / networking on the terrace</span></h3>
             </div>
         </div>
 
         <div class="schedule-item">
             <div class="schedule-time">13:50 — 15:20</div>
             <div class="schedule-content">
-                <h3>Урок 2: Глубже</h3>
-                <p>Усложняем. Соцсети, исследование пространства, контент, который взаимодействует с реальным миром. Каждый выбирает свой вектор.</p>
+                <h3><span class="ru-only">Урок 2: Глубже</span><span class="en-only">Lesson 2: Going Deeper</span></h3>
+                <p><span class="ru-only">Усложняем. Соцсети, исследование пространства, контент, который взаимодействует с реальным миром. Каждый выбирает свой вектор.</span><span class="en-only">Leveling up. Social media, space exploration, content that interacts with the real world. Everyone picks their own direction.</span></p>
             </div>
         </div>
 
         <div class="schedule-item break">
             <div class="schedule-time">15:20 — 15:40</div>
             <div class="schedule-content">
-                <h3>Перерыв / еда / обсуждение результатов</h3>
+                <h3><span class="ru-only">Перерыв / еда / обсуждение результатов</span><span class="en-only">Break / food / discussing results</span></h3>
             </div>
         </div>
 
         <div class="schedule-item">
             <div class="schedule-time">15:40 — 17:10</div>
             <div class="schedule-content">
-                <h3>Урок 3: Полный контроль</h3>
-                <p>Финальный блок. Самые необычные кейсы. Объединяем всё в один мощный проект. Показ результатов и обсуждение.</p>
+                <h3><span class="ru-only">Урок 3: Полный контроль</span><span class="en-only">Lesson 3: Full Control</span></h3>
+                <p><span class="ru-only">Финальный блок. Самые необычные кейсы. Объединяем всё в один мощный проект. Показ результатов и обсуждение.</span><span class="en-only">Final block. The most unusual cases. Combine everything into one powerful project. Showcase and discussion.</span></p>
             </div>
         </div>
 
         <div class="schedule-item break">
             <div class="schedule-time">17:10+</div>
             <div class="schedule-content">
-                <h3>After-party / закат на террасе / свободное общение</h3>
+                <h3><span class="ru-only">After-party / закат на террасе / свободное общение</span><span class="en-only">After-party / sunset on the terrace / free networking</span></h3>
             </div>
         </div>
     </div>
@@ -931,30 +972,30 @@ footer a { color: var(--lime); text-decoration: none; }
 
 <!-- REQUIREMENTS -->
 <section class="section" style="padding-top: 0;">
-    <div class="section-num">02 / Что взять с собой</div>
-    <h2>Твой <span class="accent">набор</span> на буткемп</h2>
-    <p class="lead">Убедись, что у тебя есть каждый пункт.</p>
+    <div class="section-num"><span class="ru-only">02 / Что взять с собой</span><span class="en-only">02 / What to Bring</span></div>
+    <h2><span class="ru-only">Твой <span class="accent">набор</span> на буткемп</span><span class="en-only">Your bootcamp <span class="accent">kit</span></span></h2>
+    <p class="lead"><span class="ru-only">Убедись, что у тебя есть каждый пункт.</span><span class="en-only">Make sure you have everything on the list.</span></p>
 
     <div class="req-grid">
         <div class="req-card">
             <div class="num">01</div>
-            <h3>Claude Code + подписка</h3>
-            <p>Установленный Claude Code CLI с оплаченной подпиской. Основной инструмент на весь день.</p>
+            <h3><span class="ru-only">Claude Code + подписка</span><span class="en-only">Claude Code + subscription</span></h3>
+            <p><span class="ru-only">Установленный Claude Code CLI с оплаченной подпиской. Основной инструмент на весь день.</span><span class="en-only">Installed Claude Code CLI with a paid subscription. Our main tool for the entire day.</span></p>
         </div>
         <div class="req-card">
             <div class="num">02</div>
-            <h3>Карта с $30+</h3>
-            <p>Кредитная или дебетовая карта — для оплаты дополнительных API и сервисов на твой выбор.</p>
+            <h3><span class="ru-only">Карта с $30+</span><span class="en-only">Card with $30+</span></h3>
+            <p><span class="ru-only">Кредитная или дебетовая карта — для оплаты дополнительных API и сервисов на твой выбор.</span><span class="en-only">Credit or debit card — for additional APIs and services of your choice.</span></p>
         </div>
         <div class="req-card">
             <div class="num">03</div>
             <h3>Speech-to-Text</h3>
-            <p>Whisper, Superwhisper, HandyComputer или аналог. Voice-first — наш подход.</p>
+            <p><span class="ru-only">Whisper, Superwhisper, HandyComputer или аналог. Voice-first — наш подход.</span><span class="en-only">Whisper, Superwhisper, HandyComputer or similar. Voice-first is our approach.</span></p>
         </div>
         <div class="req-card">
             <div class="num">04</div>
-            <h3>Ноутбук + зарядка</h3>
-            <p>MacBook или любой ноутбук с терминалом. Wi-Fi и розетки будут.</p>
+            <h3><span class="ru-only">Ноутбук + зарядка</span><span class="en-only">Laptop + charger</span></h3>
+            <p><span class="ru-only">MacBook или любой ноутбук с терминалом. Wi-Fi и розетки будут.</span><span class="en-only">MacBook or any laptop with terminal. Wi-Fi and power outlets provided.</span></p>
         </div>
     </div>
 </section>
@@ -964,15 +1005,16 @@ footer a { color: var(--lime); text-decoration: none; }
     <div class="host-inner">
         <div class="host-avatar">TZ</div>
         <div class="host-info">
-            <div class="section-num">03 / Ведущий</div>
-            <h3>Тим Зинин</h3>
+            <div class="section-num"><span class="ru-only">03 / Ведущий</span><span class="en-only">03 / Host</span></div>
+            <h3>Tim Zinin</h3>
             <div class="role">Multi-Agent Revenue Architect</div>
             <blockquote class="host-quote">
-                "Каш — мой дом и лучшая лаборатория для экспериментов."
+                <span class="ru-only">"Каш — мой дом и лучшая лаборатория для экспериментов."</span>
+                <span class="en-only">"Kaş is my home and the best lab for experiments."</span>
             </blockquote>
             <p>
-                Строю AI-агентов, которые работают на бизнес. Мульти-агентные системы,
-                автоматизация контента, продукты на стыке AI и реального мира.
+                <span class="ru-only">Строю AI-агентов, которые работают на бизнес. Мульти-агентные системы, автоматизация контента, продукты на стыке AI и реального мира.</span>
+                <span class="en-only">Building AI agents that work for business. Multi-agent systems, content automation, products at the intersection of AI and the real world.</span>
             </p>
         </div>
     </div>
@@ -981,36 +1023,36 @@ footer a { color: var(--lime); text-decoration: none; }
 <!-- LOCATION -->
 <section class="location-block">
     <div class="location-inner">
-        <div class="section-num">04 / Место</div>
+        <div class="section-num"><span class="ru-only">04 / Место</span><span class="en-only">04 / Venue</span></div>
         <h2>Kaş, <span class="accent">Turkey</span></h2>
 
         <div class="location-grid">
             <div class="location-info">
-                <h3>Дом Тима в горах над Кашем</h3>
+                <h3><span class="ru-only">Дом Тима в горах над Кашем</span><span class="en-only">Tim's house in the mountains above Kaş</span></h3>
 
                 <div class="detail">
                     <div class="detail-marker">
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#5B8C00" stroke-width="1.5"/><circle cx="9" cy="9" r="3" fill="#ADFF00"/></svg>
                     </div>
-                    <span class="detail-text">30 минут от центра Каша. Точные координаты отправим после регистрации.</span>
+                    <span class="detail-text"><span class="ru-only">30 минут от центра Каша. Точные координаты отправим после регистрации.</span><span class="en-only">30 min from Kaş center. Exact coordinates sent after registration.</span></span>
                 </div>
                 <div class="detail">
                     <div class="detail-marker">
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 12 L9 4 L15 12" stroke="#5B8C00" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M1 14H17" stroke="#ADFF00" stroke-width="1.5" stroke-linecap="round"/></svg>
                     </div>
-                    <span class="detail-text">Аэропорт Даламан (DLM) — 2.5 часа, Анталья (AYT) — 3 часа</span>
+                    <span class="detail-text"><span class="ru-only">Аэропорт Даламан (DLM) — 2.5 часа, Анталья (AYT) — 3 часа</span><span class="en-only">Dalaman airport (DLM) — 2.5h, Antalya (AYT) — 3h</span></span>
                 </div>
                 <div class="detail">
                     <div class="detail-marker">
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3 C5 3 3 6 3 9 C3 12 5 15 9 15 C13 15 15 12 15 9 C15 6 13 3 9 3Z" stroke="#5B8C00" stroke-width="1.5" fill="none"/><path d="M6 9H12" stroke="#ADFF00" stroke-width="1.5" stroke-linecap="round"/><path d="M9 6V12" stroke="#ADFF00" stroke-width="1.5" stroke-linecap="round"/></svg>
                     </div>
-                    <span class="detail-text">Wi-Fi, розетки, кофе, вода, лёгкие закуски — включено</span>
+                    <span class="detail-text"><span class="ru-only">Wi-Fi, розетки, кофе, вода, лёгкие закуски — включено</span><span class="en-only">Wi-Fi, power outlets, coffee, water, snacks — included</span></span>
                 </div>
                 <div class="detail">
                     <div class="detail-marker">
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2C5 6 2 9 2 12C2 15 5 17 9 17C13 17 16 15 16 12C16 9 13 6 9 2Z" fill="#ADFF00" opacity="0.3"/><path d="M9 5V12" stroke="#5B8C00" stroke-width="1.5" stroke-linecap="round"/></svg>
                     </div>
-                    <span class="detail-text">After-party на террасе с видом на закат</span>
+                    <span class="detail-text"><span class="ru-only">After-party на террасе с видом на закат</span><span class="en-only">After-party on the terrace with sunset views</span></span>
                 </div>
             </div>
 
@@ -1029,14 +1071,14 @@ footer a { color: var(--lime); text-decoration: none; }
 
 <!-- CTA -->
 <section class="cta-block" id="register">
-    <h2>10 мест.<br>Одно — твоё?</h2>
-    <p>Предзапись обязательна. Donation от $50. Напиши в Telegram — забронируй место.</p>
-    <a href="https://t.me/timofeyzinin" class="cta-btn" target="_blank">Написать в Telegram</a>
+    <h2><span class="ru-only">10 мест.<br>Одно — твоё?</span><span class="en-only">10 spots.<br>One is yours?</span></h2>
+    <p><span class="ru-only">Предзапись обязательна. Donation от $50. Напиши в Telegram — забронируй место.</span><span class="en-only">Pre-registration required. Donation from $50. Message on Telegram to book your spot.</span></p>
+    <a href="https://t.me/timofeyzinin" class="cta-btn" target="_blank"><span class="ru-only">Написать в Telegram</span><span class="en-only">Message on Telegram</span></a>
     <div class="spots-visual" aria-label="10 мест свободно">
         <span class="spot"></span><span class="spot"></span><span class="spot"></span><span class="spot"></span><span class="spot"></span>
         <span class="spot"></span><span class="spot"></span><span class="spot"></span><span class="spot"></span><span class="spot"></span>
     </div>
-    <div class="spots-label">10 из 10 мест свободны</div>
+    <div class="spots-label"><span class="ru-only">10 из 10 мест свободны</span><span class="en-only">10 of 10 spots available</span></div>
 </section>
 
 <!-- FOOTER -->
@@ -1046,20 +1088,40 @@ footer a { color: var(--lime); text-decoration: none; }
 </footer>
 
 <script>
+function setLang(lang) {
+    if (lang === 'en') {
+        document.body.classList.add('en');
+        document.documentElement.lang = 'en';
+    } else {
+        document.body.classList.remove('en');
+        document.documentElement.lang = 'ru';
+    }
+    document.querySelectorAll('.lang-btn').forEach(b => {
+        b.classList.toggle('active', b.textContent.trim() === lang.toUpperCase());
+    });
+    localStorage.setItem('botanica-lang', lang);
+}
+// Restore language preference
+const savedLang = localStorage.getItem('botanica-lang');
+if (savedLang) setLang(savedLang);
+// Auto-detect for non-Russian speakers
+else if (!navigator.language.startsWith('ru')) setLang('en');
+
 function updateCountdown() {
     const event = new Date('2026-02-28T09:00:00Z');
     const now = new Date();
     const diff = event - now;
     const el = document.getElementById('countdown');
     if (!el) return;
-    if (diff <= 0) { el.textContent = 'Буткемп начался!'; return; }
+    const isEn = document.body.classList.contains('en');
+    if (diff <= 0) { el.textContent = isEn ? 'Bootcamp started!' : 'Буткемп начался!'; return; }
     const hours = Math.floor(diff / (1000 * 60 * 60));
     const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     if (hours >= 24) {
         const days = Math.floor(hours / 24);
-        el.textContent = `До старта: ${days}д ${hours % 24}ч ${mins}мин`;
+        el.textContent = isEn ? `Starts in: ${days}d ${hours % 24}h ${mins}m` : `До старта: ${days}д ${hours % 24}ч ${mins}мин`;
     } else {
-        el.textContent = `До старта: ${hours}ч ${mins}мин`;
+        el.textContent = isEn ? `Starts in: ${hours}h ${mins}m` : `До старта: ${hours}ч ${mins}мин`;
     }
 }
 updateCountdown();
