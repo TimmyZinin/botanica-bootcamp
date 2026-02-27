@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOTANICA BOOTCAMP — One Day. Kaş. AI Meets the Real World.</title>
+<meta name="description" content="Однодневный буткемп Ботаники в Каше. 3 практических урока. Учимся взаимодействовать с окружающим миром через AI. 28 февраля 2026. Только 10 мест.">
+<meta property="og:title" content="BOTANICA BOOTCAMP — 28 февраля, Каш">
+<meta property="og:description" content="3 урока. 10 мест. AI + реальный мир. Donation от $50.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --lime: #ADFF00;
+    --lime-dim: #8BCC00;
+    --black: #0A0A0A;
+    --dark: #1A1A1A;
+    --gray: #F2F2F2;
+    --mid-gray: #8C8C8C;
+    --white: #FFFFFF;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--gray);
+    color: var(--black);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* === NAV === */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--lime);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.nav-cta {
+    background: var(--lime);
+    color: var(--black);
+    border: none;
+    padding: 10px 24px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.nav-cta:hover {
+    background: var(--white);
+}
+
+/* === HERO === */
+.hero {
+    background: var(--black);
+    color: var(--white);
+    padding: 160px 40px 100px;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(173, 255, 0, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(173, 255, 0, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+
+.hero-tag {
+    display: inline-block;
+    background: var(--lime);
+    color: var(--black);
+    padding: 6px 16px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 10vw, 120px);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+}
+
+.hero h1 .accent {
+    color: var(--lime);
+}
+
+.hero-sub {
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 48px;
+}
+
+.hero-meta {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.hero-meta-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-meta-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--lime);
+    margin-bottom: 4px;
+}
+
+.hero-meta-value {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* === COUNTDOWN STRIP === */
+.countdown-strip {
+    background: var(--lime);
+    color: var(--black);
+    padding: 20px 40px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.countdown-strip span {
+    font-weight: 900;
+    font-size: 20px;
+}
+
+/* === SECTIONS === */
+.section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 100px 40px;
+}
+
+.section-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--lime-dim);
+    margin-bottom: 8px;
+}
+
+.section h2 {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin-bottom: 24px;
+}
+
+.section h2 .accent {
+    color: var(--lime-dim);
+}
+
+.section p.lead {
+    font-size: 18px;
+    color: var(--mid-gray);
+    max-width: 640px;
+    line-height: 1.7;
+}
+
+/* === CONCEPT === */
+.concept-block {
+    background: var(--black);
+    color: var(--white);
+    padding: 80px 40px;
+}
+
+.concept-inner {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.concept-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 48px;
+}
+
+.concept-card {
+    border: 1px solid rgba(173, 255, 0, 0.2);
+    padding: 40px;
+    position: relative;
+}
+
+.concept-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--lime);
+}
+
+.concept-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.concept-card p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+}
+
+.concept-card .emoji {
+    font-size: 32px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+/* === SCHEDULE === */
+.schedule-grid {
+    display: grid;
+    gap: 0;
+    margin-top: 48px;
+}
+
+.schedule-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding: 32px 0;
+}
+
+.schedule-time {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--lime-dim);
+    padding-top: 4px;
+}
+
+.schedule-content h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.schedule-content p {
+    font-size: 15px;
+    color: var(--mid-gray);
+    line-height: 1.7;
+}
+
+.schedule-item.break {
+    opacity: 0.5;
+}
+
+.schedule-item.break .schedule-content h3 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* === REQUIREMENTS === */
+.req-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+}
+
+.req-card {
+    border: 2px solid var(--black);
+    padding: 32px;
+    position: relative;
+}
+
+.req-card .num {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--lime-dim);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.req-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.req-card p {
+    font-size: 14px;
+    color: var(--mid-gray);
+    line-height: 1.6;
+}
+
+/* === LOCATION === */
+.location-block {
+    background: var(--black);
+    color: var(--white);
+    padding: 80px 40px;
+}
+
+.location-inner {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 48px;
+    align-items: start;
+}
+
+.location-info h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.location-info p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.location-info .detail {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.location-info .detail-icon {
+    font-size: 20px;
+    min-width: 28px;
+    text-align: center;
+}
+
+.location-info .detail-text {
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+}
+
+.location-map {
+    border: 1px solid rgba(173, 255, 0, 0.2);
+    overflow: hidden;
+}
+
+.location-map iframe {
+    width: 100%;
+    height: 350px;
+    border: none;
+    filter: grayscale(1) invert(1) contrast(1.1);
+}
+
+/* === PHOTO STRIP === */
+.photo-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+}
+
+.photo-strip img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    filter: grayscale(0.2);
+    transition: filter 0.3s;
+}
+
+.photo-strip img:hover {
+    filter: grayscale(0);
+}
+
+/* === CTA === */
+.cta-block {
+    background: var(--lime);
+    color: var(--black);
+    padding: 100px 40px;
+    text-align: center;
+}
+
+.cta-block h2 {
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin-bottom: 24px;
+}
+
+.cta-block p {
+    font-size: 18px;
+    max-width: 500px;
+    margin: 0 auto 40px;
+    opacity: 0.8;
+}
+
+.cta-btn {
+    display: inline-block;
+    background: var(--black);
+    color: var(--lime);
+    padding: 18px 48px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cta-btn:hover {
+    background: var(--dark);
+    transform: translateY(-2px);
+}
+
+.spots-left {
+    margin-top: 16px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+/* === HOST === */
+.host-section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 100px 40px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.host-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    font-weight: 900;
+    color: var(--lime);
+}
+
+.host-info h3 {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.host-info .role {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--lime-dim);
+    margin-bottom: 16px;
+}
+
+.host-info p {
+    font-size: 16px;
+    color: var(--mid-gray);
+    line-height: 1.7;
+    max-width: 560px;
+}
+
+/* === FOOTER === */
+footer {
+    background: var(--black);
+    color: rgba(255,255,255,0.4);
+    padding: 40px;
+    text-align: center;
+    font-size: 13px;
+}
+
+footer a {
+    color: var(--lime);
+    text-decoration: none;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .nav { padding: 12px 20px; }
+    .nav-logo { font-size: 14px; letter-spacing: 2px; }
+    .nav-cta { padding: 8px 16px; font-size: 11px; }
+
+    .hero { padding: 120px 24px 80px; min-height: auto; }
+    .hero h1 { letter-spacing: -1px; }
+    .hero-meta { gap: 24px; }
+
+    .section { padding: 60px 24px; }
+
+    .concept-grid { grid-template-columns: 1fr; gap: 24px; }
+    .concept-card { padding: 28px; }
+
+    .schedule-item { grid-template-columns: 1fr; gap: 8px; }
+
+    .location-grid { grid-template-columns: 1fr; }
+
+    .photo-strip { grid-template-columns: 1fr; }
+    .photo-strip img { height: 220px; }
+
+    .host-section { grid-template-columns: 1fr; text-align: center; }
+    .host-avatar { margin: 0 auto; width: 140px; height: 140px; font-size: 48px; }
+    .host-info p { max-width: 100%; }
+
+    .cta-block { padding: 60px 24px; }
+}
+
+@media (max-width: 480px) {
+    .hero-meta { flex-direction: column; gap: 16px; }
+    .req-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+    <a href="#" class="nav-logo">Botanica</a>
+    <a href="https://t.me/timofeyzinin" class="nav-cta" target="_blank">Записаться</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-tag">28 февраля 2026 / Kaş, Turkey</div>
+        <h1>
+            Botanica<br>
+            <span class="accent">Bootcamp</span>
+        </h1>
+        <p class="hero-sub">
+            Однодневный интенсив, где AI встречается с реальным миром.
+            3 практических урока. Исследуем пространство вокруг нас через инструменты,
+            которые меняют правила игры.
+        </p>
+        <div class="hero-meta">
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">Когда</span>
+                <span class="hero-meta-value">28 фев, 12:00</span>
+            </div>
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">Где</span>
+                <span class="hero-meta-value">Kaş, дом Тимы</span>
+            </div>
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">Мест</span>
+                <span class="hero-meta-value">10</span>
+            </div>
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">Donation</span>
+                <span class="hero-meta-value">от $50</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COUNTDOWN -->
+<div class="countdown-strip">
+    Завтра. <span id="countdown"></span> Осталось мест: <span>10</span>
+</div>
+
+<!-- CONCEPT -->
+<section class="concept-block">
+    <div class="concept-inner">
+        <div class="section-num" style="color: var(--lime);">00 / Идея</div>
+        <h2 style="color: var(--white);"><span class="accent">AI</span> не заменяет мир.<br>Он помогает его <span class="accent">исследовать</span>.</h2>
+        <p class="lead" style="color: rgba(255,255,255,0.5);">
+            Мы будем учиться взаимодействовать с окружающим пространством через AI-инструменты и соцсети.
+            Необычные задачи, соревновательный дух, реальные результаты.
+        </p>
+
+        <div class="concept-grid">
+            <div class="concept-card">
+                <span class="emoji">🎙️</span>
+                <h3>Voice-First</h3>
+                <p>Управляем AI голосом. Распознавание речи + Claude Code = руки свободны, мозг работает. Практика начинается с первой минуты.</p>
+            </div>
+            <div class="concept-card">
+                <span class="emoji">🌍</span>
+                <h3>Окружающий мир</h3>
+                <p>Каждое задание связано с реальным пространством вокруг нас. Горы Каша, средиземноморье, местные истории — всё становится материалом для работы.</p>
+            </div>
+            <div class="concept-card">
+                <span class="emoji">⚡</span>
+                <h3>От простого к сложному</h3>
+                <p>Три урока — три уровня сложности. Начинаем с базовых взаимодействий, заканчиваем комплексными проектами, которые удивят даже вас.</p>
+            </div>
+            <div class="concept-card">
+                <span class="emoji">🏆</span>
+                <h3>Соревнование</h3>
+                <p>Каждый участник работает над своим проектом. В конце дня — показ результатов. Лучшие кейсы получат признание сообщества.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="section">
+    <div class="section-num">01 / Расписание</div>
+    <h2>3 урока. <span class="accent">1 день.</span><br>Бесконечные возможности.</h2>
+
+    <div class="schedule-grid">
+        <div class="schedule-item">
+            <div class="schedule-time">12:00 — 13:30</div>
+            <div class="schedule-content">
+                <h3>Урок 1: Первый контакт</h3>
+                <p>Настройка инструментов. Знакомство с voice-first подходом. Первые взаимодействия с окружающим миром через AI. Простые, но впечатляющие задачи, которые покажут, на что способна связка человек + AI.</p>
+            </div>
+        </div>
+
+        <div class="schedule-item break">
+            <div class="schedule-time">13:30 — 13:50</div>
+            <div class="schedule-content">
+                <h3>Перерыв / кофе / нетворкинг на террасе</h3>
+            </div>
+        </div>
+
+        <div class="schedule-item">
+            <div class="schedule-time">13:50 — 15:20</div>
+            <div class="schedule-content">
+                <h3>Урок 2: Глубже</h3>
+                <p>Усложняем задачи. Работаем с соцсетями, исследуем пространство, создаём контент, который взаимодействует с реальным миром. Каждый участник выбирает свой вектор.</p>
+            </div>
+        </div>
+
+        <div class="schedule-item break">
+            <div class="schedule-time">15:20 — 15:40</div>
+            <div class="schedule-content">
+                <h3>Перерыв / еда / обсуждение промежуточных результатов</h3>
+            </div>
+        </div>
+
+        <div class="schedule-item">
+            <div class="schedule-time">15:40 — 17:10</div>
+            <div class="schedule-content">
+                <h3>Урок 3: Полный контроль</h3>
+                <p>Финальный блок. Самые необычные и амбициозные кейсы. Объединяем всё, чему научились, в один мощный проект. Показ результатов и обсуждение.</p>
+            </div>
+        </div>
+
+        <div class="schedule-item break">
+            <div class="schedule-time">17:10 — ...</div>
+            <div class="schedule-content">
+                <h3>After-party / закат на террасе / свободное общение</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PHOTOS -->
+<div class="photo-strip">
+    <img src="https://raw.githubusercontent.com/TimmyZinin/cash-ferma-cheftlik/main/images/gen-mountain-view.jpg" alt="Вид с террасы в Каше" loading="lazy">
+    <img src="https://raw.githubusercontent.com/TimmyZinin/cash-ferma-cheftlik/main/images/gen-sunset-dining.jpg" alt="Ужин на закате" loading="lazy">
+    <img src="https://raw.githubusercontent.com/TimmyZinin/cash-ferma-cheftlik/main/images/gen-landscape-golden.jpg" alt="Горы Каша" loading="lazy">
+</div>
+
+<!-- REQUIREMENTS -->
+<section class="section">
+    <div class="section-num">02 / Что взять с собой</div>
+    <h2>Твой <span class="accent">набор</span> на буткемп</h2>
+    <p class="lead">Всё, что нужно для продуктивного дня. Убедись, что у тебя есть каждый пункт.</p>
+
+    <div class="req-grid">
+        <div class="req-card">
+            <div class="num">01</div>
+            <h3>Claude Code + подписка</h3>
+            <p>Установленный Claude Code CLI с оплаченной подпиской. Это наш основной инструмент на весь день.</p>
+        </div>
+        <div class="req-card">
+            <div class="num">02</div>
+            <h3>Карта с $30+</h3>
+            <p>Кредитная или дебетовая карта с балансом минимум $30 — для оплаты дополнительных API и сервисов, которые выберешь сам.</p>
+        </div>
+        <div class="req-card">
+            <div class="num">03</div>
+            <h3>Speech-to-Text</h3>
+            <p>Программа для распознавания речи: Whisper, Superwhisper, HandyComputer или аналог. Voice-first — наш подход.</p>
+        </div>
+        <div class="req-card">
+            <div class="num">04</div>
+            <h3>Ноутбук + зарядка</h3>
+            <p>MacBook или любой ноутбук с терминалом. Розетки есть, Wi-Fi будет. Хорошее настроение — обязательно.</p>
+        </div>
+    </div>
+</section>
+
+<!-- HOST -->
+<section class="host-section">
+    <div class="host-avatar">TZ</div>
+    <div class="host-info">
+        <div class="section-num">03 / Ведущий</div>
+        <h3>Тима Зинин</h3>
+        <div class="role">Multi-Agent Revenue Architect</div>
+        <p>
+            Строю AI-агентов, которые работают на бизнес. Управляю мульти-агентными системами,
+            автоматизирую контент, развиваю продукты на стыке AI и реального мира.
+            Каш — мой дом и лучшая лаборатория для экспериментов.
+        </p>
+    </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location-block">
+    <div class="location-inner">
+        <div class="section-num" style="color: var(--lime);">04 / Место</div>
+        <h2 style="color: var(--white);">Kaş, <span class="accent">Turkey</span></h2>
+
+        <div class="location-grid">
+            <div class="location-info">
+                <h3>Дом Тимы в горах над Кашем</h3>
+                <p>Терраса с видом на Средиземное море, оливковые рощи и горы Таурус. Идеальное место, чтобы сфокусироваться и создать что-то настоящее.</p>
+
+                <div class="detail">
+                    <span class="detail-icon">📍</span>
+                    <span class="detail-text">30 минут от центра Каша по горной дороге. Точные координаты отправим после регистрации.</span>
+                </div>
+                <div class="detail">
+                    <span class="detail-icon">🚗</span>
+                    <span class="detail-text">Аэропорт Даламан (DLM) — 2.5 часа, Анталья (AYT) — 3 часа</span>
+                </div>
+                <div class="detail">
+                    <span class="detail-icon">📶</span>
+                    <span class="detail-text">Wi-Fi, розетки, кофе, вода, лёгкие закуски — всё включено</span>
+                </div>
+                <div class="detail">
+                    <span class="detail-icon">🌅</span>
+                    <span class="detail-text">After-party на террасе с видом на закат</span>
+                </div>
+            </div>
+
+            <div class="location-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100000!2d29.63!3d36.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c1c5b0a8b0f3f9%3A0x8a6a44d3b6d6b2e0!2zS2HFnywgQW50YWx5YSwgVHVya2V5!5e0!3m2!1sen!2s!4v1" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-block" id="register">
+    <h2>10 мест.<br>Одно — твоё?</h2>
+    <p>Предзапись обязательна. Donation от $50. Напиши в Telegram — забронируй место прямо сейчас.</p>
+    <a href="https://t.me/timofeyzinin" class="cta-btn" target="_blank">Написать в Telegram</a>
+    <div class="spots-left">Количество мест ограничено</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p><a href="https://botanicaschool.com">Botanica</a> Bootcamp — 28 февраля 2026 — Kaş, Turkey</p>
+    <p style="margin-top: 8px; font-size: 12px;">AI meets the real world.</p>
+</footer>
+
+<script>
+// Countdown to Feb 28, 2026 12:00 Turkey time (UTC+3)
+function updateCountdown() {
+    const event = new Date('2026-02-28T09:00:00Z'); // 12:00 UTC+3
+    const now = new Date();
+    const diff = event - now;
+
+    if (diff <= 0) {
+        document.getElementById('countdown').textContent = 'Буткемп начался!';
+        return;
+    }
+
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+    if (hours >= 24) {
+        const days = Math.floor(hours / 24);
+        const remainHours = hours % 24;
+        document.getElementById('countdown').textContent =
+            `До старта: ${days}д ${remainHours}ч ${mins}мин`;
+    } else {
+        document.getElementById('countdown').textContent =
+            `До старта: ${hours}ч ${mins}мин`;
+    }
+}
+
+updateCountdown();
+setInterval(updateCountdown, 60000);
+
+// Smooth scroll for nav CTA
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
+    });
+});
+</script>
+
+</body>
+</html>
