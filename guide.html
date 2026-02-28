@@ -24,69 +24,30 @@ body { font-family: 'Space Grotesk', sans-serif; background: var(--warm-white); 
 
 /* Language toggle */
 .lang-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 1.5rem;
-  z-index: 200;
-  display: flex;
-  background: white;
-  border: 2px solid var(--ink);
-  border-radius: 100px;
-  overflow: hidden;
-  box-shadow: 3px 3px 0 var(--ink);
+  position: fixed; top: 1rem; right: 1.5rem; z-index: 200;
+  display: flex; background: white; border: 2px solid var(--ink);
+  border-radius: 100px; overflow: hidden; box-shadow: 3px 3px 0 var(--ink);
 }
 .lang-btn {
-  padding: 0.4rem 0.8rem;
-  font-weight: 700;
-  font-size: 0.8rem;
-  cursor: pointer;
-  border: none;
-  background: white;
-  color: var(--ink);
-  transition: all 0.2s;
-  font-family: 'Space Grotesk', sans-serif;
+  padding: 0.4rem 0.8rem; font-weight: 700; font-size: 0.8rem;
+  cursor: pointer; border: none; background: white; color: var(--ink);
+  transition: all 0.2s; font-family: 'Space Grotesk', sans-serif;
 }
-.lang-btn.active {
-  background: var(--ink);
-  color: var(--lime);
-}
+.lang-btn.active { background: var(--ink); color: var(--lime); }
 body.lang-en .ru { display: none !important; }
 body.lang-ru .en { display: none !important; }
 
+/* Slides */
 .slide {
-  min-height: 100vh;
-  scroll-snap-align: start;
-  padding: 3rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+  min-height: 100vh; scroll-snap-align: start; padding: 3rem 2rem;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
 }
 .slide-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  width: 100%;
-  position: relative;
-  z-index: 2;
+  max-width: 1100px; margin: 0 auto; width: 100%; position: relative; z-index: 2;
 }
-.nav {
-  position: fixed;
-  right: 1.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.nav a {
-  width: 12px; height: 12px; border-radius: 50%;
-  background: var(--ink); opacity: 0.25;
-  transition: all 0.3s; display: block;
-}
-.nav a:hover, .nav a.active { opacity: 1; transform: scale(1.5); background: var(--coral); }
 
+/* Typography */
 h1 { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
 h2 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; }
 h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
@@ -95,58 +56,32 @@ p, li { font-size: 1.05rem; line-height: 1.6; }
 .hand { font-family: 'Caveat', cursive; font-size: 1.4rem; }
 .tag { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 100px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
 
+/* Cards & Layout */
 .card { background: white; border: 3px solid var(--ink); border-radius: 16px; padding: 1.5rem; box-shadow: 5px 5px 0 var(--ink); transition: transform 0.2s; }
 .card:hover { transform: translateY(-3px) rotate(0.5deg); }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
 
+/* Timeline */
 .timeline-item { display: grid; grid-template-columns: 120px 1fr; gap: 1.5rem; padding: 1rem 0; border-bottom: 2px dashed rgba(0,0,0,0.1); }
 .timeline-time { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 1.1rem; white-space: nowrap; }
 
+/* Idea cards */
 .idea-card { background: white; border: 3px solid var(--ink); border-radius: 16px; padding: 1.2rem; box-shadow: 4px 4px 0 var(--ink); transition: all 0.2s; cursor: default; }
 .idea-card:hover { transform: translateY(-4px) rotate(1deg); box-shadow: 6px 8px 0 var(--ink); }
 .idea-card .emoji { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
 
-.principle-pill { display: inline-flex; align-items: center; gap: 0.5rem; background: white; border: 2px solid var(--ink); border-radius: 100px; padding: 0.5rem 1rem; font-weight: 600; font-size: 0.9rem; }
-.stripe-bg { background-image: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(0,0,0,0.02) 20px, rgba(0,0,0,0.02) 40px); }
-
-.slide-hero { background: linear-gradient(135deg, var(--lime) 0%, var(--mint) 50%, var(--sky) 100%); }
-.slide-overview { background: var(--warm-white); }
-.slide-lesson1 { background: linear-gradient(160deg, #FFF8F0 0%, #FFE4CC 100%); }
-.slide-lesson1b { background: linear-gradient(160deg, #FFE4CC 0%, #FFD4B0 100%); }
-.slide-lesson2 { background: linear-gradient(160deg, #F0FAFF 0%, #D4F0FF 100%); }
-.slide-lesson2b { background: linear-gradient(160deg, #D4F0FF 0%, #B8E4FF 100%); }
-.slide-lesson3 { background: linear-gradient(160deg, #F5FFF0 0%, #D4FFD0 100%); }
-.slide-ideas { background: linear-gradient(160deg, #FFF0F5 0%, #FFD4E8 100%); }
-.slide-kas { background: linear-gradient(160deg, #FFFFF0 0%, #FFF8D4 100%); }
-.slide-tools { background: linear-gradient(160deg, #F0FFF8 0%, #D4FFE8 100%); }
-.slide-legal { background: linear-gradient(160deg, #FFF0F0 0%, #FFD4D4 100%); }
-.slide-final { background: linear-gradient(135deg, var(--coral) 0%, var(--orange) 50%, var(--peach) 100%); }
-
-@media (max-width: 768px) {
-  .slide { padding: 2rem 1rem; }
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
-  .timeline-item { grid-template-columns: 1fr; gap: 0.3rem; }
-  .nav { display: none; }
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.6rem; }
-}
-
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--warm-white); }
-::-webkit-scrollbar-thumb { background: var(--ink); border-radius: 3px; }
-
-@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-.slide-inner > * { animation: fadeUp 0.6s ease-out both; }
-.slide-inner > *:nth-child(2) { animation-delay: 0.1s; }
-.slide-inner > *:nth-child(3) { animation-delay: 0.2s; }
-.slide-inner > *:nth-child(4) { animation-delay: 0.3s; }
+/* Badges & pills */
+.group-badge { display: inline-block; padding: 0.2rem 0.7rem; border-radius: 100px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+.group-alpha { background: var(--orange); color: white; }
+.group-beta { background: var(--sky); color: white; }
+.group-all { background: var(--mint); color: var(--ink); }
 
 /* Code blocks with copy */
 .cmd-wrap { position: relative; margin: 0.5rem 0; }
 .cmd {
   background: var(--ink); color: var(--lime);
-  font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;
+  font-family: 'JetBrains Mono', monospace; font-size: 0.82rem;
   padding: 0.8rem 2.5rem 0.8rem 1rem; border-radius: 8px;
   overflow-x: auto; white-space: pre; margin: 0;
 }
@@ -160,19 +95,165 @@ p, li { font-size: 1.05rem; line-height: 1.6; }
 .copy-btn:hover { background: rgba(255,255,255,0.3); }
 .copy-btn.copied { color: var(--mint); }
 
-.flex-wrap-gap { display: flex; flex-wrap: wrap; gap: 0.8rem; }
-.group-badge { display: inline-block; padding: 0.2rem 0.7rem; border-radius: 100px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-.group-alpha { background: var(--orange); color: white; }
-.group-beta { background: var(--sky); color: white; }
-.group-all { background: var(--mint); color: var(--ink); }
-.checklist { list-style: none; padding: 0; }
-.checklist li { padding: 0.4rem 0; padding-left: 1.8rem; position: relative; }
-.checklist li::before { content: '[ ]'; font-family: 'JetBrains Mono', monospace; position: absolute; left: 0; font-size: 0.9rem; color: var(--coral); }
-.callout { padding: 1.2rem; background: white; border-radius: 12px; border: 3px solid; margin: 1rem 0; }
-
+/* Conditions list */
 .conditions-list { list-style: none; padding: 0; counter-reset: cond; }
 .conditions-list li { padding: 0.6rem 0 0.6rem 2.5rem; position: relative; border-bottom: 1px dashed rgba(0,0,0,0.1); }
 .conditions-list li::before { counter-increment: cond; content: counter(cond); position: absolute; left: 0; top: 0.5rem; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--coral); color: white; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; }
+
+/* Checklist */
+.checklist { list-style: none; padding: 0; }
+.checklist li { padding: 0.4rem 0 0.4rem 1.8rem; position: relative; }
+.checklist li::before { content: '[ ]'; font-family: 'JetBrains Mono', monospace; position: absolute; left: 0; font-size: 0.9rem; color: var(--coral); }
+
+.callout { padding: 1.2rem; background: white; border-radius: 12px; border: 3px solid; margin: 1rem 0; }
+
+/* Slide backgrounds */
+.slide-hero { background: linear-gradient(135deg, var(--lime) 0%, var(--mint) 50%, var(--sky) 100%); }
+.slide-overview { background: var(--warm-white); }
+.slide-lesson1 { background: linear-gradient(160deg, #FFF8F0 0%, #FFE4CC 100%); }
+.slide-lesson1b { background: linear-gradient(160deg, #FFE4CC 0%, #FFD4B0 100%); }
+.slide-lesson2 { background: linear-gradient(160deg, #F0FAFF 0%, #D4F0FF 100%); }
+.slide-lesson2b { background: linear-gradient(160deg, #D4F0FF 0%, #B8E4FF 100%); }
+.slide-lesson3 { background: linear-gradient(160deg, #F5FFF0 0%, #D4FFD0 100%); }
+.slide-ideas { background: linear-gradient(160deg, #FFF0F5 0%, #FFD4E8 100%); }
+.slide-final { background: linear-gradient(135deg, var(--coral) 0%, var(--orange) 50%, var(--peach) 100%); }
+
+/* Locked chapters */
+.chapter { transition: all 0.5s; }
+.chapter.locked { display: none; }
+.chapter.unlocking { animation: chapterReveal 0.8s ease-out; }
+@keyframes chapterReveal {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* COUNTDOWN TIMER */
+.timer-overlay {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(26,26,46,0.92); z-index: 500;
+  flex-direction: column; align-items: center; justify-content: center;
+}
+.timer-overlay.active { display: flex; }
+.timer-display {
+  font-family: 'JetBrains Mono', monospace; font-size: clamp(4rem, 15vw, 12rem);
+  font-weight: 700; color: var(--lime); text-shadow: 0 0 40px rgba(173,255,0,0.3);
+  line-height: 1;
+}
+.timer-label {
+  font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem;
+  color: rgba(255,255,255,0.7); margin-top: 1rem; font-weight: 600;
+}
+.timer-bar {
+  width: 60%; height: 6px; background: rgba(255,255,255,0.1);
+  border-radius: 3px; margin-top: 2rem; overflow: hidden;
+}
+.timer-bar-fill {
+  height: 100%; background: var(--lime); border-radius: 3px;
+  transition: width 1s linear;
+}
+.timer-pulse {
+  animation: timerPulse 1s ease-in-out infinite;
+}
+@keyframes timerPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+.timer-close {
+  position: absolute; top: 2rem; right: 2rem;
+  background: rgba(255,255,255,0.15); border: none;
+  color: white; font-size: 1.2rem; cursor: pointer;
+  padding: 0.5rem 1rem; border-radius: 8px; font-family: 'Space Grotesk', sans-serif;
+}
+.timer-close:hover { background: rgba(255,255,255,0.25); }
+
+/* MINI TIMER (inline, non-overlay) */
+.mini-timer {
+  position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+  background: var(--ink); color: var(--lime); padding: 0.6rem 1.5rem;
+  border-radius: 100px; font-family: 'JetBrains Mono', monospace;
+  font-weight: 700; font-size: 1.2rem; z-index: 300;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3); display: none;
+  cursor: pointer; border: 2px solid var(--lime);
+}
+.mini-timer.active { display: block; }
+.mini-timer.warning { color: var(--coral); border-color: var(--coral); animation: timerPulse 0.5s ease-in-out infinite; }
+
+/* PRESENTER CONTROL PANEL */
+.presenter-panel {
+  display: none; position: fixed; top: 0; left: 0; right: 0;
+  background: var(--ink); color: white; z-index: 1000;
+  padding: 1rem 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  font-size: 0.85rem;
+}
+.presenter-panel.active { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+.presenter-panel h4 { color: var(--lime); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; margin-right: 0.5rem; white-space: nowrap; }
+.p-btn {
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+  color: white; padding: 0.4rem 0.8rem; border-radius: 6px;
+  cursor: pointer; font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem; font-weight: 600; transition: all 0.2s; white-space: nowrap;
+}
+.p-btn:hover { background: rgba(255,255,255,0.2); }
+.p-btn.active-ch { background: var(--mint); color: var(--ink); }
+.p-btn.timer-active { background: var(--coral); color: white; }
+.p-divider { width: 1px; height: 30px; background: rgba(255,255,255,0.2); }
+.p-timer-input {
+  width: 50px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3);
+  color: white; padding: 0.3rem; border-radius: 4px; text-align: center;
+  font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;
+}
+
+/* Chapter transition link */
+.next-chapter-link {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--ink); color: var(--lime); padding: 0.8rem 1.5rem;
+  border-radius: 100px; font-weight: 700; font-size: 1rem;
+  text-decoration: none; transition: all 0.2s; border: 3px solid var(--ink);
+  margin-top: 1.5rem; cursor: pointer;
+}
+.next-chapter-link:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+.next-chapter-link.disabled { opacity: 0.3; pointer-events: none; }
+
+/* Step cards */
+.step-card { background: white; border: 2px solid var(--ink); border-radius: 12px; padding: 1.2rem; margin-bottom: 1rem; }
+.step-num { display: inline-block; width: 2rem; height: 2rem; border-radius: 50%; background: var(--coral); color: white; font-weight: 700; text-align: center; line-height: 2rem; font-size: 0.9rem; margin-right: 0.5rem; }
+
+/* Animations */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.slide-inner > * { animation: fadeUp 0.6s ease-out both; }
+.slide-inner > *:nth-child(2) { animation-delay: 0.1s; }
+.slide-inner > *:nth-child(3) { animation-delay: 0.2s; }
+.slide-inner > *:nth-child(4) { animation-delay: 0.3s; }
+
+@media (max-width: 768px) {
+  .slide { padding: 2rem 1rem; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .timeline-item { grid-template-columns: 1fr; gap: 0.3rem; }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.6rem; }
+  .presenter-panel { font-size: 0.75rem; padding: 0.5rem 1rem; }
+  .p-btn { padding: 0.3rem 0.5rem; font-size: 0.7rem; }
+}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--warm-white); }
+::-webkit-scrollbar-thumb { background: var(--ink); border-radius: 3px; }
+
+/* Philosophy quote */
+.philosophy {
+  font-size: clamp(1.3rem, 3vw, 2rem); line-height: 1.5;
+  font-weight: 400; max-width: 800px; margin: 0 auto;
+  text-align: center; padding: 2rem 0;
+}
+.philosophy em { font-style: normal; background: linear-gradient(transparent 60%, var(--lime) 60%); padding: 0 0.2rem; }
+
+/* Challenge card */
+.challenge-card {
+  background: var(--ink); color: white; border-radius: 20px;
+  padding: 2.5rem; text-align: center; margin: 1.5rem 0;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+.challenge-card h2 { color: var(--lime); margin-bottom: 1rem; }
+.challenge-card p { color: rgba(255,255,255,0.85); font-size: 1.1rem; }
 </style>
 </head>
 <body class="lang-ru">
@@ -183,14 +264,50 @@ p, li { font-size: 1.05rem; line-height: 1.6; }
   <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
 </div>
 
-<nav class="nav" id="nav"></nav>
+<!-- PRESENTER CONTROL PANEL (Ctrl+Shift+P to toggle) -->
+<div class="presenter-panel" id="presenterPanel">
+  <h4>PRESENTER</h4>
+  <button class="p-btn active-ch" onclick="unlockChapter(1)">CH 1</button>
+  <button class="p-btn" id="ch2btn" onclick="unlockChapter(2)">CH 2</button>
+  <button class="p-btn" id="ch3btn" onclick="unlockChapter(3)">CH 3</button>
+  <div class="p-divider"></div>
+  <h4>TIMER</h4>
+  <input class="p-timer-input" id="timerMin" type="number" value="15" min="1" max="120">
+  <span style="color:rgba(255,255,255,0.5)">min</span>
+  <button class="p-btn" id="timerStartBtn" onclick="startTimer()">START</button>
+  <button class="p-btn" onclick="startTimer(90)">90 min</button>
+  <button class="p-btn" onclick="startTimer(60)">60 min</button>
+  <button class="p-btn" onclick="startTimer(15)">15 min</button>
+  <button class="p-btn" onclick="startTimer(5)">5 min</button>
+  <button class="p-btn" onclick="stopTimer()" style="color:var(--coral)">STOP</button>
+  <div class="p-divider"></div>
+  <button class="p-btn" onclick="toggleFullscreenTimer()">FULLSCREEN</button>
+</div>
 
-<!-- ============================================ -->
+<!-- COUNTDOWN TIMER (Fullscreen overlay) -->
+<div class="timer-overlay" id="timerOverlay">
+  <button class="timer-close" onclick="toggleFullscreenTimer()">
+    <span class="ru">Свернуть</span><span class="en">Minimize</span>
+  </button>
+  <div class="timer-display" id="timerDisplay">00:00</div>
+  <div class="timer-label" id="timerLabel">
+    <span class="ru">Время на задание</span><span class="en">Time remaining</span>
+  </div>
+  <div class="timer-bar"><div class="timer-bar-fill" id="timerBarFill" style="width:100%"></div></div>
+</div>
+
+<!-- MINI TIMER (bottom bar) -->
+<div class="mini-timer" id="miniTimer" onclick="toggleFullscreenTimer()">00:00</div>
+
+<!-- ================================================================ -->
+<!-- CHAPTER 1: WELCOME & SETUP -->
+<!-- ================================================================ -->
+<div class="chapter" id="chapter1">
+
 <!-- HERO -->
-<!-- ============================================ -->
 <section class="slide slide-hero" id="s0">
 <div class="slide-inner" style="text-align:center;">
-  <div class="tag" style="background:white;color:var(--ink);margin-bottom:1rem;">28 FEBRUARY 2026 / KAŞ, TURKEY</div>
+  <div class="tag" style="background:white;color:var(--ink);margin-bottom:1rem;">28 FEBRUARY 2026 / KAS, TURKEY</div>
   <h1 style="color:var(--ink);">BOTANICA<br>BOOTCAMP</h1>
   <p style="font-size:1.3rem;margin-top:1rem;max-width:600px;margin-left:auto;margin-right:auto;">
     <span class="hand">
@@ -198,713 +315,660 @@ p, li { font-size: 1.05rem; line-height: 1.6; }
       <span class="en">3 lessons. One token. Endless possibilities.</span>
     </span>
   </p>
-  <div class="flex-wrap-gap" style="justify-content:center;margin-top:2rem;">
-    <span class="principle-pill">12:00 — 17:10</span>
-    <span class="principle-pill">100% <span class="ru">практика</span><span class="en">hands-on</span></span>
-    <span class="principle-pill">Token Economy</span>
-    <span class="principle-pill">Prompt Engineering</span>
+  <div style="margin-top:2rem;display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;">
+    <span class="tag" style="background:var(--ink);color:var(--lime);">LESSON 1</span>
+    <span class="tag" style="background:var(--ink);color:var(--lime);">
+      <span class="ru">Знакомство & Setup</span><span class="en">Welcome & Setup</span>
+    </span>
   </div>
-  <p style="margin-top:2rem;opacity:0.7;font-size:0.9rem;">
-    <span class="ru">Этот документ — ваш гайд на весь день. Открыт для всех.</span>
-    <span class="en">This document is your guide for the whole day. Open to everyone.</span>
-  </p>
 </div>
 </section>
 
-<!-- ============================================ -->
-<!-- OVERVIEW -->
-<!-- ============================================ -->
+<!-- OVERVIEW & RULES -->
 <section class="slide slide-overview" id="s1">
 <div class="slide-inner">
-  <h2>Welcome to Botanica</h2>
-
-  <p style="margin-bottom:1.5rem;">
-    <span class="ru">Тим разделит вас на две группы. Вы <strong>не равны</strong> по уровню — и это нормально. В реальной жизни тоже так. Кто-то пришёл с готовым стеком, кто-то впервые откроет терминал. Обе группы делают разные вещи параллельно, а потом — соединяют результаты.</span>
-    <span class="en">Tim will split you into two groups. You're <strong>not equal</strong> in skill level — and that's fine. Real life works the same way. Some of you came with a full stack ready, some will open a terminal for the first time. Both groups work on different tasks in parallel, then merge results.</span>
-  </p>
-
+  <h2>
+    <span class="ru">Как это работает</span>
+    <span class="en">How it works</span>
+  </h2>
   <div class="grid-2" style="margin-bottom:2rem;">
-    <div class="card" style="border-color:var(--orange);">
-      <h3><span class="group-badge group-alpha">
-        <span class="ru">Группа Setup</span><span class="en">Setup Group</span>
-      </span></h3>
-      <p>
-        <span class="ru">Те, кому нужно настроить инструменты с нуля. Тим и продвинутые ребята помогут. К концу Урока 1 у вас будет полный боевой стек.</span>
-        <span class="en">Those who need to set up tools from scratch. Tim and advanced folks will help. By end of Lesson 1 you'll have a full working stack.</span>
+    <div class="card">
+      <h3><span class="ru">Две группы</span><span class="en">Two groups</span></h3>
+      <p><span class="group-badge group-alpha">SETUP</span> &mdash;
+        <span class="ru">те, кто ещё не работает с Claude Code. Устанавливаем инструменты, разбираемся вместе.</span>
+        <span class="en">those new to Claude Code. Install tools, figure things out together.</span>
+      </p>
+      <p style="margin-top:0.5rem;"><span class="group-badge group-beta">BUILDERS</span> &mdash;
+        <span class="ru">продвинутые участники. Создают токен BOT на блокчейне TON, запускают экономику буткемпа.</span>
+        <span class="en">advanced participants. Create BOT token on TON blockchain, launch the bootcamp economy.</span>
       </p>
     </div>
-    <div class="card" style="border-color:var(--sky);">
-      <h3><span class="group-badge group-beta">
-        <span class="ru">Группа Builders</span><span class="en">Builders Group</span>
-      </span></h3>
-      <p>
-        <span class="ru">Те, у кого уже всё стоит. Ваша задача — создать токен в блокчейне TON и раздать его каждому в комнате. Вы строите экономику дня.</span>
-        <span class="en">Those who already have everything set up. Your task — create a token on TON blockchain and distribute it to everyone in the room. You're building the economy of the day.</span>
-      </p>
+    <div class="card">
+      <h3><span class="ru">Правила</span><span class="en">Rules</span></h3>
+      <ul style="list-style:none;padding:0;">
+        <li style="padding:0.3rem 0;"><span class="ru">Каждый использует <strong>свой</strong> аккаунт Anthropic (Claude Pro / Max)</span><span class="en">Everyone uses <strong>their own</strong> Anthropic account (Claude Pro / Max)</span></li>
+        <li style="padding:0.3rem 0;"><span class="ru">Помогайте друг другу &mdash; кто разобрался, помогает соседу</span><span class="en">Help each other &mdash; if you figured it out, help your neighbor</span></li>
+        <li style="padding:0.3rem 0;"><span class="ru">Нет глупых вопросов, есть глупое молчание</span><span class="en">No stupid questions, only stupid silence</span></li>
+        <li style="padding:0.3rem 0;"><span class="ru">Голосовой ввод: <a href="https://handy.computer" target="_blank">handy.computer</a></span><span class="en">Voice input: <a href="https://handy.computer" target="_blank">handy.computer</a></span></li>
+      </ul>
     </div>
   </div>
-
-  <h3><span class="ru">Три урока — одна история</span><span class="en">Three lessons — one story</span></h3>
-  <div class="grid-3" style="margin-top:1rem;">
-    <div class="card" style="border-color:var(--orange);">
-      <h3><span class="ru">&#127793; Урок 1</span><span class="en">&#127793; Lesson 1</span></h3>
-      <p>
-        <span class="ru"><strong>Настройка + Токен.</strong> Все получают инструменты. Builders создают валюту буткемпа.</span>
-        <span class="en"><strong>Setup + Token.</strong> Everyone gets their tools. Builders create the bootcamp currency.</span>
-      </p>
+  <div class="card" style="border-color:var(--coral);">
+    <h3><span class="ru">Расписание урока 1</span><span class="en">Lesson 1 Schedule</span></h3>
+    <div class="timeline-item">
+      <div class="timeline-time">00:00</div>
+      <div><span class="ru">Знакомство, правила, деление на группы</span><span class="en">Introduction, rules, group split</span></div>
     </div>
-    <div class="card" style="border-color:var(--sky);">
-      <h3><span class="ru">&#128161; Урок 2</span><span class="en">&#128161; Lesson 2</span></h3>
-      <p>
-        <span class="ru"><strong>Один промпт &rarr; бизнес.</strong> Prompt engineering. Бизнес в Каше на вашем токене.</span>
-        <span class="en"><strong>One prompt &rarr; business.</strong> Prompt engineering. A Kaş business on your token.</span>
-      </p>
+    <div class="timeline-item">
+      <div class="timeline-time">00:15</div>
+      <div><span class="group-badge group-alpha">SETUP</span> <span class="ru">Установка Claude Code</span><span class="en">Installing Claude Code</span> &bull; <span class="group-badge group-beta">BUILDERS</span> <span class="ru">Создание токена BOT</span><span class="en">Creating BOT token</span></div>
     </div>
-    <div class="card" style="border-color:var(--mint);">
-      <h3><span class="ru">&#128640; Урок 3</span><span class="en">&#128640; Lesson 3</span></h3>
-      <p>
-        <span class="ru"><strong>Исследование пространства.</strong> Сканирование, OSINT, корабли, камеры. Каш как датасет.</span>
-        <span class="en"><strong>Space exploration.</strong> Scanning, OSINT, ships, cameras. Kaş as a dataset.</span>
-      </p>
+    <div class="timeline-item">
+      <div class="timeline-time">01:00</div>
+      <div><span class="group-badge group-all">ALL</span> <span class="ru">Синхронизация: что получилось, обмен результатами</span><span class="en">Sync: what worked, share results</span></div>
+    </div>
+    <div class="timeline-item" style="border:none;">
+      <div class="timeline-time">01:30</div>
+      <div><span class="ru">Перерыв</span><span class="en">Break</span></div>
     </div>
   </div>
 </div>
 </section>
 
-<!-- ============================================ -->
-<!-- DAY TIMELINE -->
-<!-- ============================================ -->
-<section class="slide slide-overview stripe-bg" id="s2">
+<!-- SETUP GROUP: Claude Code Installation -->
+<section class="slide slide-lesson1" id="s2">
 <div class="slide-inner">
-  <h2>&#128197; <span class="ru">День целиком</span><span class="en">Full Day</span></h2>
+  <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
+    <span class="group-badge group-alpha" style="font-size:1rem;padding:0.4rem 1rem;">SETUP</span>
+    <h2 style="margin:0;">
+      <span class="ru">Установка Claude Code</span>
+      <span class="en">Installing Claude Code</span>
+    </h2>
+  </div>
 
-  <div class="timeline-item">
-    <div class="timeline-time" style="color:var(--orange);">12:00 - 13:30</div>
-    <div>
-      <h3><span class="ru">Урок 1: Первый контакт</span><span class="en">Lesson 1: First Contact</span></h3>
-      <p>
-        <span class="ru"><span class="group-badge group-alpha">Setup</span> настраивают полный стек. <span class="group-badge group-beta">Builders</span> создают TON-токен и раздают всем. К концу: у каждого в Telegram-кошельке лежит токен буткемпа.</span>
-        <span class="en"><span class="group-badge group-alpha">Setup</span> installs the full stack. <span class="group-badge group-beta">Builders</span> create a TON token and distribute to all. By the end: everyone has the bootcamp token in their Telegram wallet.</span>
+  <div class="step-card">
+    <h3><span class="step-num">1</span> <span class="ru">Установка</span><span class="en">Install</span></h3>
+    <p><span class="ru">Откройте терминал (Terminal на Mac, CMD/PowerShell на Windows):</span><span class="en">Open your terminal (Terminal on Mac, CMD/PowerShell on Windows):</span></p>
+    <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">npm install -g @anthropic-ai/claude-code</pre></div>
+    <p style="margin-top:0.5rem;font-size:0.9rem;color:rgba(0,0,0,0.5);">
+      <span class="ru">Нет npm? Сначала установите Node.js: <a href="https://nodejs.org" target="_blank">nodejs.org</a></span>
+      <span class="en">No npm? Install Node.js first: <a href="https://nodejs.org" target="_blank">nodejs.org</a></span>
+    </p>
+  </div>
+
+  <div class="step-card">
+    <h3><span class="step-num">2</span> <span class="ru">Первый запуск</span><span class="en">First launch</span></h3>
+    <p><span class="ru">Создайте папку для проекта и запустите Claude:</span><span class="en">Create a project folder and launch Claude:</span></p>
+    <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">mkdir ~/botanica && cd ~/botanica && claude</pre></div>
+    <p style="margin-top:0.5rem;"><span class="ru">Войдите через свой аккаунт Anthropic (Claude Pro / Max). Свои ключи, своя подписка.</span><span class="en">Log in with your Anthropic account (Claude Pro / Max). Your keys, your subscription.</span></p>
+  </div>
+
+  <div class="step-card">
+    <h3><span class="step-num">3</span> <span class="ru">Снятие ограничений (Permissions)</span><span class="en">Bypass Permissions</span></h3>
+    <p><span class="ru">По умолчанию Claude Code спрашивает разрешение на каждое действие. Для воркшопа мы снимаем эти ограничения. Выйдите из Claude (<code>/exit</code>), затем:</span><span class="en">By default Claude Code asks permission for every action. For the workshop we bypass this. Exit Claude (<code>/exit</code>), then:</span></p>
+    <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">claude --dangerously-skip-permissions</pre></div>
+    <div class="callout" style="border-color:var(--coral);margin-top:0.8rem;">
+      <p style="font-size:0.9rem;">
+        <strong>&#9888;</strong>
+        <span class="ru">Этот флаг даёт Claude полный контроль: создание файлов, запуск команд, работа с сетью. Используйте только в безопасном окружении (воркшоп, песочница).</span>
+        <span class="en">This flag gives Claude full control: file creation, command execution, network access. Use only in safe environments (workshop, sandbox).</span>
       </p>
     </div>
+    <p style="margin-top:0.5rem;font-size:0.9rem;">
+      <span class="ru">Или настройте разрешения интерактивно (внутри Claude Code):</span>
+      <span class="en">Or configure permissions interactively (inside Claude Code):</span>
+    </p>
+    <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">/permissions</pre></div>
   </div>
-  <div class="timeline-item" style="opacity:0.6;">
-    <div class="timeline-time">13:30 - 13:50</div>
-    <div><h3>&#9749; <span class="ru">Кофе + нетворкинг</span><span class="en">Coffee + networking</span></h3></div>
+
+  <div class="step-card">
+    <h3><span class="step-num">4</span> <span class="ru">Голосовой ввод</span><span class="en">Voice input</span></h3>
+    <p><span class="ru">Установите <a href="https://handy.computer" target="_blank">Handy</a> &mdash; голосовой помощник для Claude Code. Говорите промпты вместо того, чтобы печатать:</span><span class="en">Install <a href="https://handy.computer" target="_blank">Handy</a> &mdash; voice assistant for Claude Code. Speak prompts instead of typing:</span></p>
+    <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">brew install handy</pre></div>
   </div>
-  <div class="timeline-item">
-    <div class="timeline-time" style="color:var(--sky);">13:50 - 15:20</div>
-    <div>
-      <h3><span class="ru">Урок 2: Один промпт — один бизнес</span><span class="en">Lesson 2: One Prompt — One Business</span></h3>
-      <p>
-        <span class="ru"><span class="group-badge group-all">Все</span> Prompt engineering. Один промпт создаёт бизнес в Каше на токене из Урока 1.</span>
-        <span class="en"><span class="group-badge group-all">Everyone</span> Prompt engineering. One prompt creates a Kaş business using the token from Lesson 1.</span>
-      </p>
-    </div>
-  </div>
-  <div class="timeline-item" style="opacity:0.6;">
-    <div class="timeline-time">15:20 - 15:40</div>
-    <div><h3>&#127829; <span class="ru">Еда + lightning demos</span><span class="en">Food + lightning demos</span></h3></div>
-  </div>
-  <div class="timeline-item">
-    <div class="timeline-time" style="color:var(--mint);">15:40 - 17:10</div>
-    <div>
-      <h3><span class="ru">Урок 3: Исследование пространства</span><span class="en">Lesson 3: Space Exploration</span></h3>
-      <p>
-        <span class="ru"><span class="group-badge group-all">Все</span> Каш как датасет. Сети, камеры, корабли, самолёты, OSINT. Демо. Голосование.</span>
-        <span class="en"><span class="group-badge group-all">Everyone</span> Kaş as a dataset. Networks, cameras, ships, planes, OSINT. Demos. Voting.</span>
-      </p>
-    </div>
-  </div>
-  <div class="timeline-item" style="opacity:0.6;">
-    <div class="timeline-time">17:10+</div>
-    <div><h3>&#127773; <span class="ru">After-party / закат</span><span class="en">After-party / sunset</span></h3></div>
-  </div>
-</div>
 </section>
 
-<!-- ============================================ -->
-<!-- LESSON 1: SETUP GROUP -->
-<!-- ============================================ -->
-<section class="slide slide-lesson1" id="s3">
+<!-- SETUP GROUP: MCP & GitHub -->
+<section class="slide slide-lesson1b" id="s3">
 <div class="slide-inner">
-  <div class="tag" style="background:var(--orange);color:white;">12:00 - 13:30 / <span class="ru">УРОК</span><span class="en">LESSON</span> 1</div>
-  <h2 style="margin-top:0.8rem;">&#127793; <span class="group-badge group-alpha">Setup</span> — <span class="ru">Полный стек за 90 минут</span><span class="en">Full stack in 90 minutes</span></h2>
-
-  <p style="margin-bottom:1rem;">
-    <span class="ru">Тим покажет live demo первые 15 минут. После этого — работаете сами, помогая друг другу. Тим и Builders ходят между вами.</span>
-    <span class="en">Tim will show a live demo for the first 15 min. After that — you work on your own, helping each other. Tim and Builders float between you.</span>
-  </p>
-
-  <div class="callout" style="border-color:var(--coral);margin-bottom:1.5rem;">
-    <h3 style="color:var(--coral);">&#127919; <span class="ru">Цель: к 13:30 у каждого работает ВСЁ ЭТО</span><span class="en">Goal: by 13:30 all of this works for everyone</span></h3>
-    <ul class="checklist">
-      <li><strong>Claude Code</strong> <span class="ru">установлен и запускается</span><span class="en">installed and running</span></li>
-      <li><strong>Handy</strong> (<a href="https://handy.computer" target="_blank">handy.computer</a>) <span class="ru">— голосовая диктовка для Claude Code</span><span class="en">— voice dictation for Claude Code</span></li>
-      <li><strong>Bypass Permissions</strong> <span class="ru">включён</span><span class="en">enabled</span></li>
-      <li><strong>Telegram MCP</strong> <span class="ru">подключён</span><span class="en">connected</span></li>
-      <li><strong>Playwright MCP</strong> <span class="ru">подключён</span><span class="en">connected</span></li>
-      <li><strong>GitHub</strong> <span class="ru">подключён</span><span class="en">connected</span></li>
-    </ul>
-  </div>
-
-  <h3><span class="ru">Пошагово</span><span class="en">Step by step</span></h3>
-
-  <div class="timeline-item">
-    <div class="timeline-time"><span class="ru">Шаг</span><span class="en">Step</span> 1</div>
-    <div>
-      <strong><span class="ru">Установить Claude Code</span><span class="en">Install Claude Code</span></strong>
-      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">npm install -g @anthropic-ai/claude-code</pre></div>
-      <p><span class="ru">Если нет npm — сначала</span><span class="en">If no npm — first run</span> <span class="mono">brew install node</span></p>
-    </div>
-  </div>
-  <div class="timeline-item">
-    <div class="timeline-time"><span class="ru">Шаг</span><span class="en">Step</span> 2</div>
-    <div>
-      <strong><span class="ru">Запустить и авторизоваться</span><span class="en">Launch and authenticate</span></strong>
-      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">claude</pre></div>
-      <p><span class="ru">Тим раздаст API-ключи. Или используйте свой аккаунт.</span><span class="en">Tim will distribute API keys. Or use your own account.</span></p>
-    </div>
-  </div>
-  <div class="timeline-item">
-    <div class="timeline-time"><span class="ru">Шаг</span><span class="en">Step</span> 3</div>
-    <div>
-      <strong><span class="ru">Установить Handy — голосовое управление</span><span class="en">Install Handy — voice control</span></strong>
-      <p><span class="ru">Откройте</span><span class="en">Go to</span> <a href="https://handy.computer" target="_blank" style="font-weight:700;color:var(--coral);">handy.computer</a> <span class="ru">и следуйте инструкциям. Handy позволяет диктовать команды для Claude Code голосом.</span><span class="en">and follow the instructions. Handy lets you dictate commands to Claude Code by voice.</span></p>
-    </div>
-  </div>
-  <div class="timeline-item">
-    <div class="timeline-time"><span class="ru">Шаг</span><span class="en">Step</span> 4</div>
-    <div>
-      <strong>Bypass Permissions</strong>
-      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">/permissions
-# Allow All for Bash, Read, Write, Edit</pre></div>
-    </div>
-  </div>
-  <div class="timeline-item">
-    <div class="timeline-time"><span class="ru">Шаг</span><span class="en">Step</span> 5</div>
-    <div>
-      <strong>Telegram MCP + Playwright MCP</strong>
-      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd"># Ask Claude Code:
-"Connect Telegram MCP and Playwright MCP servers"</pre></div>
-    </div>
-  </div>
-  <div class="timeline-item">
-    <div class="timeline-time"><span class="ru">Шаг</span><span class="en">Step</span> 6</div>
-    <div>
-      <strong>GitHub</strong>
-      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">gh auth login</pre></div>
-    </div>
-  </div>
-
-  <div class="callout" style="border-color:var(--mint);">
-    <h3>&#9989; <span class="ru">Финальная проверка</span><span class="en">Final check</span></h3>
-    <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">"Create an HTML page 'Hello from Kaş', commit to a new GitHub repo,
-open it in browser via Playwright, send a screenshot to Telegram"</pre></div>
-    <p><span class="ru">Если сработало — стек готов. Идите помогать другим!</span><span class="en">If it worked — you're all set. Go help others!</span></p>
-  </div>
-</div>
-</section>
-
-<!-- ============================================ -->
-<!-- LESSON 1: BUILDERS GROUP -->
-<!-- ============================================ -->
-<section class="slide slide-lesson1b" id="s4">
-<div class="slide-inner">
-  <div class="tag" style="background:var(--sky);color:white;">12:00 - 13:30 / <span class="ru">УРОК</span><span class="en">LESSON</span> 1</div>
-  <h2 style="margin-top:0.8rem;">&#128176; <span class="group-badge group-beta">Builders</span> — <span class="ru">Создайте токен буткемпа</span><span class="en">Create the bootcamp token</span></h2>
-
-  <div class="callout" style="border-color:var(--coral);margin-bottom:1.5rem;">
-    <h3 style="color:var(--coral);">&#127919; <span class="ru">Цель: к 13:30 у КАЖДОГО в этой комнате в Telegram-кошельке лежит ваш токен</span><span class="en">Goal: by 13:30 EVERYONE in this room has your token in their Telegram wallet</span></h3>
-    <p><span class="ru">Делите задачи как хотите. Консенсус — ваша ответственность.</span><span class="en">Split tasks however you want. Consensus is your responsibility.</span></p>
-  </div>
-
-  <div class="grid-2" style="margin-bottom:1.5rem;">
-    <div class="card" style="background:var(--peach);">
-      <h3>1. <span class="ru">Создать Jetton в TON</span><span class="en">Create Jetton on TON</span></h3>
-      <p><span class="ru">TON — блокчейн Telegram. Jetton — стандарт токена (аналог ERC-20).</span><span class="en">TON — Telegram's blockchain. Jetton — token standard (like ERC-20).</span></p>
-      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">"Create a Jetton token on TON.
-Name: BOTANICA | Symbol: BOT
-Supply: 1,000,000
-Deploy to testnet.
-Use Blueprint framework."</pre></div>
-    </div>
-    <div class="card" style="background:var(--lime);">
-      <h3>2. <span class="ru">Раздать всем</span><span class="en">Distribute to everyone</span></h3>
-      <p><span class="ru">Каждый участник получает токены в Telegram Wallet. Механизм на ваш выбор: airdrop, бот, QR-код, ручная отправка.</span><span class="en">Every participant gets tokens in their Telegram Wallet. Mechanism is up to you: airdrop, bot, QR code, manual transfer.</span></p>
-    </div>
+  <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
+    <span class="group-badge group-alpha" style="font-size:1rem;padding:0.4rem 1rem;">SETUP</span>
+    <h2 style="margin:0;">
+      <span class="ru">Подключение суперсил</span>
+      <span class="en">Connecting superpowers</span>
+    </h2>
   </div>
 
   <div class="grid-2">
+    <div class="step-card">
+      <h3><span class="ru">Playwright MCP</span><span class="en">Playwright MCP</span></h3>
+      <p><span class="ru">Позволяет Claude управлять браузером &mdash; открывать сайты, кликать, скриншотить:</span><span class="en">Lets Claude control a browser &mdash; open sites, click, screenshot:</span></p>
+      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">claude mcp add playwright -- npx @playwright/mcp@latest</pre></div>
+      <p style="font-size:0.85rem;margin-top:0.3rem;color:rgba(0,0,0,0.5);">
+        <span class="ru">Перезапустите Claude после добавления</span>
+        <span class="en">Restart Claude after adding</span>
+      </p>
+    </div>
+
+    <div class="step-card">
+      <h3><span class="ru">Telegram MCP</span><span class="en">Telegram MCP</span></h3>
+      <p><span class="ru">Claude сможет отправлять сообщения в Telegram от имени бота:</span><span class="en">Claude will be able to send Telegram messages via bot:</span></p>
+      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">claude mcp add telegram -- npx @tonresistor/telegram-mcp</pre></div>
+      <p style="font-size:0.85rem;margin-top:0.3rem;color:rgba(0,0,0,0.5);">
+        <span class="ru">Потребуется Bot Token (получите у <a href="https://t.me/BotFather" target="_blank">@BotFather</a>)</span>
+        <span class="en">Requires Bot Token (get from <a href="https://t.me/BotFather" target="_blank">@BotFather</a>)</span>
+      </p>
+    </div>
+
+    <div class="step-card">
+      <h3>GitHub</h3>
+      <p><span class="ru">Claude уже умеет работать с git. Для GitHub CLI:</span><span class="en">Claude already works with git. For GitHub CLI:</span></p>
+      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">brew install gh && gh auth login</pre></div>
+    </div>
+
+    <div class="step-card">
+      <h3><span class="ru">Проверка</span><span class="en">Verify</span></h3>
+      <p><span class="ru">Убедитесь, что всё работает. Внутри Claude Code:</span><span class="en">Make sure it all works. Inside Claude Code:</span></p>
+      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">/mcp</pre></div>
+      <p style="font-size:0.9rem;margin-top:0.3rem;">
+        <span class="ru">Вы должны увидеть список подключённых MCP-серверов (playwright, telegram).</span>
+        <span class="en">You should see a list of connected MCP servers (playwright, telegram).</span>
+      </p>
+    </div>
+  </div>
+
+  <ul class="checklist" style="margin-top:1.5rem;">
+    <li><span class="ru">Claude Code установлен и запускается</span><span class="en">Claude Code installed and running</span></li>
+    <li><span class="ru">Permissions настроены (skip или интерактив)</span><span class="en">Permissions configured (skip or interactive)</span></li>
+    <li><span class="ru">Playwright MCP подключён</span><span class="en">Playwright MCP connected</span></li>
+    <li><span class="ru">Telegram MCP подключён</span><span class="en">Telegram MCP connected</span></li>
+    <li><span class="ru">GitHub CLI авторизован</span><span class="en">GitHub CLI authorized</span></li>
+  </ul>
+</div>
+</section>
+
+<!-- BUILDERS GROUP: TON Token -->
+<section class="slide slide-lesson1b" id="s4">
+<div class="slide-inner">
+  <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
+    <span class="group-badge group-beta" style="font-size:1rem;padding:0.4rem 1rem;">BUILDERS</span>
+    <h2 style="margin:0;">
+      <span class="ru">Создание токена BOT</span>
+      <span class="en">Creating BOT token</span>
+    </h2>
+  </div>
+  <p style="margin-bottom:1.5rem;">
+    <span class="ru">Задача: создать Jetton (токен) на TON, который станет валютой буткемпа. Все участники получат BOT-токены.</span>
+    <span class="en">Goal: create a Jetton (token) on TON that becomes the bootcamp currency. All participants will receive BOT tokens.</span>
+  </p>
+
+  <div class="step-card">
+    <h3><span class="step-num">1</span> <span class="ru">Инициализация проекта</span><span class="en">Init project</span></h3>
+    <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">npm create ton@latest</pre></div>
+    <p style="font-size:0.9rem;margin-top:0.3rem;"><span class="ru">Выберите шаблон <strong>Tact</strong>. Назовите проект <code>botanica-token</code>.</span><span class="en">Choose <strong>Tact</strong> template. Name the project <code>botanica-token</code>.</span></p>
+  </div>
+
+  <div class="step-card">
+    <h3><span class="step-num">2</span> <span class="ru">Сборка и тесты</span><span class="en">Build & test</span></h3>
+    <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">cd botanica-token && npm install && npx blueprint build --all && npm test</pre></div>
+  </div>
+
+  <div class="step-card">
+    <h3><span class="step-num">3</span> <span class="ru">Деплой в тестнет</span><span class="en">Deploy to testnet</span></h3>
+    <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">npx blueprint run --testnet --tonconnect</pre></div>
+    <p style="font-size:0.9rem;margin-top:0.3rem;"><span class="ru">Отсканируйте QR-код через Tonkeeper для подтверждения.</span><span class="en">Scan QR code with Tonkeeper to confirm.</span></p>
+  </div>
+
+  <div class="step-card">
+    <h3><span class="step-num">4</span> <span class="ru">Раздача токенов</span><span class="en">Distribute tokens</span></h3>
+    <p><span class="ru">Отправьте BOT-токены каждому участнику через <a href="https://t.me/wallet" target="_blank">@wallet</a> в Telegram или напрямую на адрес кошелька.</span><span class="en">Send BOT tokens to each participant via <a href="https://t.me/wallet" target="_blank">@wallet</a> in Telegram or directly to their wallet address.</span></p>
+  </div>
+
+  <div class="callout" style="border-color:var(--sky);">
+    <p><span class="ru"><strong>Совет:</strong> используйте Claude Code для написания смарт-контракта! Скажите ему: "Создай Jetton с названием BOT, символом BOT, supply 1,000,000, и деплой в тестнет TON".</span><span class="en"><strong>Tip:</strong> use Claude Code to write the smart contract! Tell it: "Create a Jetton named BOT, symbol BOT, supply 1,000,000, and deploy to TON testnet".</span></p>
+  </div>
+</div>
+</section>
+
+<!-- SYNC -->
+<section class="slide slide-overview" id="s5">
+<div class="slide-inner" style="text-align:center;">
+  <span class="group-badge group-all" style="font-size:1.2rem;padding:0.5rem 1.5rem;margin-bottom:1.5rem;">ALL TOGETHER</span>
+  <h2 style="margin-top:1rem;">
+    <span class="ru">Синхронизация</span>
+    <span class="en">Sync</span>
+  </h2>
+  <div class="grid-2" style="text-align:left;margin-top:1.5rem;">
     <div class="card">
-      <h3>3. <span class="ru">Экономика</span><span class="en">Economics</span></h3>
-      <ul style="margin-top:0.5rem;">
-        <li><span class="ru">Сколько токенов на старте?</span><span class="en">How many tokens per person?</span></li>
-        <li><span class="ru">За что заработать ещё?</span><span class="en">How to earn more?</span></li>
-        <li><span class="ru">Что купить за токены?</span><span class="en">What can you buy?</span></li>
-      </ul>
+      <h3><span class="group-badge group-alpha">SETUP</span></h3>
+      <p><span class="ru">Покажите, что у вас получилось. Откройте Claude Code, спросите его что-нибудь. Поделитесь первыми впечатлениями.</span><span class="en">Show what you've got. Open Claude Code, ask it something. Share first impressions.</span></p>
     </div>
     <div class="card">
-      <h3>4. <span class="ru">Инфраструктура для Урока 2</span><span class="en">Infrastructure for Lesson 2</span></h3>
-      <ul style="margin-top:0.5rem;">
-        <li><span class="ru">Документация по интеграции</span><span class="en">Integration docs</span></li>
-        <li><span class="ru">Примеры кода для приёма токенов</span><span class="en">Code examples for accepting tokens</span></li>
-        <li><span class="ru">Проверка баланса</span><span class="en">Balance checker</span></li>
-      </ul>
+      <h3><span class="group-badge group-beta">BUILDERS</span></h3>
+      <p><span class="ru">Покажите токен на эксплорере. Раздайте BOT-токены всем участникам. Объясните, как работает Jetton на TON.</span><span class="en">Show the token on explorer. Distribute BOT tokens to all participants. Explain how Jetton works on TON.</span></p>
     </div>
   </div>
-
-  <div style="margin-top:1.5rem;padding:1rem;background:white;border-radius:12px;border:2px dashed var(--sky);">
-    <p><strong>&#128161; Tim's tip:</strong> <span class="mono">npm create ton@latest</span> &rarr; Blueprint project. Jetton standard: TEP-74 on <a href="https://docs.ton.org" target="_blank">docs.ton.org</a>. Claude Code knows TON.</p>
-  </div>
+  <p class="hand" style="font-size:1.8rem;margin-top:2rem;">
+    <span class="ru">Теперь у каждого есть Claude Code + BOT-токены. Мы готовы к уроку 2.</span>
+    <span class="en">Everyone now has Claude Code + BOT tokens. We're ready for lesson 2.</span>
+  </p>
 </div>
 </section>
 
-<!-- ============================================ -->
-<!-- LESSON 2: PROMPT ENGINEERING -->
-<!-- ============================================ -->
-<section class="slide slide-lesson2" id="s5">
+</div><!-- /chapter1 -->
+
+
+<!-- ================================================================ -->
+<!-- CHAPTER 2: BUILDING THE ECONOMY -->
+<!-- ================================================================ -->
+<div class="chapter locked" id="chapter2">
+
+<section class="slide slide-lesson2" id="s6">
+<div class="slide-inner" style="text-align:center;">
+  <div class="tag" style="background:var(--ink);color:var(--sky);margin-bottom:1rem;">LESSON 2</div>
+  <h1 style="font-size:clamp(2rem,5vw,3.5rem);">
+    <span class="ru">Создаём экономику</span>
+    <span class="en">Building the Economy</span>
+  </h1>
+  <p style="font-size:1.2rem;margin-top:1rem;max-width:700px;margin-left:auto;margin-right:auto;">
+    <span class="ru">Один промпт. Один бизнес. Один токен. Вы удивитесь, что из этого получится.</span>
+    <span class="en">One prompt. One business. One token. You'll be surprised what comes out of this.</span>
+  </p>
+</div>
+</section>
+
+<!-- CHALLENGE: Prompt Engineering -->
+<section class="slide slide-lesson2" id="s7">
 <div class="slide-inner">
-  <div class="tag" style="background:var(--sky);color:white;">13:50 - 15:20 / <span class="ru">УРОК</span><span class="en">LESSON</span> 2</div>
-  <h2 style="margin-top:0.8rem;">&#128161; <span class="ru">Один промпт — один бизнес</span><span class="en">One Prompt — One Business</span></h2>
-
-  <div class="callout" style="border-color:var(--coral);margin-bottom:1.5rem;">
-    <h3 style="color:var(--coral);">&#127919; <span class="ru">Три условия</span><span class="en">Three conditions</span></h3>
-    <ol class="conditions-list">
-      <li><strong><span class="ru">ОДИН ПРОМПТ.</span><span class="en">ONE PROMPT.</span></strong> <span class="ru">Вы конструируете один промпт, который за один заход создаёт максимально полный продукт. Сайт, бот, API, финмодель — всё одним запросом.</span><span class="en">You construct one prompt that creates the most complete product possible in a single run. Website, bot, API, financial model — everything in one request.</span></li>
-      <li><strong><span class="ru">БИЗНЕС В КАШЕ.</span><span class="en">BUSINESS IN KAŞ.</span></strong> <span class="ru">Ваш бизнес должен быть связан с Кашем. Тема на ваш выбор: туризм, дайвинг, недвижимость, еда, история, транспорт — что угодно, но привязано к этому месту.</span><span class="en">Your business must be connected to Kaş. Topic is your choice: tourism, diving, real estate, food, history, transport — anything, but tied to this place.</span></li>
-      <li><strong><span class="ru">ТОКЕН BOT.</span><span class="en">BOT TOKEN.</span></strong> <span class="ru">Ваш бизнес принимает оплату в токене BOTANICA (BOT), который вам раздали в Уроке 1. Интеграция токена — обязательная часть продукта.</span><span class="en">Your business accepts payment in the BOTANICA (BOT) token distributed in Lesson 1. Token integration is a mandatory part of the product.</span></li>
-    </ol>
+  <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
+    <span class="group-badge group-alpha" style="font-size:1rem;padding:0.4rem 1rem;">SETUP</span>
+    <h2 style="margin:0;">
+      <span class="ru">Челлендж: один промпт &mdash; один бизнес</span>
+      <span class="en">Challenge: one prompt &mdash; one business</span>
+    </h2>
   </div>
 
-  <div style="margin-bottom:1.5rem;">
-    <div class="timeline-item">
-      <div class="timeline-time">13:50 - 14:05</div>
-      <div><strong><span class="ru">Тим показывает приёмы.</span><span class="en">Tim demonstrates techniques.</span></strong> <span class="ru">Как конструировать мега-промпты. Как подключать агентов и шаблоны. Live demo.</span><span class="en">How to construct mega-prompts. How to connect agents and templates. Live demo.</span></div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-time">14:05 - 15:00</div>
-      <div><strong><span class="ru">Работа.</span><span class="en">Work.</span></strong> <span class="ru">Конструируйте промпт, запускайте, итерируйте. Тим помогает.</span><span class="en">Construct your prompt, run it, iterate. Tim helps.</span></div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-time">15:00 - 15:20</div>
-      <div><strong>Lightning demos.</strong> <span class="ru">60 секунд: покажи промпт и результат.</span><span class="en">60 seconds: show your prompt and the result.</span></div>
-    </div>
+  <p style="margin-bottom:1rem;">
+    <span class="ru">Ваша задача &mdash; написать <strong>один мега-промпт</strong>, который заставит Claude Code создать полноценный бизнес-проект. Три обязательных условия:</span>
+    <span class="en">Your task &mdash; write <strong>one mega-prompt</strong> that makes Claude Code create a full business project. Three mandatory conditions:</span>
+  </p>
+
+  <ol class="conditions-list">
+    <li>
+      <strong><span class="ru">Один промпт</span><span class="en">One prompt</span></strong><br>
+      <span class="ru">Весь бизнес создаётся одной командой. Никаких уточнений, дополнений, переделок. Один промпт &mdash; один результат.</span>
+      <span class="en">The entire business is created with a single command. No clarifications, additions, redo. One prompt &mdash; one result.</span>
+    </li>
+    <li>
+      <strong><span class="ru">Привязка к Кашу</span><span class="en">Connected to Kas</span></strong><br>
+      <span class="ru">Бизнес должен быть привязан к Кашу: местная аудитория, туристы, море, природа, яхты, дайвинг &mdash; что угодно из контекста этого города.</span>
+      <span class="en">Business must be connected to Kas: local audience, tourists, sea, nature, yachts, diving &mdash; anything from this town's context.</span>
+    </li>
+    <li>
+      <strong><span class="ru">Использует токен BOT</span><span class="en">Uses BOT token</span></strong><br>
+      <span class="ru">Бизнес-модель должна интегрировать токен BOT, созданный на уроке 1: оплата, лояльность, доступ, голосование &mdash; любой use case.</span>
+      <span class="en">Business model must integrate the BOT token created in lesson 1: payments, loyalty, access, voting &mdash; any use case.</span>
+    </li>
+  </ol>
+
+  <div class="callout" style="border-color:var(--lime);margin-top:1.5rem;">
+    <p style="font-size:0.95rem;">
+      <strong><span class="ru">Подсказка:</span><span class="en">Hint:</span></strong>
+      <span class="ru">Хороший мега-промпт включает: роль Claude, описание бизнеса, технический стек, структуру файлов, дизайн, деплой. Чем подробнее &mdash; тем лучше результат.</span>
+      <span class="en">A good mega-prompt includes: Claude's role, business description, tech stack, file structure, design, deploy. The more detail &mdash; the better the result.</span>
+    </p>
   </div>
 
-  <h3><span class="ru">Примеры бизнесов</span><span class="en">Business examples</span></h3>
-  <div class="grid-3">
-    <div class="idea-card" style="background:var(--peach);">
-      <span class="emoji">&#128674;</span>
-      <h3><span class="ru">Аренда яхт</span><span class="en">Yacht rental</span></h3>
-      <p><span class="ru">Каталог, бронирование, оплата в BOT, Telegram-бот капитана.</span><span class="en">Catalog, booking, BOT payment, captain's Telegram bot.</span></p>
-    </div>
-    <div class="idea-card" style="background:var(--lime);">
-      <span class="emoji">&#127793;</span>
-      <h3><span class="ru">Эко-туры</span><span class="en">Eco-tours</span></h3>
-      <p><span class="ru">Ликийская тропа, дайвинг, каякинг. Маршруты + booking + BOT.</span><span class="en">Lycian Way, diving, kayaking. Routes + booking + BOT.</span></p>
-    </div>
-    <div class="idea-card" style="background:var(--lavender);">
-      <span class="emoji">&#127963;</span>
-      <h3><span class="ru">Digital Nomad Hub</span><span class="en">Digital Nomad Hub</span></h3>
-      <p><span class="ru">Коворкинг + жильё + комьюнити. Подписка за BOT.</span><span class="en">Coworking + housing + community. Subscription in BOT.</span></p>
-    </div>
-    <div class="idea-card" style="background:var(--sky);color:white;">
-      <span class="emoji">&#127860;</span>
-      <h3><span class="ru">Farm-to-table</span><span class="en">Farm-to-table</span></h3>
-      <p><span class="ru">Ресторан с local produce. Меню + delivery + оплата BOT.</span><span class="en">Restaurant with local produce. Menu + delivery + BOT payment.</span></p>
-    </div>
-    <div class="idea-card" style="background:var(--coral);color:white;">
-      <span class="emoji">&#128218;</span>
-      <h3><span class="ru">Гид по истории</span><span class="en">History guide</span></h3>
-      <p><span class="ru">AR/web-гид по руинам Антифеллоса. Доступ за BOT.</span><span class="en">AR/web guide to Antiphellos ruins. Access for BOT.</span></p>
-    </div>
-    <div class="idea-card" style="background:var(--orange);color:white;">
-      <span class="emoji">&#127961;</span>
-      <h3><span class="ru">Недвижимость</span><span class="en">Real estate</span></h3>
-      <p><span class="ru">Платформа аренды/продажи. Аналитика + виртуальные туры + BOT.</span><span class="en">Rental/sales platform. Analytics + virtual tours + BOT.</span></p>
-    </div>
+  <div class="callout" style="border-color:var(--peach);margin-top:0.5rem;">
+    <p style="font-size:0.95rem;">
+      <strong><span class="ru">Пример промпта:</span><span class="en">Example prompt:</span></strong>
+      <span class="ru">"Ты &mdash; fullstack-разработчик. Создай веб-приложение для бронирования дайвинг-туров в Каше. Стек: HTML+CSS+JS (один файл). Принимай оплату в токенах BOT (TON Jetton, адрес: ...). Добавь карту достопримечательностей, форму бронирования, и задеплой на GitHub Pages."</span>
+      <span class="en">"You are a fullstack developer. Create a web app for booking diving tours in Kas. Stack: HTML+CSS+JS (single file). Accept payments in BOT tokens (TON Jetton, address: ...). Add a map of attractions, booking form, and deploy to GitHub Pages."</span>
+    </p>
   </div>
 </div>
 </section>
 
-<!-- ============================================ -->
-<!-- LESSON 2: TOOLS -->
-<!-- ============================================ -->
-<section class="slide slide-lesson2b" id="s6">
+<!-- BUILDERS: Economy Development -->
+<section class="slide slide-lesson2b" id="s8">
 <div class="slide-inner">
-  <h2>&#129302; <span class="ru">Инструменты</span><span class="en">Tools</span></h2>
+  <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
+    <span class="group-badge group-beta" style="font-size:1rem;padding:0.4rem 1rem;">BUILDERS</span>
+    <h2 style="margin:0;">
+      <span class="ru">Развитие экономики BOT</span>
+      <span class="en">BOT Economy Development</span>
+    </h2>
+  </div>
 
-  <div class="grid-2" style="margin-bottom:1.5rem;">
-    <div class="card" style="background:#F0FAFF;">
-      <h3>Claude Code + MCP</h3>
-      <ul style="margin-top:0.5rem;">
-        <li><strong>Telegram MCP</strong> — <span class="ru">бот, сообщения</span><span class="en">bot, messages</span></li>
-        <li><strong>Playwright MCP</strong> — <span class="ru">браузер, скриншоты</span><span class="en">browser, screenshots</span></li>
-        <li><strong>GitHub</strong> — <span class="ru">коммиты, деплой</span><span class="en">commits, deploy</span></li>
-        <li><strong>Handy</strong> — <span class="ru">голосовая диктовка</span><span class="en">voice dictation</span></li>
-      </ul>
+  <p style="margin-bottom:1rem;">
+    <span class="ru">Пока Setup-группа создаёт бизнесы, ваша задача &mdash; сделать так, чтобы экономика BOT-токена реально работала.</span>
+    <span class="en">While Setup group creates businesses, your task &mdash; make the BOT token economy actually work.</span>
+  </p>
+
+  <div class="grid-2">
+    <div class="card" style="border-color:var(--sky);">
+      <h3><span class="ru">Ликвидность</span><span class="en">Liquidity</span></h3>
+      <p><span class="ru">Создайте пул ликвидности BOT/TON на DEX (DeDust или STON.fi). Или напишите простой обменник.</span><span class="en">Create a BOT/TON liquidity pool on DEX (DeDust or STON.fi). Or write a simple swap contract.</span></p>
     </div>
-    <div class="card" style="background:#FFF8F0;">
-      <h3><span class="ru">Шаблоны и агенты</span><span class="en">Templates & agents</span></h3>
-      <ul style="margin-top:0.5rem;">
-        <li><a href="https://aitmpl.com/skills" target="_blank"><strong>aitmpl.com/skills</strong></a> — Claude Code skills</li>
-        <li><a href="https://skillsmp.com" target="_blank"><strong>skillsmp.com</strong></a> — <span class="ru">маркетплейс скиллов</span><span class="en">skills marketplace</span></li>
-        <li><strong>Claude Agent SDK</strong> — <span class="ru">мультиагентность</span><span class="en">multi-agent</span></li>
-        <li><strong>CrewAI / LangGraph</strong> — <span class="ru">оркестрация</span><span class="en">orchestration</span></li>
-      </ul>
+    <div class="card" style="border-color:var(--sky);">
+      <h3><span class="ru">Распределение</span><span class="en">Distribution</span></h3>
+      <p><span class="ru">Напишите airdrop-бота: участники отправляют адрес кошелька &mdash; получают BOT. Или создайте faucet-сайт.</span><span class="en">Write an airdrop bot: participants send wallet address &mdash; get BOT. Or create a faucet site.</span></p>
+    </div>
+    <div class="card" style="border-color:var(--sky);">
+      <h3><span class="ru">Use Cases</span><span class="en">Use Cases</span></h3>
+      <p><span class="ru">Придумайте, за что можно тратить BOT: голосование за лучший проект, доступ к контенту, NFT-награды, ставки.</span><span class="en">Think of what BOT can buy: voting for best project, content access, NFT rewards, staking.</span></p>
+    </div>
+    <div class="card" style="border-color:var(--sky);">
+      <h3><span class="ru">Интеграция</span><span class="en">Integration</span></h3>
+      <p><span class="ru">Помогите Setup-группе подключить BOT к их бизнесам. Напишите SDK, примеры кода, документацию.</span><span class="en">Help Setup group connect BOT to their businesses. Write SDK, code examples, documentation.</span></p>
     </div>
   </div>
 
-  <div class="callout" style="border-color:var(--lavender);">
-    <h3>&#128161; <span class="ru">Структура мега-промпта</span><span class="en">Mega-prompt structure</span></h3>
-    <div class="grid-2" style="margin-top:0.8rem;">
-      <div>
-        <ol style="margin-top:0.3rem;">
-          <li><span class="ru">Роль и контекст</span><span class="en">Role and context</span></li>
-          <li><span class="ru">Конечный результат</span><span class="en">End result</span></li>
-          <li><span class="ru">Технический стек</span><span class="en">Tech stack</span></li>
-          <li><span class="ru">Бизнес-логика + токен BOT</span><span class="en">Business logic + BOT token</span></li>
-          <li><span class="ru">Дизайн</span><span class="en">Design</span></li>
-          <li><span class="ru">Деплой</span><span class="en">Deploy</span></li>
-        </ol>
-      </div>
-      <div>
-        <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd" style="font-size:0.75rem;">"You are a full-stack developer.
-Build a complete yacht rental
-service for Kaş, Turkey.
-
-Output:
-1. Landing page (HTML/CSS/JS)
-2. Yacht catalog (JSON + UI)
-3. Booking system
-4. BOT token payment (TON)
-5. Telegram bot for clients
-6. GitHub repo + deploy to Pages
-
-Style: Mediterranean, warm."</pre></div>
-      </div>
-    </div>
+  <div class="challenge-card" style="margin-top:1.5rem;">
+    <h3 style="color:var(--lime);margin-bottom:0.5rem;">
+      <span class="ru">Цель урока 2</span><span class="en">Lesson 2 Goal</span>
+    </h3>
+    <p style="color:rgba(255,255,255,0.9);">
+      <span class="ru">К концу урока каждый бизнес Setup-группы должен принимать BOT-токены. У каждого участника должны быть токены на кошельке. Экономика должна жить.</span>
+      <span class="en">By end of lesson, every Setup business should accept BOT tokens. Every participant should have tokens in their wallet. The economy must be alive.</span>
+    </p>
   </div>
 </div>
 </section>
 
-<!-- ============================================ -->
-<!-- LESSON 3 -->
-<!-- ============================================ -->
-<section class="slide slide-lesson3" id="s7">
+</div><!-- /chapter2 -->
+
+
+<!-- ================================================================ -->
+<!-- CHAPTER 3: SURPRISE ME -->
+<!-- ================================================================ -->
+<div class="chapter locked" id="chapter3">
+
+<section class="slide slide-lesson3" id="s9">
+<div class="slide-inner" style="text-align:center;">
+  <div class="tag" style="background:var(--ink);color:var(--mint);margin-bottom:1rem;">LESSON 3</div>
+  <h1 style="font-size:clamp(2.5rem,6vw,4.5rem);">
+    <span class="ru">Удиви меня</span>
+    <span class="en">Surprise Me</span>
+  </h1>
+</div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="slide slide-lesson3" id="s10">
 <div class="slide-inner">
-  <div class="tag" style="background:var(--mint);color:var(--ink);">15:40 - 17:10 / <span class="ru">УРОК</span><span class="en">LESSON</span> 3</div>
-  <h2 style="margin-top:0.8rem;">&#128640; <span class="ru">Исследование пространства</span><span class="en">Space Exploration</span></h2>
-
-  <div class="callout" style="border-color:var(--coral);margin-bottom:1.5rem;">
-    <h3 style="color:var(--coral);">&#127919; <span class="ru">Задание</span><span class="en">Challenge</span></h3>
-    <p><span class="ru">Выберите челлендж из банка идей (или придумайте свой). Представьте, что окно — это ваш терминал. Что вы видите? Что скрыто?</span><span class="en">Pick a challenge from the idea bank (or invent your own). Imagine the window is your terminal. What do you see? What's hidden?</span></p>
-    <p style="margin-top:0.5rem;"><span class="ru"><strong>Формат:</strong> пары или индивидуально. 3-минутные демо. Голосование.</span><span class="en"><strong>Format:</strong> pairs or solo. 3-minute demos. Voting.</span></p>
+  <div class="philosophy">
+    <span class="ru">
+      Информация &mdash; это <em>продолжение нас</em>.<br><br>
+      Мы можем <em>формировать пространство</em> вокруг себя.<br><br>
+      Мы можем <em>всё</em>.
+    </span>
+    <span class="en">
+      Information is an <em>extension of us</em>.<br><br>
+      We can <em>shape the space</em> around us.<br><br>
+      We can do <em>anything</em>.
+    </span>
   </div>
-
-  <div class="timeline-item">
-    <div class="timeline-time">15:40 - 15:55</div>
-    <div><strong><span class="ru">Тим показывает возможности</span><span class="en">Tim demos the possibilities</span></strong></div>
-  </div>
-  <div class="timeline-item">
-    <div class="timeline-time">15:55 - 16:40</div>
-    <div><strong><span class="ru">Работа</span><span class="en">Work</span></strong></div>
-  </div>
-  <div class="timeline-item">
-    <div class="timeline-time">16:40 - 17:05</div>
-    <div><strong>Demo Day</strong></div>
-  </div>
-  <div class="timeline-item">
-    <div class="timeline-time">17:05 - 17:10</div>
-    <div><strong><span class="ru">Голосование</span><span class="en">Voting</span></strong></div>
+  <div style="text-align:center;margin-top:1rem;">
+    <p style="font-size:1.1rem;max-width:700px;margin:0 auto;">
+      <span class="ru">Исследуйте <strong>транспортный уровень интернета</strong>. Любую информацию вокруг вас. Подумайте, как вы можете <strong>дотянуться до неё</strong>. Как вы можете формировать пространство вокруг себя при помощи этого инструмента.</span>
+      <span class="en">Explore the <strong>transport layer of the internet</strong>. Any information around you. Think about how you can <strong>reach it</strong>. How you can shape the space around you using this tool.</span>
+    </p>
   </div>
 </div>
 </section>
 
-<!-- ============================================ -->
+<!-- CHALLENGE BRIEF -->
+<section class="slide slide-lesson3" id="s11">
+<div class="slide-inner">
+  <div class="challenge-card">
+    <h2 style="color:var(--lime);font-size:clamp(1.5rem,3vw,2.5rem);">
+      <span class="ru">Задание: удиви всех</span>
+      <span class="en">Challenge: surprise everyone</span>
+    </h2>
+    <p style="color:rgba(255,255,255,0.9);font-size:1.15rem;margin-top:1rem;">
+      <span class="ru">Индивидуально или в группах &mdash; делитесь как хотите.</span>
+      <span class="en">Individually or in groups &mdash; team up however you like.</span>
+    </p>
+    <p style="color:rgba(255,255,255,0.9);font-size:1.15rem;margin-top:0.5rem;">
+      <span class="ru">Через <strong>60 минут</strong> &mdash; презентации ваших проектов.</span>
+      <span class="en">In <strong>60 minutes</strong> &mdash; project presentations.</span>
+    </p>
+    <p style="color:rgba(255,255,255,0.9);font-size:1.15rem;margin-top:0.5rem;">
+      <span class="ru">Покажите что-то <strong>необычное</strong>. Как вы исследовали пространство при помощи этого инструмента.</span>
+      <span class="en">Show something <strong>extraordinary</strong>. How you explored space using this tool.</span>
+    </p>
+    <p style="color:var(--lime);font-size:1.3rem;margin-top:1.5rem;font-weight:700;">
+      <span class="ru">Представьте, что у вас в руках волшебная палочка, которая может исследовать всё, показать всё, трансформировать всё.</span>
+      <span class="en">Imagine you're holding a magic wand that can explore anything, show anything, transform anything.</span>
+    </p>
+    <p style="color:var(--lime);font-size:1.5rem;margin-top:1rem;font-weight:700;">
+      <span class="ru">Действуйте.</span>
+      <span class="en">Go.</span>
+    </p>
+  </div>
+</div>
+</section>
+
 <!-- IDEA BANK -->
-<!-- ============================================ -->
-<section class="slide slide-ideas" id="s8">
+<section class="slide slide-ideas" id="s12">
 <div class="slide-inner">
-  <h2>&#128161; <span class="ru">Банк идей</span><span class="en">Idea Bank</span></h2>
+  <h2>
+    <span class="ru">Банк идей для вдохновения</span>
+    <span class="en">Idea Bank for Inspiration</span>
+  </h2>
+  <p style="margin-bottom:1.5rem;">
+    <span class="ru">Не знаете с чего начать? Вот несколько направлений:</span>
+    <span class="en">Don't know where to start? Here are some directions:</span>
+  </p>
   <div class="grid-3">
     <div class="idea-card">
-      <span class="emoji">&#128225;</span>
-      <h3><span class="ru">Сканируй сеть</span><span class="en">Scan the network</span></h3>
-      <p><span class="ru">nmap локальной сети. Принтеры, камеры, IoT. Карта устройств.</span><span class="en">nmap local network. Printers, cameras, IoT. Device map.</span></p>
-      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd" style="font-size:0.75rem;">nmap -sn 192.168.1.0/24</pre></div>
-    </div>
-    <div class="idea-card">
       <span class="emoji">&#128674;</span>
-      <h3><span class="ru">Корабли у берега</span><span class="en">Ships offshore</span></h3>
-      <p><span class="ru">AIS-данные. Какие корабли рядом? Откуда? Куда? Визуализация.</span><span class="en">AIS data. Which ships are nearby? Where from? Where to? Visualization.</span></p>
+      <h3><span class="ru">Море и корабли</span><span class="en">Sea & Ships</span></h3>
+      <p style="font-size:0.9rem;"><span class="ru">AIS-данные кораблей в порту Каша. Куда плывут яхты? Откуда пришёл тот паром?</span><span class="en">AIS data of ships in Kas port. Where are the yachts heading? Where did that ferry come from?</span></p>
+      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">curl "https://www.marinetraffic.com/en/ais/home/centerx/29.64/centery/36.20/zoom/13"</pre></div>
     </div>
     <div class="idea-card">
-      <span class="emoji">&#9992;</span>
-      <h3><span class="ru">Самолёты над нами</span><span class="en">Planes above us</span></h3>
-      <p>OpenSky API. <span class="ru">Реалтайм-карта.</span><span class="en">Real-time map.</span></p>
-      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd" style="font-size:0.75rem;">opensky-network.org/api/states/all?lamin=36.0&lomin=29.5</pre></div>
-    </div>
-    <div class="idea-card">
-      <span class="emoji">&#127909;</span>
-      <h3><span class="ru">Публичные камеры</span><span class="en">Public cameras</span></h3>
-      <p>Windy.com, Shodan, SkylineWebcams. <span class="ru">Дашборд.</span><span class="en">Dashboard.</span></p>
-    </div>
-    <div class="idea-card">
-      <span class="emoji">&#127982;</span>
-      <h3><span class="ru">История здания</span><span class="en">Building history</span></h3>
-      <p><span class="ru">Выбери дом из окна. Раскопай историю. Ликийцы? Османы?</span><span class="en">Pick a building from the window. Dig into its history. Lycians? Ottomans?</span></p>
+      <span class="emoji">&#9992;&#65039;</span>
+      <h3><span class="ru">Небо над нами</span><span class="en">Sky Above</span></h3>
+      <p style="font-size:0.9rem;"><span class="ru">ADS-B трекинг самолётов. Что сейчас летит над Кашем?</span><span class="en">ADS-B aircraft tracking. What's flying over Kas right now?</span></p>
+      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">curl "https://opensky-network.org/api/states/all?lamin=36.0&lomin=29.4&lamax=36.4&lomax=29.9"</pre></div>
     </div>
     <div class="idea-card">
       <span class="emoji">&#127758;</span>
-      <h3><span class="ru">2 км = 2 страны</span><span class="en">2 km = 2 countries</span></h3>
-      <p><span class="ru">Каш — Меис (Греция). Геополитика, экономика.</span><span class="en">Kaş — Meis (Greece). Geopolitics, economics.</span></p>
+      <h3><span class="ru">Сетевой ландшафт</span><span class="en">Network Landscape</span></h3>
+      <p style="font-size:0.9rem;"><span class="ru">nmap, Shodan, Wi-Fi &mdash; что видно в цифровом пространстве Каша?</span><span class="en">nmap, Shodan, Wi-Fi &mdash; what's visible in Kas digital space?</span></p>
     </div>
     <div class="idea-card">
-      <span class="emoji">&#128674;</span>
-      <h3><span class="ru">Улубурун</span><span class="en">Uluburun</span></h3>
-      <p><span class="ru">Корабль XIV в. до н.э. 20 тонн. 10 культур. Реконструкция.</span><span class="en">14th c. BCE ship. 20 tons. 10 cultures. Reconstruction.</span></p>
+      <span class="emoji">&#127961;&#65039;</span>
+      <h3><span class="ru">Архитектура города</span><span class="en">City Architecture</span></h3>
+      <p style="font-size:0.9rem;"><span class="ru">OpenStreetMap + Overpass API: все здания, кафе, магазины. Визуализируйте Каш.</span><span class="en">OpenStreetMap + Overpass API: all buildings, cafes, shops. Visualize Kas.</span></p>
+      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">curl -d '[out:json];area[name="Kaş"]->.a;(node(area.a)[amenity];);out;' "https://overpass-api.de/api/interpreter"</pre></div>
     </div>
     <div class="idea-card">
-      <span class="emoji">&#127754;</span>
-      <h3><span class="ru">Затонувший Кекова</span><span class="en">Sunken Kekova</span></h3>
-      <p><span class="ru">Город под водой. UNESCO. Расследование.</span><span class="en">City underwater. UNESCO. Investigation.</span></p>
+      <span class="emoji">&#127909;</span>
+      <h3><span class="ru">Камеры и стримы</span><span class="en">Cameras & Streams</span></h3>
+      <p style="font-size:0.9rem;"><span class="ru">Публичные веб-камеры Каша, RTSP-потоки, Insecam &mdash; глаза на мир.</span><span class="en">Public webcams of Kas, RTSP streams, Insecam &mdash; eyes on the world.</span></p>
     </div>
     <div class="idea-card">
-      <span class="emoji">&#128302;</span>
-      <h3>WiFi <span class="ru">ландшафт</span><span class="en">landscape</span></h3>
-      <p><span class="ru">Пассивный скан. Электромагнитный портрет Каша.</span><span class="en">Passive scan. Electromagnetic portrait of Kaş.</span></p>
-    </div>
-    <div class="idea-card">
-      <span class="emoji">&#127961;</span>
-      <h3>Digital Twin</h3>
-      <p><span class="ru">Карта: погода + корабли + самолёты + POI. Leaflet.js.</span><span class="en">Map: weather + ships + planes + POI. Leaflet.js.</span></p>
-    </div>
-    <div class="idea-card">
-      <span class="emoji">&#128302;</span>
-      <h3>OSINT <span class="ru">досье</span><span class="en">dossier</span></h3>
-      <p><span class="ru">Всё публичное о Каше в одном HTML-отчёте.</span><span class="en">All public info about Kaş in one HTML report.</span></p>
-    </div>
-    <div class="idea-card">
-      <span class="emoji">&#127963;</span>
-      <h3><span class="ru">Открой бизнес</span><span class="en">Open a business</span></h3>
-      <p><span class="ru">Место, аренда, конкуренты, бизнес-план.</span><span class="en">Location, rent, competitors, business plan.</span></p>
+      <span class="emoji">&#129689;</span>
+      <h3><span class="ru">Генеративное искусство</span><span class="en">Generative Art</span></h3>
+      <p style="font-size:0.9rem;"><span class="ru">SVG-инсталляция, анимация на основе данных из Каша, звуковой ландшафт.</span><span class="en">SVG installation, data-driven animation from Kas, soundscape.</span></p>
     </div>
   </div>
 </div>
 </section>
 
-<!-- ============================================ -->
-<!-- KAS CONTEXT -->
-<!-- ============================================ -->
-<section class="slide slide-kas" id="s9">
-<div class="slide-inner">
-  <h2>&#127466;&#127481; <span class="ru">Каш: контекст</span><span class="en">Kaş: context</span></h2>
-  <div class="grid-2" style="margin-bottom:1.5rem;">
-    <div class="card">
-      <h3><span class="ru">Антифеллос</span><span class="en">Antiphellos</span></h3>
-      <p><span class="ru">XV в. до н.э. Ликийцы. Монеты. Театр на 4000. Львиная гробница (2400 лет). 100+ гробниц.</span><span class="en">15th c. BCE. Lycians. Coins. Theater for 4000. Lion Tomb (2400 years). 100+ tombs.</span></p>
-    </div>
-    <div class="card">
-      <h3><span class="ru">Улубурун</span><span class="en">Uluburun</span></h3>
-      <p><span class="ru">1982. Бронзовый век. 20 тонн груза из 10 культур. 22,413 погружений.</span><span class="en">1982. Bronze Age. 20 tons of cargo from 10 cultures. 22,413 dives.</span></p>
-    </div>
-    <div class="card">
-      <h3><span class="ru">Кекова</span><span class="en">Kekova</span></h3>
-      <p><span class="ru">Город под водой. Запрет плавания с 1990. UNESCO. 40 км.</span><span class="en">Sunken city. Swimming banned since 1990. UNESCO. 40 km away.</span></p>
-    </div>
-    <div class="card">
-      <h3><span class="ru">Меис</span><span class="en">Meis</span></h3>
-      <p><span class="ru">Греция — 2.1 км. 20 мин паром. Оскар 1991.</span><span class="en">Greece — 2.1 km. 20 min ferry. Oscar 1991.</span></p>
-    </div>
-  </div>
-  <div class="grid-3">
-    <div style="padding:1rem;background:white;border-radius:12px;">
-      <h3><span class="ru">Недвижимость</span><span class="en">Real estate</span></h3>
-      <p>&euro;200K — &euro;2M. +12%/<span class="ru">год</span><span class="en">year</span>.</p>
-    </div>
-    <div style="padding:1rem;background:white;border-radius:12px;">
-      <h3><span class="ru">Город</span><span class="en">Town</span></h3>
-      <p>~7000 <span class="ru">жителей</span><span class="en">residents</span>. x5 <span class="ru">летом</span><span class="en">in summer</span>.</p>
-    </div>
-    <div style="padding:1rem;background:white;border-radius:12px;">
-      <h3><span class="ru">Дайвинг</span><span class="en">Diving</span></h3>
-      <p>30+ sites. 40m <span class="ru">видимость</span><span class="en">visibility</span>.</p>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- ============================================ -->
-<!-- TOOLS -->
-<!-- ============================================ -->
-<section class="slide slide-tools" id="s10">
-<div class="slide-inner">
-  <h2>&#128736; <span class="ru">Шпаргалка</span><span class="en">Cheat Sheet</span></h2>
-  <div class="grid-2" style="margin-bottom:1.5rem;">
-    <div>
-      <h3>Claude Code</h3>
-      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">claude                  # launch
-claude "task"           # prompt
-/help                   # help
-/permissions            # access settings
-/mcp                    # MCP servers list</pre></div>
-    </div>
-    <div>
-      <h3>GitHub</h3>
-      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">gh auth login
-gh repo create my-project --public --clone
-git add . && git commit -m "msg" && git push</pre></div>
-    </div>
-    <div>
-      <h3>Network & OSINT</h3>
-      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">nmap -sn 192.168.1.0/24
-airport -s
-shodan search "city:Kas country:TR"</pre></div>
-    </div>
-    <div>
-      <h3>TON</h3>
-      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">npm create ton@latest
-npx blueprint run</pre></div>
-    </div>
-  </div>
-  <div style="padding:1rem;background:white;border-radius:12px;">
-    <h3>&#128279; Links</h3>
-    <div class="grid-3" style="margin-top:0.5rem;">
-      <div>
-        <a href="https://handy.computer" target="_blank"><strong>handy.computer</strong></a> — voice<br>
-        <a href="https://aitmpl.com/skills" target="_blank">aitmpl.com/skills</a><br>
-        <a href="https://skillsmp.com" target="_blank">skillsmp.com</a>
-      </div>
-      <div>
-        <a href="https://opensky-network.org" target="_blank">OpenSky</a><br>
-        <a href="https://www.windy.com/webcams" target="_blank">Windy webcams</a><br>
-        <a href="https://overpass-turbo.eu" target="_blank">Overpass (OSM)</a>
-      </div>
-      <div>
-        <a href="https://docs.ton.org" target="_blank">docs.ton.org</a><br>
-        <a href="https://blueprint.ton.org" target="_blank">Blueprint</a><br>
-        <a href="https://testnet.tonscan.org" target="_blank">Testnet Explorer</a>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- ============================================ -->
-<!-- LEGAL -->
-<!-- ============================================ -->
-<section class="slide slide-legal" id="s11">
-<div class="slide-inner">
-  <h2>&#9878; <span class="ru">Правила</span><span class="en">Rules</span></h2>
-  <div class="grid-2">
-    <div class="card" style="border-color:var(--coral);">
-      <h3>&#128683; <span class="ru">Нельзя</span><span class="en">Don't</span></h3>
-      <ul>
-        <li><span class="ru">Подключаться к чужим устройствам</span><span class="en">Access others' devices</span></li>
-        <li><span class="ru">Собирать персональные данные</span><span class="en">Collect personal data</span></li>
-        <li><span class="ru">Активно сканировать чужие сети</span><span class="en">Actively scan others' networks</span></li>
-        <li><span class="ru">Токены для реального fundraising</span><span class="en">Tokens for real fundraising</span></li>
-        <li><span class="ru">Слежка за людьми</span><span class="en">Stalking people</span></li>
-      </ul>
-    </div>
-    <div class="card" style="border-color:var(--mint);">
-      <h3>&#9989; <span class="ru">Можно</span><span class="en">Can</span></h3>
-      <ul>
-        <li>Shodan / Censys</li>
-        <li>OpenStreetMap, Overpass API</li>
-        <li><span class="ru">Публичные камеры</span><span class="en">Public webcams</span></li>
-        <li>AIS / ADS-B</li>
-        <li><span class="ru">Токены на testnet</span><span class="en">Testnet tokens</span></li>
-        <li><span class="ru">Пассивный WiFi-скан</span><span class="en">Passive WiFi scan</span></li>
-      </ul>
-    </div>
-  </div>
-  <div style="margin-top:1.5rem;padding:1rem;background:white;border-radius:12px;border:2px solid var(--coral);">
-    <p><span class="ru"><strong>Турция:</strong> Закон 5651 + УК 243-244: несанкционированный доступ = 1-3 года. KVKK (6698) = турецкий GDPR.</span><span class="en"><strong>Turkey:</strong> Law 5651 + Penal Code 243-244: unauthorized access = 1-3 years. KVKK (6698) = Turkish GDPR.</span></p>
-  </div>
-</div>
-</section>
-
-<!-- ============================================ -->
-<!-- CLOSING -->
-<!-- ============================================ -->
-<section class="slide slide-final" id="s12">
+<!-- PRESENTATIONS -->
+<section class="slide slide-final" id="s13">
 <div class="slide-inner" style="text-align:center;">
-  <h1 style="color:white;text-shadow:4px 4px 0 rgba(0,0,0,0.2);">GO BUILD<br>SOMETHING<br>AMAZING</h1>
-  <p style="color:white;font-size:1.3rem;margin-top:1.5rem;opacity:0.9;">
-    <span class="ru">Каш ждёт 3000 лет. У нас 5 часов.</span>
-    <span class="en">Kaş has been waiting 3000 years. We have 5 hours.</span><br>
-    <span class="hand" style="font-size:1.8rem;">Let's botanize.</span>
+  <h1 style="color:white;font-size:clamp(2rem,5vw,4rem);">
+    <span class="ru">Презентации</span>
+    <span class="en">Presentations</span>
+  </h1>
+  <p style="color:rgba(255,255,255,0.9);font-size:1.3rem;margin-top:1rem;">
+    <span class="ru">Каждый проект &mdash; 5 минут. Покажите, что вы нашли. Удивите.</span>
+    <span class="en">Each project &mdash; 5 minutes. Show what you found. Surprise us.</span>
   </p>
-  <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-    <span class="principle-pill" style="background:white;">&#127793; 3 <span class="ru">урока</span><span class="en">lessons</span></span>
-    <span class="principle-pill" style="background:white;">&#128176; 1 token</span>
-    <span class="principle-pill" style="background:white;">&#128640; &infin;</span>
+  <div style="margin-top:3rem;">
+    <p class="hand" style="font-size:2rem;color:white;">
+      <span class="ru">Вы только что сделали невозможное возможным.</span>
+      <span class="en">You just made the impossible possible.</span>
+    </p>
   </div>
 </div>
 </section>
 
+</div><!-- /chapter3 -->
+
+
+<!-- ============================================ -->
+<!-- JAVASCRIPT -->
+<!-- ============================================ -->
 <script>
-// Language toggle
+// === LANGUAGE ===
 function setLang(lang) {
   document.body.className = 'lang-' + lang;
-  document.querySelectorAll('.lang-btn').forEach(b => {
-    b.classList.toggle('active', b.dataset.lang === lang);
-  });
-  localStorage.setItem('botanica-lang', lang);
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  localStorage.setItem('bb-lang', lang);
 }
-// Restore saved language
-const saved = localStorage.getItem('botanica-lang');
-if (saved) setLang(saved);
+(function() {
+  const saved = localStorage.getItem('bb-lang');
+  if (saved) setLang(saved);
+})();
 
-// Copy button
+// === COPY BUTTON ===
 function copyCmd(btn) {
   const pre = btn.parentElement.querySelector('.cmd');
-  const text = pre.textContent;
+  const text = pre.textContent.trim();
   navigator.clipboard.writeText(text).then(() => {
     btn.innerHTML = '&#10003;';
     btn.classList.add('copied');
-    setTimeout(() => {
-      btn.innerHTML = '&#128203;';
-      btn.classList.remove('copied');
-    }, 1500);
+    setTimeout(() => { btn.innerHTML = '&#128203;'; btn.classList.remove('copied'); }, 1500);
   });
 }
 
-// Nav dots
-const slides = document.querySelectorAll('.slide');
-const nav = document.getElementById('nav');
-slides.forEach((s, i) => {
-  const a = document.createElement('a');
-  a.href = '#' + s.id;
-  nav.appendChild(a);
-});
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      nav.querySelectorAll('a').forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id);
-      });
-    }
-  });
-}, { threshold: 0.5 });
-slides.forEach(s => observer.observe(s));
+// === CHAPTER UNLOCK ===
+const chaptersUnlocked = { 1: true, 2: false, 3: false };
 
-// Keyboard nav
-document.addEventListener('keydown', (e) => {
-  const current = [...slides].findIndex(s => {
-    const r = s.getBoundingClientRect();
-    return r.top >= -100 && r.top < window.innerHeight / 2;
-  });
-  if (['ArrowDown', ' ', 'PageDown'].includes(e.key)) {
-    e.preventDefault();
-    if (current < slides.length - 1) slides[current + 1].scrollIntoView({ behavior: 'smooth' });
+function unlockChapter(num) {
+  if (chaptersUnlocked[num]) {
+    // Already unlocked — scroll to it
+    const ch = document.getElementById('chapter' + num);
+    if (ch) ch.querySelector('.slide').scrollIntoView({ behavior: 'smooth' });
+    return;
   }
-  if (['ArrowUp', 'PageUp'].includes(e.key)) {
+  chaptersUnlocked[num] = true;
+  const ch = document.getElementById('chapter' + num);
+  if (ch) {
+    ch.classList.remove('locked');
+    ch.classList.add('unlocking');
+    setTimeout(() => ch.classList.remove('unlocking'), 800);
+    // Scroll to new chapter
+    setTimeout(() => ch.querySelector('.slide').scrollIntoView({ behavior: 'smooth' }), 100);
+  }
+  // Update panel buttons
+  const btn = document.getElementById('ch' + num + 'btn');
+  if (btn) btn.classList.add('active-ch');
+}
+
+// === COUNTDOWN TIMER ===
+let timerInterval = null;
+let timerEndTime = 0;
+let timerTotalSec = 0;
+let timerFullscreen = false;
+
+function startTimer(minutes) {
+  if (!minutes) minutes = parseInt(document.getElementById('timerMin').value) || 15;
+  stopTimer();
+  timerTotalSec = minutes * 60;
+  timerEndTime = Date.now() + timerTotalSec * 1000;
+  document.getElementById('miniTimer').classList.add('active');
+  document.getElementById('timerStartBtn').classList.add('timer-active');
+  document.getElementById('timerStartBtn').textContent = 'RUNNING';
+  timerInterval = setInterval(updateTimer, 250);
+  updateTimer();
+}
+
+function stopTimer() {
+  if (timerInterval) clearInterval(timerInterval);
+  timerInterval = null;
+  document.getElementById('miniTimer').classList.remove('active', 'warning');
+  document.getElementById('timerOverlay').classList.remove('active');
+  document.getElementById('timerStartBtn').classList.remove('timer-active');
+  document.getElementById('timerStartBtn').textContent = 'START';
+  timerFullscreen = false;
+}
+
+function updateTimer() {
+  const remaining = Math.max(0, timerEndTime - Date.now());
+  const sec = Math.ceil(remaining / 1000);
+  const m = Math.floor(sec / 60);
+  const s = sec % 60;
+  const display = String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+
+  document.getElementById('timerDisplay').textContent = display;
+  document.getElementById('miniTimer').textContent = display;
+
+  // Progress bar
+  const pct = (remaining / (timerTotalSec * 1000)) * 100;
+  document.getElementById('timerBarFill').style.width = pct + '%';
+
+  // Warning state (last 60 seconds)
+  if (sec <= 60 && sec > 0) {
+    document.getElementById('miniTimer').classList.add('warning');
+    document.getElementById('timerDisplay').classList.add('timer-pulse');
+  } else {
+    document.getElementById('miniTimer').classList.remove('warning');
+    document.getElementById('timerDisplay').classList.remove('timer-pulse');
+  }
+
+  // Time's up
+  if (sec <= 0) {
+    document.getElementById('timerDisplay').textContent = '00:00';
+    document.getElementById('miniTimer').textContent = "TIME'S UP";
+    document.getElementById('miniTimer').classList.add('warning');
+    document.getElementById('timerDisplay').classList.add('timer-pulse');
+    clearInterval(timerInterval);
+    timerInterval = null;
+    // Auto show fullscreen for 3 seconds
+    document.getElementById('timerOverlay').classList.add('active');
+    document.getElementById('timerDisplay').textContent = lang() === 'ru' ? 'ВРЕМЯ!' : "TIME'S UP!";
+  }
+}
+
+function toggleFullscreenTimer() {
+  timerFullscreen = !timerFullscreen;
+  document.getElementById('timerOverlay').classList.toggle('active', timerFullscreen);
+}
+
+function lang() {
+  return document.body.classList.contains('lang-en') ? 'en' : 'ru';
+}
+
+// === PRESENTER PANEL (Ctrl+Shift+P) ===
+let panelVisible = false;
+document.addEventListener('keydown', function(e) {
+  if (e.ctrlKey && e.shiftKey && e.key === 'P') {
     e.preventDefault();
-    if (current > 0) slides[current - 1].scrollIntoView({ behavior: 'smooth' });
+    panelVisible = !panelVisible;
+    document.getElementById('presenterPanel').classList.toggle('active', panelVisible);
+  }
+});
+
+// Also activate with triple-click on hero title
+let clickCount = 0;
+let clickTimer = null;
+document.addEventListener('click', function(e) {
+  if (e.target.closest('h1') && e.target.closest('#s0')) {
+    clickCount++;
+    clearTimeout(clickTimer);
+    clickTimer = setTimeout(() => { clickCount = 0; }, 500);
+    if (clickCount >= 3) {
+      clickCount = 0;
+      panelVisible = !panelVisible;
+      document.getElementById('presenterPanel').classList.toggle('active', panelVisible);
+    }
   }
 });
 </script>
