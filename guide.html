@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BOTANICA BOOTCAMP — Методический гайд</title>
+<title>BOTANICA BOOTCAMP — Гайд</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -20,7 +20,6 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 html { scroll-behavior: smooth; scroll-snap-type: y mandatory; }
 
 body {
@@ -30,7 +29,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== SLIDE SYSTEM ===== */
 .slide {
   min-height: 100vh;
   scroll-snap-align: start;
@@ -50,7 +48,6 @@ body {
   z-index: 2;
 }
 
-/* ===== NAV ===== */
 .nav {
   position: fixed;
   right: 1.5rem;
@@ -78,7 +75,6 @@ body {
   background: var(--coral);
 }
 
-/* ===== TYPOGRAPHY ===== */
 h1 {
   font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 700;
@@ -114,7 +110,6 @@ p, li {
   font-size: 1.4rem;
 }
 
-/* ===== COMPONENTS ===== */
 .tag {
   display: inline-block;
   padding: 0.3rem 0.8rem;
@@ -138,7 +133,6 @@ p, li {
 
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
-.grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1rem; }
 
 .timeline-item {
   display: grid;
@@ -153,19 +147,6 @@ p, li {
   font-weight: 700;
   font-size: 1.1rem;
   white-space: nowrap;
-}
-
-.badge-number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  font-weight: 700;
-  font-size: 1.2rem;
-  border: 3px solid var(--ink);
-  flex-shrink: 0;
 }
 
 .idea-card {
@@ -205,86 +186,40 @@ p, li {
   font-size: 0.9rem;
 }
 
-/* ===== DECORATIVE ===== */
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.3;
-  z-index: 0;
-}
-
 .stripe-bg {
   background-image: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 20px,
-    rgba(0,0,0,0.02) 20px,
-    rgba(0,0,0,0.02) 40px
+    -45deg, transparent, transparent 20px,
+    rgba(0,0,0,0.02) 20px, rgba(0,0,0,0.02) 40px
   );
 }
 
-/* ===== SLIDE THEMES ===== */
-.slide-hero {
-  background: linear-gradient(135deg, var(--lime) 0%, var(--mint) 50%, var(--sky) 100%);
-}
+.slide-hero { background: linear-gradient(135deg, var(--lime) 0%, var(--mint) 50%, var(--sky) 100%); }
+.slide-overview { background: var(--warm-white); }
+.slide-lesson1 { background: linear-gradient(160deg, #FFF8F0 0%, #FFE4CC 100%); }
+.slide-lesson1b { background: linear-gradient(160deg, #FFE4CC 0%, #FFD4B0 100%); }
+.slide-lesson2 { background: linear-gradient(160deg, #F0FAFF 0%, #D4F0FF 100%); }
+.slide-lesson2b { background: linear-gradient(160deg, #D4F0FF 0%, #B8E4FF 100%); }
+.slide-lesson3 { background: linear-gradient(160deg, #F5FFF0 0%, #D4FFD0 100%); }
+.slide-ideas { background: linear-gradient(160deg, #FFF0F5 0%, #FFD4E8 100%); }
+.slide-methods { background: linear-gradient(160deg, #F8F0FF 0%, #E8D4FF 100%); }
+.slide-kas { background: linear-gradient(160deg, #FFFFF0 0%, #FFF8D4 100%); }
+.slide-tools { background: linear-gradient(160deg, #F0FFF8 0%, #D4FFE8 100%); }
+.slide-legal { background: linear-gradient(160deg, #FFF0F0 0%, #FFD4D4 100%); }
+.slide-final { background: linear-gradient(135deg, var(--coral) 0%, var(--orange) 50%, var(--peach) 100%); }
 
-.slide-overview {
-  background: var(--warm-white);
-}
-
-.slide-lesson1 {
-  background: linear-gradient(160deg, #FFF8F0 0%, #FFE4CC 100%);
-}
-
-.slide-lesson2 {
-  background: linear-gradient(160deg, #F0FAFF 0%, #D4F0FF 100%);
-}
-
-.slide-lesson3 {
-  background: linear-gradient(160deg, #F5FFF0 0%, #D4FFD0 100%);
-}
-
-.slide-ideas {
-  background: linear-gradient(160deg, #FFF0F5 0%, #FFD4E8 100%);
-}
-
-.slide-methods {
-  background: linear-gradient(160deg, #F8F0FF 0%, #E8D4FF 100%);
-}
-
-.slide-kas {
-  background: linear-gradient(160deg, #FFFFF0 0%, #FFF8D4 100%);
-}
-
-.slide-tools {
-  background: linear-gradient(160deg, #F0FFF8 0%, #D4FFE8 100%);
-}
-
-.slide-legal {
-  background: linear-gradient(160deg, #FFF0F0 0%, #FFD4D4 100%);
-}
-
-.slide-final {
-  background: linear-gradient(135deg, var(--coral) 0%, var(--orange) 50%, var(--peach) 100%);
-}
-
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .slide { padding: 2rem 1rem; }
-  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
   .timeline-item { grid-template-columns: 1fr; gap: 0.3rem; }
   .nav { display: none; }
   h1 { font-size: 2.2rem; }
   h2 { font-size: 1.6rem; }
 }
 
-/* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--warm-white); }
 ::-webkit-scrollbar-thumb { background: var(--ink); border-radius: 3px; }
 
-/* ===== TOC ===== */
 .toc-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -311,7 +246,6 @@ p, li {
   box-shadow: 3px 3px 0 var(--ink);
 }
 
-/* ===== ANIMATIONS ===== */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
@@ -320,13 +254,11 @@ p, li {
 .slide-inner > * {
   animation: fadeUp 0.6s ease-out both;
 }
-
 .slide-inner > *:nth-child(2) { animation-delay: 0.1s; }
 .slide-inner > *:nth-child(3) { animation-delay: 0.2s; }
 .slide-inner > *:nth-child(4) { animation-delay: 0.3s; }
 .slide-inner > *:nth-child(5) { animation-delay: 0.4s; }
 
-/* command block */
 .cmd {
   background: var(--ink);
   color: var(--lime);
@@ -339,21 +271,57 @@ p, li {
   white-space: pre;
 }
 
-.highlight {
-  background: linear-gradient(to right, var(--lime), transparent);
-  padding: 0 0.3rem;
-}
-
 .flex-wrap-gap {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
 }
+
+.group-badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.group-alpha { background: var(--orange); color: white; }
+.group-beta { background: var(--sky); color: white; }
+.group-all { background: var(--mint); color: var(--ink); }
+
+.checklist {
+  list-style: none;
+  padding: 0;
+}
+
+.checklist li {
+  padding: 0.4rem 0;
+  padding-left: 1.8rem;
+  position: relative;
+}
+
+.checklist li::before {
+  content: '[ ]';
+  font-family: 'JetBrains Mono', monospace;
+  position: absolute;
+  left: 0;
+  font-size: 0.9rem;
+  color: var(--coral);
+}
+
+.callout {
+  padding: 1.2rem;
+  background: white;
+  border-radius: 12px;
+  border: 3px solid;
+  margin: 1rem 0;
+}
 </style>
 </head>
 <body>
 
-<!-- NAV DOTS -->
 <nav class="nav" id="nav"></nav>
 
 <!-- ============================================ -->
@@ -361,525 +329,640 @@ p, li {
 <!-- ============================================ -->
 <section class="slide slide-hero" id="s0">
 <div class="slide-inner" style="text-align:center;">
-  <div class="tag" style="background:white;color:var(--ink);margin-bottom:1rem;">28 FEBRUARY 2026 / KAS, TURKEY</div>
+  <div class="tag" style="background:white;color:var(--ink);margin-bottom:1rem;">28 FEBRUARY 2026 / KAŞ, TURKEY</div>
   <h1 style="color:var(--ink);">BOTANICA<br>BOOTCAMP</h1>
   <p style="font-size:1.3rem;margin-top:1rem;max-width:600px;margin-left:auto;margin-right:auto;">
-    Методический гайд для ведущего.<br>
-    <span class="hand">3 урока. 10 человек. Бесконечные возможности.</span>
+    <span class="hand">3 урока. Один токен. Бесконечные возможности.</span>
   </p>
   <div class="flex-wrap-gap" style="justify-content:center;margin-top:2rem;">
     <span class="principle-pill">12:00 — 17:10</span>
-    <span class="principle-pill">80% практика</span>
-    <span class="principle-pill">Voice-First</span>
-    <span class="principle-pill">Peer Learning</span>
+    <span class="principle-pill">100% практика</span>
+    <span class="principle-pill">Token Economy</span>
+    <span class="principle-pill">Prompt Engineering</span>
   </div>
+  <p style="margin-top:2rem;opacity:0.7;font-size:0.9rem;">Этот документ — ваш гайд на весь день. Открыт для всех.</p>
 </div>
 </section>
 
 <!-- ============================================ -->
-<!-- SLIDE 1: TABLE OF CONTENTS -->
+<!-- SLIDE 1: OVERVIEW -->
 <!-- ============================================ -->
 <section class="slide slide-overview" id="s1">
 <div class="slide-inner">
-  <h2>Навигация</h2>
-  <div class="toc-grid">
-    <a href="#s2" class="toc-item">&#128197; День целиком</a>
-    <a href="#s3" class="toc-item">&#127793; Урок 1: Контакт</a>
-    <a href="#s4" class="toc-item">&#127754; Урок 2: Глубже</a>
-    <a href="#s5" class="toc-item">&#128640; Урок 3: Контроль</a>
-    <a href="#s6" class="toc-item">&#128161; Банк идей</a>
-    <a href="#s7" class="toc-item">&#127919; Методика</a>
-    <a href="#s8" class="toc-item">&#127466;&#127481; Контекст Каша</a>
-    <a href="#s9" class="toc-item">&#128736; Инструменты</a>
-    <a href="#s10" class="toc-item">&#9878; Legal & Safety</a>
+  <h2>Welcome to Botanica</h2>
+
+  <div style="margin-bottom:1.5rem;">
+    <p>Тим разделит вас на две группы. Вы <strong>не равны</strong> по уровню — и это нормально. В реальной жизни тоже так. Кто-то пришёл с готовым стеком, кто-то впервые откроет терминал. Обе группы будут делать разные вещи параллельно, а потом — соединят результаты.</p>
   </div>
 
-  <div style="margin-top:2.5rem;">
-    <h3>Ключевые принципы дня</h3>
-    <div class="grid-3" style="margin-top:1rem;">
-      <div class="card" style="border-color:var(--coral);">
-        <h3>&#127891; Show, Then Do</h3>
-        <p>15 мин демо ведущего &rarr; сразу в практику. Никаких лекций. Люди забывают лекции, но помнят то, что сделали руками.</p>
-      </div>
-      <div class="card" style="border-color:var(--sky);">
-        <h3>&#129309; Buddy System</h3>
-        <p>Неравные уровни = сила, не проблема. Сильные учат слабых. Все растут. Пары меняются каждый блок.</p>
-      </div>
-      <div class="card" style="border-color:var(--mint);">
-        <h3>&#127942; Артефакт на выходе</h3>
-        <p>Каждый участник уходит с работающим проектом, который можно показать. Это не курс, это буткемп.</p>
-      </div>
+  <div class="grid-2" style="margin-bottom:2rem;">
+    <div class="card" style="border-color:var(--orange);">
+      <h3><span class="group-badge group-alpha">Группа Setup</span></h3>
+      <p>Те, кому нужно настроить инструменты с нуля. Тим и продвинутые ребята помогут. К концу Урока 1 у вас будет полный боевой стек.</p>
+    </div>
+    <div class="card" style="border-color:var(--sky);">
+      <h3><span class="group-badge group-beta">Группа Builders</span></h3>
+      <p>Те, у кого уже всё стоит. Ваша задача — создать токен в блокчейне TON и раздать его каждому в комнате. Вы строите экономику дня.</p>
+    </div>
+  </div>
+
+  <h3>Три урока — одна история</h3>
+  <div class="grid-3" style="margin-top:1rem;">
+    <div class="card" style="border-color:var(--orange);">
+      <h3>&#127793; Урок 1</h3>
+      <p><strong>Настройка + Токен.</strong> Все получают инструменты. Builders создают валюту буткемпа.</p>
+    </div>
+    <div class="card" style="border-color:var(--sky);">
+      <h3>&#128161; Урок 2</h3>
+      <p><strong>Один промпт &rarr; продукт.</strong> Prompt engineering. Каждый строит бизнес, завязанный на токен.</p>
+    </div>
+    <div class="card" style="border-color:var(--mint);">
+      <h3>&#128640; Урок 3</h3>
+      <p><strong>Исследование пространства.</strong> Сканирование, OSINT, корабли, камеры. Каш как датасет.</p>
     </div>
   </div>
 </div>
 </section>
 
 <!-- ============================================ -->
-<!-- SLIDE 2: FULL DAY TIMELINE -->
+<!-- SLIDE 2: DAY TIMELINE -->
 <!-- ============================================ -->
 <section class="slide slide-overview stripe-bg" id="s2">
 <div class="slide-inner">
   <h2>&#128197; День целиком</h2>
-  <p style="margin-bottom:1.5rem;">Три 90-минутных блока (ультрадианный ритм мозга) + два перерыва с движением.</p>
 
   <div class="timeline-item">
     <div class="timeline-time" style="color:var(--orange);">12:00 - 13:30</div>
     <div>
       <h3>Урок 1: Первый контакт</h3>
-      <p>Установка Claude Code + Voice Recognition + первый код + Telegram MCP. Групповая взаимопомощь. К концу блока: у всех работает полный стек.</p>
+      <p><span class="group-badge group-alpha">Setup</span> настраивают полный стек. <span class="group-badge group-beta">Builders</span> создают TON-токен и раздают всем. К концу урока: у каждого в Telegram-кошельке лежит токен буткемпа.</p>
     </div>
   </div>
 
   <div class="timeline-item" style="opacity:0.6;">
     <div class="timeline-time">13:30 - 13:50</div>
     <div>
-      <h3>&#9749; Кофе + нетворкинг</h3>
-      <p>Обязательное движение. Выйти на террасу, размяться, обсудить первые впечатления.</p>
+      <h3>&#9749; Кофе + нетворкинг на террасе</h3>
+      <p>Обязательное движение. Обсудить первые результаты. Подышать морем.</p>
     </div>
   </div>
 
   <div class="timeline-item">
     <div class="timeline-time" style="color:var(--sky);">13:50 - 15:20</div>
     <div>
-      <h3>Урок 2: Глубже</h3>
-      <p>Групповой челлендж. Работа в командах по 2-3. Исследование Каша через AI: пространство, история, бизнес, сети, данные.</p>
+      <h3>Урок 2: Один промпт — один продукт</h3>
+      <p><span class="group-badge group-all">Все вместе</span> Prompt engineering. Каждый конструирует один промпт, который создаёт максимально полный продукт за один заход. Бизнес обязан принимать токен из Урока 1.</p>
     </div>
   </div>
 
   <div class="timeline-item" style="opacity:0.6;">
     <div class="timeline-time">15:20 - 15:40</div>
     <div>
-      <h3>&#127829; Еда + промежуточные демо</h3>
-      <p>60-секундные demo каждой команды. Быстрый фидбек. Энергия перед финальным спринтом.</p>
+      <h3>&#127829; Еда + lightning demos</h3>
+      <p>60 секунд на каждого: покажи, что твой промпт создал. Фидбек. Восхищение.</p>
     </div>
   </div>
 
   <div class="timeline-item">
     <div class="timeline-time" style="color:var(--mint);">15:40 - 17:10</div>
     <div>
-      <h3>Урок 3: Полный контроль</h3>
-      <p>Финальный проект. Объединяем всё: Claude Code + Voice + MCP + исследования. Презентации. Голосование за лучший проект.</p>
+      <h3>Урок 3: Исследование пространства</h3>
+      <p><span class="group-badge group-all">Все вместе</span> Каш как датасет. Сканирование сетей, публичные камеры, морской трафик, самолёты, OSINT. Финальные демо. Голосование.</p>
     </div>
   </div>
 
   <div class="timeline-item" style="opacity:0.6;">
     <div class="timeline-time">17:10+</div>
     <div>
-      <h3>&#127773; After-party на закате</h3>
-      <p>Обсуждение результатов, обмен контактами, рефлексия.</p>
+      <h3>&#127773; After-party / закат на террасе</h3>
+      <p>Результаты, рефлексия, фото, обмен контактами.</p>
     </div>
   </div>
 </div>
 </section>
 
 <!-- ============================================ -->
-<!-- SLIDE 3: LESSON 1 -->
+<!-- SLIDE 3: LESSON 1 — SETUP GROUP -->
 <!-- ============================================ -->
 <section class="slide slide-lesson1" id="s3">
 <div class="slide-inner">
-  <div class="tag" style="background:var(--orange);color:white;">12:00 - 13:30</div>
-  <h2 style="margin-top:0.8rem;">&#127793; Урок 1: Первый контакт</h2>
-  <p style="margin-bottom:1rem;"><strong>Цель:</strong> У каждого стоит Claude Code + Voice Recognition + (идеально) Telegram MCP. Все написали первый код.</p>
+  <div class="tag" style="background:var(--orange);color:white;">12:00 - 13:30 / УРОК 1</div>
+  <h2 style="margin-top:0.8rem;">&#127793; <span class="group-badge group-alpha">Группа Setup</span> — Полный стек за 90 минут</h2>
 
-  <div style="margin-bottom:2rem;">
-    <h3>Структура блока</h3>
-    <div class="timeline-item">
-      <div class="timeline-time">12:00 - 12:15</div>
-      <div><strong>Открытие.</strong> Кто мы, зачем здесь, правила дня. "Вы не равны по уровню — и это сила, не проблема." Быстрый опрос уровней (поднять руку). Формирование пар: сильный + начинающий.</div>
+  <p style="margin-bottom:1rem;">Тим покажет live demo первые 15 минут. После этого — работаете сами, помогая друг другу. Тим и Builders ходят между вами и помогают.</p>
+
+  <div class="callout" style="border-color:var(--coral);margin-bottom:1.5rem;">
+    <h3 style="color:var(--coral);">&#127919; Цель: к 13:30 у каждого из вас работает ВСЁ ЭТО</h3>
+    <ul class="checklist">
+      <li><strong>Claude Code</strong> установлен и запускается в терминале</li>
+      <li><strong>Bypass Permissions</strong> включён (чтобы Claude работал без подтверждений)</li>
+      <li><strong>Telegram MCP</strong> подключён (Claude управляет Telegram)</li>
+      <li><strong>Playwright MCP</strong> подключён (Claude управляет браузером)</li>
+      <li><strong>GitHub</strong> подключён (Claude может коммитить и пушить)</li>
+    </ul>
+  </div>
+
+  <h3>Пошагово</h3>
+
+  <div class="timeline-item">
+    <div class="timeline-time">Шаг 1</div>
+    <div>
+      <strong>Установить Claude Code</strong>
+      <div class="cmd">npm install -g @anthropic-ai/claude-code</div>
+      <p>Если нет npm — сначала <span class="mono">brew install node</span> (macOS) или скачать с nodejs.org</p>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-time">12:15 - 12:30</div>
-      <div><strong>Live Demo.</strong> Ведущий показывает: открыть терминал &rarr; установить Claude Code &rarr; первый промпт &rarr; голосовой ввод &rarr; "вау-момент" (например, Claude Code создаёт сайт голосом за 60 секунд).</div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-time">Шаг 2</div>
+    <div>
+      <strong>Запустить и авторизоваться</strong>
+      <div class="cmd">claude</div>
+      <p>Тим раздаст API-ключи. Или используйте свой аккаунт Anthropic.</p>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-time">12:30 - 13:10</div>
-      <div><strong>Практика в парах.</strong>
-        <ul style="margin-top:0.5rem;">
-          <li><strong>Шаг 1:</strong> Установить Claude Code (<span class="mono">npm install -g @anthropic-ai/claude-code</span>)</li>
-          <li><strong>Шаг 2:</strong> Активировать API-ключ (заранее подготовить ключи для всех!)</li>
-          <li><strong>Шаг 3:</strong> Настроить Voice Recognition (Whisper локально или macOS Dictation)</li>
-          <li><strong>Шаг 4:</strong> Первое задание: <em>"Голосом попроси Claude Code создать HTML-страницу о тебе"</em></li>
-          <li><strong>Шаг 5:</strong> (Продвинутые) Установить Telegram MCP</li>
-        </ul>
-      </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-time">Шаг 3</div>
+    <div>
+      <strong>Включить Bypass Permissions</strong>
+      <div class="cmd"># В Claude Code набрать:
+/permissions
+# Добавить разрешения для Bash, Read, Write, Edit — Allow All</div>
+      <p>Это позволит Claude действовать автономно, без подтверждений на каждое действие.</p>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-time">13:10 - 13:30</div>
-      <div><strong>Покажи соседу.</strong> Каждая пара показывает, что получилось. 30 сек на пару. Аплодисменты.</div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-time">Шаг 4</div>
+    <div>
+      <strong>Подключить Telegram MCP</strong>
+      <div class="cmd"># Попросите Claude Code сделать это за вас:
+"Подключи Telegram MCP сервер. Используй @anthropic-ai/claude-code-telegram-mcp"</div>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-time">Шаг 5</div>
+    <div>
+      <strong>Подключить Playwright MCP</strong>
+      <div class="cmd"># Попросите Claude:
+"Подключи Playwright MCP сервер для управления браузером"</div>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-time">Шаг 6</div>
+    <div>
+      <strong>Подключить GitHub</strong>
+      <div class="cmd">gh auth login
+# Следуйте инструкциям. Потом проверьте:
+gh auth status</div>
+    </div>
+  </div>
+
+  <div class="callout" style="border-color:var(--mint);">
+    <h3>&#9989; Проверка: всё работает?</h3>
+    <div class="cmd"># Скажите Claude Code:
+"Создай HTML-страницу 'Привет из Каша', закоммить в новый GitHub-репо,
+открой её в браузере через Playwright, и отправь скриншот в Telegram"</div>
+    <p>Если это сработало — у вас готов полный стек. Идите помогать другим!</p>
+  </div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- SLIDE 4: LESSON 1 — BUILDERS GROUP -->
+<!-- ============================================ -->
+<section class="slide slide-lesson1b" id="s4">
+<div class="slide-inner">
+  <div class="tag" style="background:var(--sky);color:white;">12:00 - 13:30 / УРОК 1</div>
+  <h2 style="margin-top:0.8rem;">&#128176; <span class="group-badge group-beta">Группа Builders</span> — Создайте токен буткемпа</h2>
+
+  <div class="callout" style="border-color:var(--coral);margin-bottom:1.5rem;">
+    <h3 style="color:var(--coral);">&#127919; Цель: к 13:30 у КАЖДОГО человека в этой комнате в Telegram-кошельке лежит ваш токен</h3>
+    <p>Делите задачи между собой как хотите. Один пишет смарт-контракт, другой делает метаданные, третий разбирается с раздачей. Консенсус — ваша ответственность.</p>
+  </div>
+
+  <h3>Что нужно сделать</h3>
+
+  <div class="grid-2" style="margin-bottom:1.5rem;">
+    <div class="card" style="background:var(--peach);">
+      <h3>1. Создать Jetton (токен) в TON</h3>
+      <p>TON — блокчейн Telegram. Jetton — стандарт токена в TON (аналог ERC-20). Используйте Claude Code для написания и деплоя смарт-контракта.</p>
+      <div class="cmd"># Попросите Claude Code:
+"Создай Jetton токен в блокчейне TON.
+Название: BOTANICA
+Символ: BOT
+Общее количество: 1,000,000
+Задеплой в testnet.
+Используй Blueprint framework."</div>
+    </div>
+    <div class="card" style="background:var(--lime);">
+      <h3>2. Раздать всем в комнате</h3>
+      <p>Каждый участник должен получить токены в свой Telegram Wallet. Придумайте механизм раздачи: airdrop, ссылка, бот, ручная отправка — как хотите.</p>
+      <div class="cmd"># Варианты:
+# 1. Через Telegram Wallet API
+# 2. Написать бот для раздачи
+# 3. Ручной трансфер каждому
+# 4. QR-код для получения</div>
     </div>
   </div>
 
   <div class="grid-2">
-    <div class="card" style="background:var(--peach);">
-      <h3>&#9889; Scaffold: 3 уровня сложности</h3>
-      <p><strong>Новичок:</strong> Просто установи и запусти "hello world"<br>
-      <strong>Средний:</strong> Создай страницу о себе голосом<br>
-      <strong>Продвинутый:</strong> + Telegram MCP + отправь результат в чат</p>
+    <div class="card">
+      <h3>3. Договориться об экономике</h3>
+      <p>Этот токен будет использоваться весь день. Решите:</p>
+      <ul style="margin-top:0.5rem;">
+        <li>Сколько токенов получает каждый на старте?</li>
+        <li>За что можно заработать ещё?</li>
+        <li>Что можно купить за токены?</li>
+        <li>Будет ли "обменный курс"?</li>
+      </ul>
     </div>
-    <div class="card" style="background:var(--lime);">
-      <h3>&#128270; Подготовить заранее</h3>
-      <p>&bull; API-ключи Anthropic (10 шт)<br>
-      &bull; Шпаргалка с командами (напечатать)<br>
-      &bull; WiFi пароль крупно на стене<br>
-      &bull; Telegram-чат группы создать ДО начала</p>
+    <div class="card">
+      <h3>4. Подготовить инфраструктуру</h3>
+      <p>Для Урока 2 каждый будет строить бизнес на этом токене. Подготовьте:</p>
+      <ul style="margin-top:0.5rem;">
+        <li>Документацию: как интегрировать ваш токен</li>
+        <li>API / SDK / примеры кода для приёма токенов</li>
+        <li>Простой способ проверки баланса</li>
+      </ul>
     </div>
+  </div>
+
+  <div style="margin-top:1.5rem;padding:1rem;background:white;border-radius:12px;border:2px dashed var(--sky);">
+    <p><strong>&#128161; Подсказка от Тима:</strong> TON Blueprint — официальный framework для смарт-контрактов TON. <span class="mono">npm create ton@latest</span> создаст проект. Jetton стандарт задокументирован на docs.ton.org. Claude Code знает TON.</p>
   </div>
 </div>
 </section>
 
 <!-- ============================================ -->
-<!-- SLIDE 4: LESSON 2 -->
+<!-- SLIDE 5: LESSON 2 — PROMPT ENGINEERING -->
 <!-- ============================================ -->
-<section class="slide slide-lesson2" id="s4">
+<section class="slide slide-lesson2" id="s5">
 <div class="slide-inner">
-  <div class="tag" style="background:var(--sky);color:white;">13:50 - 15:20</div>
-  <h2 style="margin-top:0.8rem;">&#127754; Урок 2: Глубже</h2>
-  <p style="margin-bottom:1rem;"><strong>Цель:</strong> Работа в командах. Исследование реального мира через AI. Каждая команда выбирает челлендж и работает над ним.</p>
+  <div class="tag" style="background:var(--sky);color:white;">13:50 - 15:20 / УРОК 2</div>
+  <h2 style="margin-top:0.8rem;">&#128161; Один промпт — один продукт</h2>
+  <p style="margin-bottom:0.5rem;"><span class="group-badge group-all">Все вместе</span> Главный навык дня: prompt engineering.</p>
+
+  <div class="callout" style="border-color:var(--coral);margin-bottom:1.5rem;">
+    <h3 style="color:var(--coral);">&#127919; Задание</h3>
+    <p>Сконструируйте <strong>один промпт</strong>, который за один заход создаст максимально полный продукт. Не набор файлов — а рабочий бизнес. Сайт, бот, API, презентация, финмодель — всё в одном промпте.</p>
+    <p style="margin-top:0.5rem;"><strong>Обязательное условие:</strong> ваш продукт принимает оплату в токене BOTANICA (BOT) из Урока 1.</p>
+  </div>
 
   <div style="margin-bottom:2rem;">
     <h3>Структура блока</h3>
     <div class="timeline-item">
       <div class="timeline-time">13:50 - 14:05</div>
-      <div><strong>Intro + выбор челленджа.</strong> Ведущий показывает 3-4 варианта. Команды (по 3-5 человек) выбирают. Quick demo: как Claude Code работает с API, веб-данными, Telegram.</div>
+      <div><strong>Тим показывает приёмы.</strong> Как конструировать мега-промпты. Как подключать агентов. Как использовать шаблоны и библиотеки. Live demo: один промпт &rarr; готовый продукт.</div>
     </div>
     <div class="timeline-item">
       <div class="timeline-time">14:05 - 15:00</div>
-      <div><strong>Sprint.</strong> Команды работают. Ведущий — floating facilitator (ходит, разблокирует). Музыка фоном. Каждые 20 мин — быстрый check-in ("покажите прогресс на экране").</div>
+      <div><strong>Работа.</strong> Каждый конструирует свой промпт и запускает. Итерируете, улучшаете, добиваетесь максимального результата. Тим ходит между вами и помогает.</div>
     </div>
     <div class="timeline-item">
       <div class="timeline-time">15:00 - 15:20</div>
-      <div><strong>Lightning demos.</strong> Каждая команда: 2-3 минуты. Что сделали, что удивило, что не получилось.</div>
+      <div><strong>Lightning demos.</strong> 60 секунд на каждого: покажи свой промпт и что он создал.</div>
     </div>
   </div>
 
-  <h3 style="margin-bottom:1rem;">Варианты челленджей (команды выбирают 1)</h3>
-
-  <div class="grid-2">
-    <div class="variant-block" style="border-color:var(--coral);">
-      <h3>&#127963; Вариант A: "Бизнес в Каше"</h3>
-      <p>Найдите место в Каше, придумайте бизнес. Claude Code исследует: аренда, конкуренты, юридика, сезонность. Результат: HTML-презентация бизнес-плана с реальными цифрами.</p>
-      <div class="cmd">claude "Исследуй рынок аренды коммерческой недвижимости в Каше, Турция.
-Средняя цена за м2, лучшие локации для кафе, сезонность туризма."</div>
-    </div>
-
-    <div class="variant-block" style="border-color:var(--sky);">
-      <h3>&#127758; Вариант B: "История за окном"</h3>
-      <p>Выберите здание / руину / улицу видимую из окна. Claude Code раскапывает: историю Античфеллоса, ликийские гробницы, торговые пути. Результат: интерактивная карта + лонгрид.</p>
-      <div class="cmd">claude "Расскажи историю ликийского города Антифеллос (современный Каш).
-Построй HTML-таймлайн ключевых событий с 15 века до н.э."</div>
-    </div>
-
-    <div class="variant-block" style="border-color:var(--mint);">
-      <h3>&#128674; Вариант C: "Цифровой сканер"</h3>
-      <p>Исследуйте цифровое пространство вокруг: WiFi-сети, устройства в локальной сети, публичные камеры, морской трафик (AIS). Результат: дашборд "Цифровой портрет Каша".</p>
-      <div class="cmd">nmap -sn 192.168.1.0/24  # устройства в локальной сети
-curl "https://opensky-network.org/api/states/all?lamin=36.0&lomin=29.5&lamax=36.3&lomax=29.8"</div>
-    </div>
-
-    <div class="variant-block" style="border-color:var(--lavender);">
-      <h3>&#128176; Вариант D: "Свой токен"</h3>
-      <p>Создайте крипто-токен (Solana devnet). Задеплойте. Раздайте всем в комнате. Постройте мини-экономику: токены = баллы за помощь друг другу.</p>
-      <div class="cmd">solana-keygen new --outfile ~/kas-wallet.json
-solana config set --url devnet
-solana airdrop 2
-spl-token create-token</div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- ============================================ -->
-<!-- SLIDE 5: LESSON 3 -->
-<!-- ============================================ -->
-<section class="slide slide-lesson3" id="s5">
-<div class="slide-inner">
-  <div class="tag" style="background:var(--mint);color:var(--ink);">15:40 - 17:10</div>
-  <h2 style="margin-top:0.8rem;">&#128640; Урок 3: Полный контроль</h2>
-  <p style="margin-bottom:1rem;"><strong>Цель:</strong> Финальный проект. Объединяем навыки. Презентация. Голосование.</p>
-
-  <div style="margin-bottom:2rem;">
-    <h3>Структура блока</h3>
-    <div class="timeline-item">
-      <div class="timeline-time">15:40 - 15:55</div>
-      <div><strong>Постановка финального челленджа.</strong> Ведущий объявляет общую тему. Команды могут продолжить проект из Урока 2 или взять новый. Критерий: "удиви комнату".</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-time">15:55 - 16:40</div>
-      <div><strong>Финальный спринт.</strong> 45 минут чистой работы. Команды собирают финальный артефакт. Ведущий помогает, но не навязывает. За 10 мин до конца: "Заканчиваем! Готовьте демо!"</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-time">16:40 - 17:05</div>
-      <div><strong>Demo Day.</strong> Каждая команда: 3-5 минут. Показ проекта. Вопросы. Восхищение.</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-time">17:05 - 17:10</div>
-      <div><strong>Голосование + Закрытие.</strong> Каждый голосует за лучший проект (нельзя за свой). Награда. Фото. Аплодисменты.</div>
-    </div>
-  </div>
-
-  <h3 style="margin-bottom:1rem;">Варианты финального челленджа</h3>
-  <div class="grid-3">
+  <h3>Что можно построить (примеры)</h3>
+  <div class="grid-3" style="margin-bottom:1.5rem;">
     <div class="idea-card" style="background:var(--peach);">
-      <span class="emoji">&#127961;</span>
-      <h3>Digital Twin Каша</h3>
-      <p>Интерактивная карта с реальными данными: погода, корабли, POI, история. Leaflet.js + OpenStreetMap + API.</p>
+      <span class="emoji">&#127963;</span>
+      <h3>Бизнес в Каше</h3>
+      <p>Сайт + бизнес-план + финмодель + дизайн пространства + интеграция BOT-токена для оплаты. Всё в одном промпте.</p>
     </div>
     <div class="idea-card" style="background:var(--lime);">
-      <span class="emoji">&#128250;</span>
-      <h3>Pitch Deck за 30 мин</h3>
-      <p>Бизнес-идея для Каша. Полная презентация: рынок, конкуренты, финмодель. Всё через Claude Code.</p>
+      <span class="emoji">&#127891;</span>
+      <h3>Онлайн-курс</h3>
+      <p>Лендинг + программа из 10 уроков + презентации + тесты + бот для студентов. Оплата в BOT.</p>
     </div>
     <div class="idea-card" style="background:var(--lavender);">
       <span class="emoji">&#129302;</span>
-      <h3>Telegram-бот Каша</h3>
-      <p>Бот-гид: фото локации &rarr; история + рестораны + маршрут. MCP + Claude + Overpass API.</p>
+      <h3>SaaS-продукт</h3>
+      <p>API + фронтенд + документация + pricing page + Telegram-бот для поддержки. Подписка за BOT.</p>
+    </div>
+    <div class="idea-card" style="background:var(--sky);color:white;">
+      <span class="emoji">&#128187;</span>
+      <h3>Мобильное приложение</h3>
+      <p>PWA с полным UI + бэкенд + push-уведомления. Внутренняя валюта = BOT-токен.</p>
+    </div>
+    <div class="idea-card" style="background:var(--coral);color:white;">
+      <span class="emoji">&#128200;</span>
+      <h3>Аналитическая платформа</h3>
+      <p>Дашборд + ETL-пайплайн + визуализации + API. Доступ по подписке в BOT.</p>
+    </div>
+    <div class="idea-card" style="background:var(--orange);color:white;">
+      <span class="emoji">&#127912;</span>
+      <h3>Креативное агентство</h3>
+      <p>Портфолио-сайт + генератор контента + CRM + автоматизация. Клиенты платят в BOT.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SLIDE 6: LESSON 2 — TOOLS & AGENTS -->
+<!-- ============================================ -->
+<section class="slide slide-lesson2b" id="s6">
+<div class="slide-inner">
+  <h2>&#129302; Инструменты для мега-промптов</h2>
+  <p style="margin-bottom:1.5rem;">Используйте всё, что усилит ваш промпт. Чем сложнее комбинация — тем круче результат.</p>
+
+  <div class="grid-2" style="margin-bottom:1.5rem;">
+    <div class="card" style="background:#F0FAFF;">
+      <h3>&#128736; Claude Code + MCP</h3>
+      <p>У вас уже подключены:</p>
+      <ul style="margin-top:0.5rem;">
+        <li><strong>Telegram MCP</strong> — бот, сообщения, каналы</li>
+        <li><strong>Playwright MCP</strong> — управление браузером, скриншоты</li>
+        <li><strong>GitHub</strong> — коммиты, репозитории, деплой</li>
+      </ul>
+      <p style="margin-top:0.5rem;">Claude Code может использовать их всех <em>одновременно</em> в одном промпте.</p>
+    </div>
+    <div class="card" style="background:#FFF8F0;">
+      <h3>&#127919; AI Templates & Agents</h3>
+      <p>Библиотеки агентов и шаблонов:</p>
+      <ul style="margin-top:0.5rem;">
+        <li><strong>aitmpl.com/skills</strong> — каталог шаблонов для Claude Code</li>
+        <li><strong>skillsmp.com</strong> — маркетплейс скиллов (Claude, Codex, ChatGPT)</li>
+        <li><strong>Claude Agent SDK</strong> — если хотите мультиагентность</li>
+        <li><strong>CrewAI / LangGraph</strong> — оркестрация агентов</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout" style="border-color:var(--lavender);">
+    <h3>&#128161; Как конструировать мега-промпт</h3>
+    <div class="grid-2" style="margin-top:0.8rem;">
+      <div>
+        <strong>Структура промпта:</strong>
+        <ol style="margin-top:0.3rem;">
+          <li>Роль и контекст</li>
+          <li>Конечный результат (что должно получиться)</li>
+          <li>Технический стек</li>
+          <li>Бизнес-логика + интеграция BOT-токена</li>
+          <li>Дизайн и UX требования</li>
+          <li>Деплой и финализация</li>
+        </ol>
+      </div>
+      <div>
+        <strong>Пример начала:</strong>
+        <div class="cmd" style="font-size:0.75rem;">"Ты — full-stack разработчик.
+Создай полностью рабочий сервис
+аренды яхт в Каше.
+
+Результат:
+1. Landing page (HTML/CSS/JS)
+2. Каталог яхт (JSON + UI)
+3. Система бронирования
+4. Оплата в BOT-токене (TON)
+5. Telegram-бот для клиентов
+6. GitHub repo + README
+7. Деплой на GitHub Pages
+
+Стиль: средиземноморский,
+тёплые цвета, фото Каша."</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:1rem;padding:1rem;background:white;border-radius:12px;border:2px dashed var(--sky);">
+    <p><strong>&#9889; Совет Тима:</strong> Не бойтесь длинных промптов. Claude Code справляется с промптами на 1000+ слов. Чем точнее описание — тем ближе результат к идеалу. Используйте MCP-серверы внутри промпта: "используй Playwright чтобы...", "отправь в Telegram..."</p>
+  </div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- SLIDE 7: LESSON 3 -->
+<!-- ============================================ -->
+<section class="slide slide-lesson3" id="s7">
+<div class="slide-inner">
+  <div class="tag" style="background:var(--mint);color:var(--ink);">15:40 - 17:10 / УРОК 3</div>
+  <h2 style="margin-top:0.8rem;">&#128640; Исследование пространства</h2>
+  <p style="margin-bottom:0.5rem;"><span class="group-badge group-all">Все вместе</span> Каш — это не просто город. Это датасет, ожидающий анализа.</p>
+
+  <div class="callout" style="border-color:var(--coral);margin-bottom:1.5rem;">
+    <h3 style="color:var(--coral);">&#127919; Задание</h3>
+    <p>Выберите челлендж из банка идей ниже (или придумайте свой). Используйте Claude Code для исследования реального мира вокруг вас. Представьте, что окно — это ваш терминал. Что вы видите? Что скрыто?</p>
+    <p style="margin-top:0.5rem;"><strong>Формат:</strong> работа в парах или индивидуально. В конце — 3-минутные демо и голосование за лучший проект.</p>
+  </div>
+
+  <div style="margin-bottom:1.5rem;">
+    <h3>Структура блока</h3>
+    <div class="timeline-item">
+      <div class="timeline-time">15:40 - 15:55</div>
+      <div><strong>Тим показывает возможности:</strong> как сканировать сети, как найти публичные камеры, как отследить корабли и самолёты, как исследовать историю любого здания — всё через Claude Code.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">15:55 - 16:40</div>
+      <div><strong>Работа.</strong> Выбирайте челлендж и погружайтесь. Тим помогает.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">16:40 - 17:05</div>
+      <div><strong>Demo Day.</strong> 3 минуты на каждого / каждую пару. Покажите, что нашли.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">17:05 - 17:10</div>
+      <div><strong>Голосование.</strong> Каждый голосует за лучший проект (нельзя за свой). Победитель получает ??? (решим на месте).</div>
     </div>
   </div>
 </div>
 </section>
 
 <!-- ============================================ -->
-<!-- SLIDE 6: IDEA BANK -->
+<!-- SLIDE 8: IDEA BANK -->
 <!-- ============================================ -->
-<section class="slide slide-ideas" id="s6">
+<section class="slide slide-ideas" id="s8">
 <div class="slide-inner">
-  <h2>&#128161; Банк идей для заданий</h2>
-  <p style="margin-bottom:1.5rem;">Каждая идея — самостоятельный челлендж. Миксуй, комбинируй, адаптируй под группу.</p>
+  <h2>&#128161; Банк идей: исследование пространства</h2>
+  <p style="margin-bottom:1.5rem;">Выберите одну идею или скомбинируйте несколько. Всё делается через Claude Code.</p>
 
   <div class="grid-3">
     <div class="idea-card">
       <span class="emoji">&#128225;</span>
       <h3>Сканируй сеть</h3>
-      <p>nmap локальной сети. Найди принтеры, камеры, IoT-устройства. Построй карту. Этичный аудит безопасности.</p>
+      <p>nmap локальной сети. Найди принтеры, камеры, IoT-устройства. Построй карту всех устройств в здании.</p>
+      <div class="cmd" style="font-size:0.75rem;">nmap -sn 192.168.1.0/24</div>
     </div>
 
     <div class="idea-card">
       <span class="emoji">&#128674;</span>
       <h3>Морская разведка</h3>
-      <p>AIS-данные: какие корабли сейчас у берегов Каша? Откуда идут? Куда? MarineTraffic / aisstream.io.</p>
+      <p>AIS-данные: какие корабли сейчас у берегов Каша? Откуда идут? Куда? Визуализируй на карте.</p>
+      <div class="cmd" style="font-size:0.75rem;">aisstream.io API / marinetraffic.com</div>
     </div>
 
     <div class="idea-card">
       <span class="emoji">&#9992;</span>
-      <h3>Самолёты над головой</h3>
-      <p>OpenSky API: самолёты в радиусе 50 км. Визуализация на карте в реальном времени. ADS-B данные.</p>
+      <h3>Самолёты над нами</h3>
+      <p>OpenSky API: все самолёты в радиусе 50 км от Каша. Реалтайм-карта с маршрутами.</p>
+      <div class="cmd" style="font-size:0.75rem;">opensky-network.org/api/states/all
+?lamin=36.0&lomin=29.5</div>
     </div>
 
     <div class="idea-card">
       <span class="emoji">&#127909;</span>
       <h3>Публичные камеры</h3>
-      <p>Windy.com webcams + Shodan (легальный индекс). Найди открытые камеры в регионе Анталья. Дашборд.</p>
-    </div>
-
-    <div class="idea-card">
-      <span class="emoji">&#128176;</span>
-      <h3>Создай токен</h3>
-      <p>Solana devnet: создать, заминтить, раздать всем. 15 минут от нуля до рабочего токена.</p>
-    </div>
-
-    <div class="idea-card">
-      <span class="emoji">&#127963;</span>
-      <h3>Открой бизнес</h3>
-      <p>Найди место, посчитай аренду, конкурентов, сезонность. Бизнес-план + дизайн пространства. Pitch deck.</p>
+      <p>Windy.com webcams, Shodan, SkylineWebcams. Легальные агрегаторы публичных камер. Собери дашборд.</p>
     </div>
 
     <div class="idea-card">
       <span class="emoji">&#127982;</span>
       <h3>История здания</h3>
-      <p>Выбери любой дом из окна. Раскопай его историю: кто строил, когда, зачем. Ликийцы? Османы? Видеопрезентация.</p>
-    </div>
-
-    <div class="idea-card">
-      <span class="emoji">&#128640;</span>
-      <h3>Full Stack за 60 мин</h3>
-      <p>FastAPI бэкенд + HTML фронтенд + Telegram бот + деплой на бесплатный хостинг. Весь стек за час.</p>
+      <p>Выбери любой дом из окна. Раскопай: кто строил, когда, зачем. Ликийцы? Османы? Генерируй лонгрид.</p>
     </div>
 
     <div class="idea-card">
       <span class="emoji">&#127758;</span>
       <h3>2 км = 2 страны</h3>
-      <p>Каш и Меис (Греция) — 2.1 км. Исследуй границу: геополитика, экономика, визовый режим. Инфографика.</p>
+      <p>Каш и Меис (Греция) — 2.1 км. Исследуй границу: геополитика, история, экономика. Инфографика.</p>
     </div>
 
     <div class="idea-card">
       <span class="emoji">&#128674;</span>
       <h3>Корабль Улубурун</h3>
-      <p>XIV век до н.э.: затонувший корабль у Каша. 20 тонн груза из 10 культур. AI-реконструкция торгового маршрута.</p>
+      <p>XIV в. до н.э.: 20 тонн груза из 10 культур. Реконструируй торговый маршрут. Визуализируй.</p>
     </div>
 
     <div class="idea-card">
       <span class="emoji">&#127754;</span>
-      <h3>Затонувший город</h3>
-      <p>Кеков: ликийский город ушёл под воду после землетрясения. UNESCO. Что известно? Что утрачено? Расследование.</p>
+      <h3>Затонувший Кекова</h3>
+      <p>Ликийский город ушёл под воду. UNESCO. Что известно? Что утрачено? AI-расследование.</p>
     </div>
 
     <div class="idea-card">
       <span class="emoji">&#128302;</span>
-      <h3>Voice-First App</h3>
-      <p>Голосовой помощник для Каша: "Где поесть?", "Расскажи про эту руину", "Сколько стоит аренда?" Whisper + Claude + TTS.</p>
+      <h3>WiFi-ландшафт</h3>
+      <p>Пассивный скан WiFi: сколько сетей, какие каналы, какие устройства. Визуализация электромагнитного портрета Каша.</p>
+      <div class="cmd" style="font-size:0.75rem;">/System/Library/PrivateFrameworks/
+Apple80211.framework/.../airport -s</div>
+    </div>
+
+    <div class="idea-card">
+      <span class="emoji">&#127961;</span>
+      <h3>Digital Twin Каша</h3>
+      <p>Интерактивная карта: Overpass API + погода + корабли + самолёты + POI. Leaflet.js. Всё в одном дашборде.</p>
+    </div>
+
+    <div class="idea-card">
+      <span class="emoji">&#128302;</span>
+      <h3>OSINT-досье на город</h3>
+      <p>Собери всё публично доступное о Каше: домены (dig), бизнесы (реестр), недвижимость, соцсети. Один HTML-отчёт.</p>
+    </div>
+
+    <div class="idea-card">
+      <span class="emoji">&#127963;</span>
+      <h3>Открой бизнес</h3>
+      <p>Найди место, посчитай аренду, конкурентов, сезонность. Полный бизнес-план с цифрами и дизайном.</p>
     </div>
   </div>
 </div>
 </section>
 
 <!-- ============================================ -->
-<!-- SLIDE 7: METHODOLOGY -->
+<!-- SLIDE 9: KAS CONTEXT -->
 <!-- ============================================ -->
-<section class="slide slide-methods" id="s7">
+<section class="slide slide-kas" id="s9">
 <div class="slide-inner">
-  <h2>&#127919; Методика: как вести</h2>
-
-  <div class="grid-2" style="margin-bottom:2rem;">
-    <div class="card" style="background:#F8F0FF;">
-      <h3>&#128337; 90-минутные блоки</h3>
-      <p>Нейробиология: мозг фокусируется циклами ~90 мин (ультрадианный ритм, Huberman). После — обязательный перерыв с движением. Не пытайся растянуть блок.</p>
-    </div>
-    <div class="card" style="background:#FFF0F5;">
-      <h3>&#129309; Pair Programming</h3>
-      <p>Driver (пишет) + Navigator (направляет). Менять роли каждые 15-20 мин. Сильный + начинающий в одной паре. Менять пары между блоками.</p>
-    </div>
-    <div class="card" style="background:#F0FFF8;">
-      <h3>&#127922; Геймификация</h3>
-      <p>Командный leaderboard (НЕ индивидуальный). Баллы за: помощь другим, креативность, скорость, лучший вопрос. Финальное голосование.</p>
-    </div>
-    <div class="card" style="background:#FFFFF0;">
-      <h3>&#128218; Scaffold (3 уровня)</h3>
-      <p><strong>Новичок:</strong> готовый код, заполни пропуски<br>
-      <strong>Средний:</strong> скелет + подсказки<br>
-      <strong>Продвинутый:</strong> только бриф и API-доки<br>
-      Все приходят к одному результату!</p>
-    </div>
-  </div>
-
-  <h3>Формат каждого блока (IKRA Framework)</h3>
-  <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.8rem;">
-    <div class="principle-pill" style="background:var(--peach);"><strong>1.</strong> Фокусировка (5 мин)</div>
-    <div style="font-size:1.5rem;display:flex;align-items:center;">&rarr;</div>
-    <div class="principle-pill" style="background:var(--lime);"><strong>2.</strong> Демо (10 мин)</div>
-    <div style="font-size:1.5rem;display:flex;align-items:center;">&rarr;</div>
-    <div class="principle-pill" style="background:var(--sky);color:white;"><strong>3.</strong> Практика (55 мин)</div>
-    <div style="font-size:1.5rem;display:flex;align-items:center;">&rarr;</div>
-    <div class="principle-pill" style="background:var(--lavender);"><strong>4.</strong> Демо + Рефлексия (20 мин)</div>
-  </div>
-
-  <div style="margin-top:2rem;padding:1.2rem;background:white;border-radius:12px;border:2px dashed var(--coral);">
-    <h3 style="color:var(--coral);">&#9888; Что НЕ делать</h3>
-    <ul style="margin-top:0.5rem;">
-      <li>Не читать лекции дольше 15 минут — люди отключаются</li>
-      <li>Не показывать слайды — показывай живой терминал</li>
-      <li>Не решать задачи ЗА участников — направляй, не делай</li>
-      <li>Не оставлять никого одного — если кто-то молчит 5 мин, подойди</li>
-      <li>Не игнорировать перерывы — мозгу нужен отдых, это не опционально</li>
-    </ul>
-  </div>
-</div>
-</section>
-
-<!-- ============================================ -->
-<!-- SLIDE 8: KAS CONTEXT -->
-<!-- ============================================ -->
-<section class="slide slide-kas" id="s8">
-<div class="slide-inner">
-  <h2>&#127466;&#127481; Каш: контекст для заданий</h2>
-  <p style="margin-bottom:1.5rem;">Каш (Антифеллос) — не просто город. Это 3000+ лет истории на одном полуострове.</p>
+  <h2>&#127466;&#127481; Каш: что интересного вокруг</h2>
+  <p style="margin-bottom:1.5rem;">Для тех, кто хочет копнуть в историю и контекст города.</p>
 
   <div class="grid-2" style="margin-bottom:1.5rem;">
     <div class="card">
-      <h3>&#127963; Античфеллос</h3>
-      <p>Город основан ликийцами (XV в. до н.э.). Чеканил собственные монеты. Эллинистический театр на 4000 мест. Львиная гробница (2400 лет). 100+ скальных гробниц.</p>
+      <h3>&#127963; Античный Антифеллос</h3>
+      <p>Каш построен на руинах ликийского города (XV в. до н.э.). Чеканил монеты. Театр на 4000 мест. Львиная гробница (2400 лет). 100+ скальных гробниц.</p>
     </div>
     <div class="card">
       <h3>&#128674; Корабль Улубурун</h3>
-      <p>1982: ныряльщик за губками нашёл медные слитки. XIV век до н.э. 20 тонн груза из 10 культур. 22,413 погружений. Одно из главных открытий подводной археологии.</p>
+      <p>1982: ныряльщик нашёл "металлические бисквиты с ушами" на глубине 45м. Оказалось — бронзовый век, XIV в. до н.э. 20 тонн груза из 10 культур. 22,413 погружений за 10 лет раскопок.</p>
     </div>
     <div class="card">
       <h3>&#127754; Затонувший Кекова</h3>
-      <p>Ликийский город ушёл под воду после землетрясений. В 1990 запретили плавание (мародёры). Номинирован в UNESCO. 40 км от Каша.</p>
+      <p>Город ушёл под воду после землетрясений. Мародёры — запрет плавания с 1990. Номинирован в UNESCO. 40 км от нас.</p>
     </div>
     <div class="card">
       <h3>&#127468;&#127479; Остров Меис</h3>
-      <p>Греческий Кастеллоризо — 2.1 км от Каша. 20 мин на пароме. Две страны, две валюты, два мира. Оскар за "Средиземноморье" (1991).</p>
+      <p>Греческий Кастеллоризо — 2.1 км от Каша. 20 мин на пароме. Две страны, две валюты. Оскар за фильм "Средиземноморье" (1991). Самая маленькая EEZ-дискуссия в мире.</p>
     </div>
   </div>
 
   <div class="grid-3">
     <div style="padding:1rem;background:white;border-radius:12px;">
       <h3>&#127961; Недвижимость</h3>
-      <p>Виллы от &euro;200K. Люкс &euro;500K-2M. Рост ~12%/год. Дешевле Бодрума.</p>
+      <p>Виллы от &euro;200K. Люкс до &euro;2M. Рост ~12%/год. Дешевле Бодрума.</p>
     </div>
     <div style="padding:1rem;background:white;border-radius:12px;">
-      <h3>&#128101; Население</h3>
-      <p>~7000 жителей. Летом x5. Нет аэропорта = нет масс-туризма. Богемный дух.</p>
+      <h3>&#128101; Город</h3>
+      <p>~7000 жителей. Летом x5. Нет аэропорта = нет масс-туризма. Богема, дайверы, экспаты.</p>
     </div>
     <div style="padding:1rem;background:white;border-radius:12px;">
-      <h3>&#127754; Дайвинг</h3>
-      <p>30+ дайв-сайтов. Видимость 30-40м. Пещеры, каньоны, рэки. Красноморские мигранты.</p>
+      <h3>&#127754; Под водой</h3>
+      <p>30+ дайв-сайтов. Видимость 40м. Пещеры, каньоны. Мигранты из Красного моря через Суэц.</p>
     </div>
   </div>
 </div>
 </section>
 
 <!-- ============================================ -->
-<!-- SLIDE 9: TOOLS -->
+<!-- SLIDE 10: TOOLS -->
 <!-- ============================================ -->
-<section class="slide slide-tools" id="s9">
+<section class="slide slide-tools" id="s10">
 <div class="slide-inner">
-  <h2>&#128736; Технический стек</h2>
-  <p style="margin-bottom:1.5rem;">Всё, что может понадобиться. Установить заранее на свой мак.</p>
+  <h2>&#128736; Шпаргалка</h2>
 
   <div class="grid-2" style="margin-bottom:1.5rem;">
     <div>
-      <h3>Core (обязательно для всех)</h3>
-      <div class="cmd">npm install -g @anthropic-ai/claude-code
-pip install openai-whisper
-brew install sox ffmpeg</div>
-      <p style="margin-top:0.5rem;">Claude Code + Whisper (voice) + аудио-утилиты</p>
+      <h3>Claude Code — базовое</h3>
+      <div class="cmd">claude                    # запуск
+claude "задание"          # промпт
+/help                     # справка
+/permissions              # настройки доступа
+/mcp                      # список MCP серверов</div>
     </div>
     <div>
-      <h3>Network Exploration</h3>
-      <div class="cmd">brew install nmap
-pip install shodan scapy
-shodan init YOUR_API_KEY</div>
-      <p style="margin-top:0.5rem;">Сканирование сети + Shodan (публичный индекс устройств)</p>
+      <h3>GitHub</h3>
+      <div class="cmd">gh auth login             # авторизация
+gh repo create my-project --public --clone
+git add . && git commit -m "msg" && git push</div>
     </div>
     <div>
-      <h3>Crypto / Tokens</h3>
-      <div class="cmd">sh -c "$(curl -sSfL https://release.anza.xyz/stable/install)"
-export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
-solana config set --url devnet</div>
-      <p style="margin-top:0.5rem;">Solana CLI для создания токенов на devnet</p>
+      <h3>Network & OSINT</h3>
+      <div class="cmd">nmap -sn 192.168.1.0/24         # сканировать сеть
+airport -s                       # WiFi вокруг
+shodan search "city:Kas country:TR"
+dig kas.bel.tr                   # DNS домена</div>
     </div>
     <div>
-      <h3>Geo & Data</h3>
-      <div class="cmd"># Overpass API (OpenStreetMap)
-curl "https://overpass-api.de/api/interpreter" \
-  -d 'data=[out:json];area["name"="Kaş"]->.a;...'
-
-# OpenSky (самолёты)
-curl "https://opensky-network.org/api/states/all?lamin=36.0&lomin=29.5"</div>
+      <h3>TON / Crypto</h3>
+      <div class="cmd">npm create ton@latest            # новый TON проект
+npx blueprint run                # деплой контракта
+# TON docs: docs.ton.org
+# Jetton стандарт: TEP-74</div>
     </div>
   </div>
 
   <div style="padding:1rem;background:white;border-radius:12px;">
-    <h3>&#128196; Шпаргалка для участников (напечатать!)</h3>
+    <h3>&#128279; Полезные ссылки</h3>
     <div class="grid-3" style="margin-top:0.5rem;">
       <div>
-        <strong>Claude Code</strong><br>
-        <span class="mono">claude</span> — запуск<br>
-        <span class="mono">claude "задание"</span> — промпт<br>
-        <span class="mono">/help</span> — справка
+        <strong>AI шаблоны</strong><br>
+        <a href="https://aitmpl.com/skills" target="_blank">aitmpl.com/skills</a><br>
+        <a href="https://skillsmp.com" target="_blank">skillsmp.com</a>
       </div>
       <div>
-        <strong>Voice</strong><br>
-        <span class="mono">rec input.wav trim 0 30</span><br>
-        <span class="mono">whisper input.wav --language ru</span><br>
-        <span class="mono">say "текст"</span> — TTS (macOS)
+        <strong>Данные</strong><br>
+        <a href="https://opensky-network.org" target="_blank">OpenSky (самолёты)</a><br>
+        <a href="https://www.windy.com/webcams" target="_blank">Windy webcams</a><br>
+        <a href="https://overpass-turbo.eu" target="_blank">Overpass (OSM)</a>
       </div>
       <div>
-        <strong>Полезное</strong><br>
-        <span class="mono">nmap -sn 192.168.1.0/24</span><br>
-        <span class="mono">open index.html</span><br>
-        <span class="mono">python -m http.server 8000</span>
+        <strong>TON</strong><br>
+        <a href="https://docs.ton.org" target="_blank">docs.ton.org</a><br>
+        <a href="https://blueprint.ton.org" target="_blank">Blueprint</a><br>
+        <a href="https://testnet.tonscan.org" target="_blank">Testnet Explorer</a>
       </div>
     </div>
   </div>
@@ -887,64 +970,62 @@ curl "https://opensky-network.org/api/states/all?lamin=36.0&lomin=29.5"</div>
 </section>
 
 <!-- ============================================ -->
-<!-- SLIDE 10: LEGAL -->
+<!-- SLIDE 11: LEGAL -->
 <!-- ============================================ -->
-<section class="slide slide-legal" id="s10">
+<section class="slide slide-legal" id="s11">
 <div class="slide-inner">
-  <h2>&#9878; Legal & Этика</h2>
-  <p style="margin-bottom:1.5rem;">Озвучить в начале дня. 2 минуты. Серьёзно, но без паники.</p>
+  <h2>&#9878; Правила игры</h2>
+  <p style="margin-bottom:1.5rem;">Мы исследуем мир этично. 2 минуты на прочтение.</p>
 
   <div class="grid-2">
     <div class="card" style="border-color:var(--coral);">
       <h3>&#128683; Нельзя</h3>
       <ul>
-        <li>Подключаться к чужим устройствам / сетям без разрешения</li>
-        <li>Собирать персональные данные (KVKK = турецкий GDPR)</li>
-        <li>Сканировать чужие WiFi-сети (только свою!)</li>
+        <li>Подключаться к чужим устройствам / сетям</li>
+        <li>Собирать персональные данные людей</li>
+        <li>Активно сканировать чужие WiFi</li>
         <li>Создавать токены для реального fundraising</li>
-        <li>Stalking / сбор данных о конкретных людях</li>
+        <li>Stalking / слежка за конкретными людьми</li>
       </ul>
     </div>
     <div class="card" style="border-color:var(--mint);">
       <h3>&#9989; Можно</h3>
       <ul>
-        <li>Shodan / Censys — легальный индекс публичных банеров</li>
-        <li>OpenStreetMap, Overpass API — открытые данные</li>
-        <li>Публичные вебкамеры (windy.com, skylinewebcams)</li>
-        <li>AIS / ADS-B — корабли и самолёты вещают открыто</li>
-        <li>Токены на devnet/testnet — образовательные цели</li>
-        <li>Пассивный WiFi-скан (airport -s) — только наблюдение</li>
+        <li>Shodan / Censys — публичный индекс</li>
+        <li>OpenStreetMap, Overpass API</li>
+        <li>Публичные вебкамеры (windy, skyline)</li>
+        <li>AIS / ADS-B — открытые радиоданные</li>
+        <li>Токены на testnet — учебные цели</li>
+        <li>Пассивный WiFi-скан — только наблюдение</li>
       </ul>
     </div>
   </div>
 
   <div style="margin-top:1.5rem;padding:1rem;background:white;border-radius:12px;border:2px solid var(--coral);">
-    <p><strong>Турецкое законодательство:</strong> Закон 5651 + УК ст. 243-244: несанкционированный доступ к компьютерным системам — от 1 до 3 лет. Закон 6698 (KVKK): обработка персональных данных без согласия запрещена. Мы работаем только с публичными данными и своей сетью.</p>
+    <p><strong>Турция:</strong> Закон 5651 + УК ст. 243-244: несанкционированный доступ = 1-3 года. KVKK (6698) = турецкий GDPR. Мы работаем только с открытыми данными.</p>
   </div>
 </div>
 </section>
 
 <!-- ============================================ -->
-<!-- SLIDE 11: CLOSING -->
+<!-- SLIDE 12: CLOSING -->
 <!-- ============================================ -->
-<section class="slide slide-final" id="s11">
+<section class="slide slide-final" id="s12">
 <div class="slide-inner" style="text-align:center;">
   <h1 style="color:white;text-shadow:4px 4px 0 rgba(0,0,0,0.2);">GO BUILD<br>SOMETHING<br>AMAZING</h1>
   <p style="color:white;font-size:1.3rem;margin-top:1.5rem;opacity:0.9;">
-    Каш ждёт 3000 лет. Мы ждём 5 часов.<br>
+    Каш ждёт 3000 лет. У нас 5 часов.<br>
     <span class="hand" style="font-size:1.8rem;">Let's botanize.</span>
   </p>
   <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
     <span class="principle-pill" style="background:white;">&#127793; 3 урока</span>
-    <span class="principle-pill" style="background:white;">&#129309; 10 человек</span>
+    <span class="principle-pill" style="background:white;">&#128176; 1 токен</span>
     <span class="principle-pill" style="background:white;">&#128640; &infin; возможностей</span>
   </div>
 </div>
 </section>
 
-<!-- ===== SCRIPTS ===== -->
 <script>
-// Build nav dots
 const slides = document.querySelectorAll('.slide');
 const nav = document.getElementById('nav');
 slides.forEach((s, i) => {
@@ -954,7 +1035,6 @@ slides.forEach((s, i) => {
   nav.appendChild(a);
 });
 
-// Active nav dot on scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -968,13 +1048,11 @@ const observer = new IntersectionObserver((entries) => {
 
 slides.forEach(s => observer.observe(s));
 
-// Keyboard navigation
 document.addEventListener('keydown', (e) => {
   const current = [...slides].findIndex(s => {
     const rect = s.getBoundingClientRect();
     return rect.top >= -100 && rect.top < window.innerHeight / 2;
   });
-
   if (e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageDown') {
     e.preventDefault();
     if (current < slides.length - 1) slides[current + 1].scrollIntoView({ behavior: 'smooth' });
