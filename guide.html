@@ -67,9 +67,13 @@ p, li { font-size: 1.05rem; line-height: 1.6; }
 .timeline-time { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 1.1rem; white-space: nowrap; }
 
 /* Idea cards */
-.idea-card { background: white; border: 3px solid var(--ink); border-radius: 16px; padding: 1.2rem; box-shadow: 4px 4px 0 var(--ink); transition: all 0.2s; cursor: default; }
-.idea-card:hover { transform: translateY(-4px) rotate(1deg); box-shadow: 6px 8px 0 var(--ink); }
-.idea-card .emoji { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+.idea-card { background: white; border: 2px solid var(--ink); border-radius: 12px; padding: 0.8rem 1rem; box-shadow: 3px 3px 0 var(--ink); transition: all 0.2s; cursor: default; }
+.idea-card:hover { transform: translateY(-3px) rotate(1deg); box-shadow: 5px 6px 0 var(--ink); }
+.idea-card .emoji { font-size: 1.5rem; display: inline-block; margin-right: 0.4rem; vertical-align: middle; }
+.idea-card h3 { display: inline; font-size: 1.05rem; vertical-align: middle; }
+.idea-card p { font-size: 0.82rem !important; margin-top: 0.3rem; line-height: 1.4; }
+.idea-card .cmd-wrap { margin: 0.3rem 0 0; }
+.idea-card .cmd { font-size: 0.7rem; padding: 0.4rem 2rem 0.4rem 0.6rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* Badges & pills */
 .group-badge { display: inline-block; padding: 0.2rem 0.7rem; border-radius: 100px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
@@ -763,37 +767,31 @@ p, li { font-size: 1.05rem; line-height: 1.6; }
   </p>
   <div class="grid-3">
     <div class="idea-card">
-      <span class="emoji">&#128674;</span>
-      <h3><span class="ru">Море и корабли</span><span class="en">Sea & Ships</span></h3>
-      <p style="font-size:0.9rem;"><span class="ru">AIS-данные кораблей в порту Каша. Куда плывут яхты? Откуда пришёл тот паром?</span><span class="en">AIS data of ships in Kas port. Where are the yachts heading? Where did that ferry come from?</span></p>
-      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">curl "https://www.marinetraffic.com/en/ais/home/centerx/29.64/centery/36.20/zoom/13"</pre></div>
+      <div><span class="emoji">&#128674;</span><h3><span class="ru">Море и корабли</span><span class="en">Sea & Ships</span></h3></div>
+      <p><span class="ru">AIS-данные кораблей в порту Каша. Куда плывут яхты?</span><span class="en">AIS ship data in Kas port. Where are yachts heading?</span></p>
+      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">marinetraffic.com + OpenSky API</pre></div>
     </div>
     <div class="idea-card">
-      <span class="emoji">&#9992;&#65039;</span>
-      <h3><span class="ru">Небо над нами</span><span class="en">Sky Above</span></h3>
-      <p style="font-size:0.9rem;"><span class="ru">ADS-B трекинг самолётов. Что сейчас летит над Кашем?</span><span class="en">ADS-B aircraft tracking. What's flying over Kas right now?</span></p>
-      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">curl "https://opensky-network.org/api/states/all?lamin=36.0&lomin=29.4&lamax=36.4&lomax=29.9"</pre></div>
+      <div><span class="emoji">&#9992;&#65039;</span><h3><span class="ru">Небо над нами</span><span class="en">Sky Above</span></h3></div>
+      <p><span class="ru">ADS-B трекинг: что летит над Кашем прямо сейчас?</span><span class="en">ADS-B tracking: what's flying over Kas right now?</span></p>
+      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">opensky-network.org/api/states/all</pre></div>
     </div>
     <div class="idea-card">
-      <span class="emoji">&#127758;</span>
-      <h3><span class="ru">Сетевой ландшафт</span><span class="en">Network Landscape</span></h3>
-      <p style="font-size:0.9rem;"><span class="ru">nmap, Shodan, Wi-Fi &mdash; что видно в цифровом пространстве Каша?</span><span class="en">nmap, Shodan, Wi-Fi &mdash; what's visible in Kas digital space?</span></p>
+      <div><span class="emoji">&#127758;</span><h3><span class="ru">Сетевой ландшафт</span><span class="en">Network Scan</span></h3></div>
+      <p><span class="ru">nmap, Shodan, Wi-Fi &mdash; цифровое пространство Каша</span><span class="en">nmap, Shodan, Wi-Fi &mdash; Kas digital space</span></p>
     </div>
     <div class="idea-card">
-      <span class="emoji">&#127961;&#65039;</span>
-      <h3><span class="ru">Архитектура города</span><span class="en">City Architecture</span></h3>
-      <p style="font-size:0.9rem;"><span class="ru">OpenStreetMap + Overpass API: все здания, кафе, магазины. Визуализируйте Каш.</span><span class="en">OpenStreetMap + Overpass API: all buildings, cafes, shops. Visualize Kas.</span></p>
-      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">curl -d '[out:json];area[name="Kaş"]->.a;(node(area.a)[amenity];);out;' "https://overpass-api.de/api/interpreter"</pre></div>
+      <div><span class="emoji">&#127961;&#65039;</span><h3><span class="ru">Архитектура</span><span class="en">Architecture</span></h3></div>
+      <p><span class="ru">Overpass API: здания, кафе, магазины. Карта Каша.</span><span class="en">Overpass API: buildings, cafes, shops. Map of Kas.</span></p>
+      <div class="cmd-wrap"><button class="copy-btn" onclick="copyCmd(this)">&#128203;</button><pre class="cmd">overpass-api.de/api/interpreter</pre></div>
     </div>
     <div class="idea-card">
-      <span class="emoji">&#127909;</span>
-      <h3><span class="ru">Камеры и стримы</span><span class="en">Cameras & Streams</span></h3>
-      <p style="font-size:0.9rem;"><span class="ru">Публичные веб-камеры Каша, RTSP-потоки, Insecam &mdash; глаза на мир.</span><span class="en">Public webcams of Kas, RTSP streams, Insecam &mdash; eyes on the world.</span></p>
+      <div><span class="emoji">&#127909;</span><h3><span class="ru">Камеры</span><span class="en">Cameras</span></h3></div>
+      <p><span class="ru">Веб-камеры, RTSP-потоки, Insecam &mdash; глаза на мир</span><span class="en">Webcams, RTSP streams, Insecam &mdash; eyes on world</span></p>
     </div>
     <div class="idea-card">
-      <span class="emoji">&#129689;</span>
-      <h3><span class="ru">Генеративное искусство</span><span class="en">Generative Art</span></h3>
-      <p style="font-size:0.9rem;"><span class="ru">SVG-инсталляция, анимация на основе данных из Каша, звуковой ландшафт.</span><span class="en">SVG installation, data-driven animation from Kas, soundscape.</span></p>
+      <div><span class="emoji">&#129689;</span><h3><span class="ru">Генеративное</span><span class="en">Generative Art</span></h3></div>
+      <p><span class="ru">SVG-арт, анимация из данных, звуковой ландшафт</span><span class="en">SVG art, data animation, soundscape</span></p>
     </div>
   </div>
 </div>
@@ -849,28 +847,46 @@ function copyCmd(btn) {
 }
 
 // === CHAPTER UNLOCK ===
+// Chapters unlock via:
+//   1. Presenter panel buttons (Ctrl+Shift+P)
+//   2. URL hash: guide.html#ch2 or guide.html#ch3
+//   Tim shares a new link in chat → participants click → chapter unlocked
 const chaptersUnlocked = { 1: true, 2: false, 3: false };
 
-function unlockChapter(num) {
-  if (chaptersUnlocked[num]) {
-    // Already unlocked — scroll to it
+function unlockChapter(num, scroll) {
+  // Unlock all chapters up to num (ch3 implies ch2 too)
+  for (let i = 2; i <= num; i++) {
+    if (!chaptersUnlocked[i]) {
+      chaptersUnlocked[i] = true;
+      const ch = document.getElementById('chapter' + i);
+      if (ch) {
+        ch.classList.remove('locked');
+        ch.classList.add('unlocking');
+        setTimeout(() => ch.classList.remove('unlocking'), 800);
+      }
+      const btn = document.getElementById('ch' + i + 'btn');
+      if (btn) btn.classList.add('active-ch');
+    }
+  }
+  // Scroll to the requested chapter
+  if (scroll !== false) {
     const ch = document.getElementById('chapter' + num);
-    if (ch) ch.querySelector('.slide').scrollIntoView({ behavior: 'smooth' });
-    return;
+    if (ch) setTimeout(() => ch.querySelector('.slide').scrollIntoView({ behavior: 'smooth' }), 150);
   }
-  chaptersUnlocked[num] = true;
-  const ch = document.getElementById('chapter' + num);
-  if (ch) {
-    ch.classList.remove('locked');
-    ch.classList.add('unlocking');
-    setTimeout(() => ch.classList.remove('unlocking'), 800);
-    // Scroll to new chapter
-    setTimeout(() => ch.querySelector('.slide').scrollIntoView({ behavior: 'smooth' }), 100);
-  }
-  // Update panel buttons
-  const btn = document.getElementById('ch' + num + 'btn');
-  if (btn) btn.classList.add('active-ch');
 }
+
+// Read hash on load: #ch2 or #ch3
+(function() {
+  const hash = window.location.hash.toLowerCase();
+  if (hash === '#ch3' || hash === '#lesson3') unlockChapter(3);
+  else if (hash === '#ch2' || hash === '#lesson2') unlockChapter(2);
+})();
+// Also react to hash changes (e.g. someone pastes new hash)
+window.addEventListener('hashchange', function() {
+  const hash = window.location.hash.toLowerCase();
+  if (hash === '#ch3' || hash === '#lesson3') unlockChapter(3);
+  else if (hash === '#ch2' || hash === '#lesson2') unlockChapter(2);
+});
 
 // === COUNTDOWN TIMER ===
 let timerInterval = null;
